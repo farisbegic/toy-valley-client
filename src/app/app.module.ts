@@ -20,6 +20,9 @@ import { TopCategoriesComponent } from './features/home/components/top-categorie
 import { MatChipsModule } from "@angular/material/chips";
 import {MatCardModule} from "@angular/material/card";
 import { CardComponent } from './features/common/card/card.component';
+import { TopTradersComponent } from './features/home/components/top-traders/top-traders.component';
+import { TopTradersContainerComponent } from './features/home/containers/top-traders-container/top-traders-container.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { CardComponent } from './features/common/card/card.component';
     SearchBarContainerComponent,
     SearchBarComponent,
     TopCategoriesComponent,
-    CardComponent
+    CardComponent,
+    TopTradersComponent,
+    TopTradersContainerComponent,
+    TopTradersComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +49,8 @@ import { CardComponent } from './features/common/card/card.component';
     FormsModule,
     FlexLayoutModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
