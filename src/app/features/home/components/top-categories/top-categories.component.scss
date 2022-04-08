@@ -1,0 +1,15 @@
+@import "src/styles";
+
+.top-categories-container {
+  background-color: $primary;
+  height: 300px;
+}
+
+.chips {
+  margin-top: 20px;
+}
+
+.single-chip {
+  cursor: pointer;
+  padding: 25px 40px;
+}

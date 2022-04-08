@@ -17,7 +17,7 @@ import { HomeComponent } from "./features/home/components/home/home.component";
 import { SearchBarContainerComponent } from "./features/home/containers/search-bar-container/search-bar-container.component";
 import { SearchBarComponent } from "./features/home/components/search-bar/search-bar.component";
 import { TopCategoriesComponent } from './features/home/components/top-categories/top-categories.component';
-import {MatChipsModule} from "@angular/material/chips";
+import { MatChipsModule } from "@angular/material/chips";
 
 @NgModule({
   declarations: [
