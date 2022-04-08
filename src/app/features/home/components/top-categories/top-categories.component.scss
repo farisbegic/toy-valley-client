@@ -2,7 +2,7 @@
 
 .top-categories-container {
   background-color: $primary;
-  height: 300px;
+  padding: 100px 50px;
 }
 
 .chips {
@@ -12,4 +12,15 @@
 .single-chip {
   cursor: pointer;
   padding: 25px 40px;
+}
+
+.items {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 368px) {
+  .single-chip {
+    padding: 10px 20px;
+  }
 }

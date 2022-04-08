@@ -18,6 +18,8 @@ import { SearchBarContainerComponent } from "./features/home/containers/search-b
 import { SearchBarComponent } from "./features/home/components/search-bar/search-bar.component";
 import { TopCategoriesComponent } from './features/home/components/top-categories/top-categories.component';
 import { MatChipsModule } from "@angular/material/chips";
+import {MatCardModule} from "@angular/material/card";
+import { CardComponent } from './features/common/card/card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { MatChipsModule } from "@angular/material/chips";
     HomeComponent,
     SearchBarContainerComponent,
     SearchBarComponent,
-    TopCategoriesComponent
+    TopCategoriesComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { MatChipsModule } from "@angular/material/chips";
     MatInputModule,
     FormsModule,
     FlexLayoutModule,
-    MatChipsModule
+    MatChipsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
