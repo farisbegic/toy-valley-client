@@ -26,7 +26,7 @@ export class TopCategoriesComponent {
       url: "/"
     },
     {
-      name: "LEGO",
+      name: "VIEW MORE",
       url: "/"
     },
   );

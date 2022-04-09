@@ -24,6 +24,7 @@ import { TopTradersComponent } from './features/home/components/top-traders/top-
 import { TopTradersContainerComponent } from './features/home/containers/top-traders-container/top-traders-container.component';
 import { MatTableModule } from "@angular/material/table";
 import { TopChipsComponent } from './features/home/components/top-chips/top-chips.component';
+import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TopChipsComponent } from './features/home/components/top-chips/top-chip
     TopTradersComponent,
     TopTradersContainerComponent,
     TopTradersComponent,
-    TopChipsComponent
+    TopChipsComponent,
+    TopLocationsComponent
   ],
   imports: [
     BrowserModule,
