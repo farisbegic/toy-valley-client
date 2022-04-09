@@ -1,12 +1,5 @@
-<div class="top-categories-container" fxLayoutAlign="center center" fxLayout="column">
-  <h1 class="text-light title">TOP CATEGORIES</h1>
-  <mat-chip-list class="chips" aria-label="Top categories" fxLayout="row wrap">
-    <mat-chip class="single-chip" color="primary" routerLink="/" >CARS</mat-chip>
-    <mat-chip class="single-chip" color="primary" routerLink="/" >SOLDIERS</mat-chip>
-    <mat-chip class="single-chip" color="primary" routerLink="/" >BALLS</mat-chip>
-    <mat-chip class="single-chip" color="primary" routerLink="/" >DOLLS</mat-chip>
-    <mat-chip class="single-chip" color="primary" routerLink="/" >VIEW MORE..</mat-chip>
-  </mat-chip-list>
+<div class="top-container" fxLayoutAlign="center center" fxLayout="column">
+  <app-top-chips [title]="'MOST POPULAR CATEGORIES'" [chips]="chips"></app-top-chips>
   <div class="items" fxLayout="row wrap" fxLayoutAlign="space-between center">
     <app-card [title]="item.title" [description]="item.description" [image]="item.image" *ngFor="let item of items"></app-card>
   </div>

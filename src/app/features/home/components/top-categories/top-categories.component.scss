@@ -1,26 +1,6 @@
 @import "src/styles";
 
-.top-categories-container {
-  background-color: $primary;
-  padding: 100px 50px;
-}
-
-.chips {
-  margin-top: 20px;
-}
-
-.single-chip {
-  cursor: pointer;
-  padding: 25px 40px;
-}
-
 .items {
   width: 100%;
   margin-top: 20px;
-}
-
-@media screen and (max-width: 368px) {
-  .single-chip {
-    padding: 10px 20px;
-  }
 }
