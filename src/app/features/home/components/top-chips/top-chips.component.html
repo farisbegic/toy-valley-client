@@ -1,0 +1,4 @@
+<h1 class="title text-light">{{title}}</h1>
+<mat-chip-list class="chips" aria-label="Top categories" fxLayout="row wrap">
+  <mat-chip class="single-chip" color="primary" routerLink="{{chip.url}}" *ngFor="let chip of chips">{{chip.name}}</mat-chip>
+</mat-chip-list>
