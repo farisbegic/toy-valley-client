@@ -25,6 +25,7 @@ import { TopTradersContainerComponent } from './features/home/containers/top-tra
 import { MatTableModule } from "@angular/material/table";
 import { TopChipsComponent } from "./features/common/top-chips/top-chips.component";
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
+import { FooterComponent } from './features/common/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TopLocationsComponent } from './features/home/components/top-locations/
     TopTradersContainerComponent,
     TopTradersComponent,
     TopChipsComponent,
-    TopLocationsComponent
+    TopLocationsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

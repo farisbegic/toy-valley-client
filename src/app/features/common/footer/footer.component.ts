@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {HeaderButtonsConstants} from "../../../constants/header-buttons.constants";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss']
 })
-export class HeaderComponent {
+export class FooterComponent {
   public buttons = HeaderButtonsConstants.buttons
 }
