@@ -1,13 +1,17 @@
-<mat-toolbar color="primary">
-  <span
-    class="nav-logo"
-    routerLink="/"
-  >Toy Valley</span>
-  <span class="example-spacer"></span>
-  <ng-container *ngFor="let button of buttons">
+<nav class="nav">
+  <span class="nav__brand">
+    Toy Valley
+  </span>
+
+  <div class="{{active}}" *ngFor="let button of buttons">
     <button
-      routerLink="button.link"
+      class="nav__item"
+      routerLink="{{button.link}}"
       mat-button
     >{{button.text}}</button>
-  </ng-container>
-</mat-toolbar>
+  </div>
+
+  <div class="nav__toggler" (click)="navToggle()">
+    <mat-icon>{{icon}}</mat-icon>
+  </div>
+</nav>

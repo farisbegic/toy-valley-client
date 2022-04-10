@@ -1,0 +1,13 @@
+<mat-toolbar color="primary" fxLayoutAlign="space-between center">
+  <span
+    class="nav-logo"
+    routerLink="/"
+  >Toy Valley</span>
+  <span class="example-spacer"></span>
+  <ng-container *ngFor="let button of buttons">
+    <button
+      routerLink="{{button.link}}"
+      mat-button
+    >{{button.text}}</button>
+  </ng-container>
+</mat-toolbar>

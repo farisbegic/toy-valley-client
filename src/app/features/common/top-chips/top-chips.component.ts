@@ -1,10 +1,10 @@
 import {Component, Input} from '@angular/core';
-import {ChipsModel} from "../../../../models/chips.model";
+import {ChipsModel} from "../../../models/chips.model";
 
 @Component({
   selector: 'app-top-chips',
   templateUrl: './top-chips.component.html',
-  styleUrls: ['./top-chips.component.scss', '../../../../../styles.scss']
+  styleUrls: ['./top-chips.component.scss', '../../../../styles.scss']
 })
 export class TopChipsComponent {
   @Input() title: string = '';
