@@ -44,7 +44,7 @@ import { LoginComponent } from './features/login/login.component';
     TopChipsComponent,
     TopLocationsComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,7 +5,7 @@
 
 <div class="container">
   <h1>Login</h1>
-  <form class="example-form">
+  <form class="example-form" > // [formGroup]="form" (ngSubmit)="submit()"
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>E-mail</mat-label>
       <input matInput placeholder="Ex. name.surname@gmail.com" value="">
@@ -15,7 +15,7 @@
       <input matInput placeholder="Password" value="" type="password">
     </mat-form-field>
 
-    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="primary">Log in</button>
     <p>Don't have an account? <a href="google.com">Register here.</a></p>
   </form>
 </div>

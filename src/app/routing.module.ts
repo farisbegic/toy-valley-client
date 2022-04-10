@@ -6,16 +6,27 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
 import {LoginComponent} from "./features/login/login.component";
+import {Route} from "./constants/route.constants";
 
 const routes: Routes = [
   {
     path: "",
-    component: LoginComponent,
+    component: MainComponent,
     children: [
       {
         path: "",
-        component: HomeComponent
-      }
+        component: HomeComponent,
+        children:[
+          {
+           path: Route.LOGIN,
+          component: LoginComponent,
+           },
+
+        ],
+
+      },
+
+
     ]
   }
 ]
