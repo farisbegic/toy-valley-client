@@ -5,11 +5,12 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
+import {LoginComponent} from "./features/login/login.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: MainComponent,
+    component: LoginComponent,
     children: [
       {
         path: "",
