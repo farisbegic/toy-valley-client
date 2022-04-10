@@ -5,6 +5,8 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
+import {RegistrationComponent} from "./features/registration/registration.component";
+import {Route} from "./constants/route.constants";
 
 const routes: Routes = [
   {
@@ -13,12 +15,17 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        component: HomeComponent
-      }
+        component: HomeComponent,
+        children: [
+          {
+            path: Route.REGISTER,
+            component: RegistrationComponent,
+          }
+        ]
+      },
     ]
   }
 ]
-
 
 @NgModule({
   declarations: [],

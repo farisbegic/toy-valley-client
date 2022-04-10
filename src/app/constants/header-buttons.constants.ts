@@ -5,6 +5,6 @@ export class HeaderButtonsConstants {
     {
       link: Route.EMPTY,
       text: "Home"
-    }
+    },
   ]
 }
