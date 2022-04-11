@@ -8,8 +8,11 @@ import {User} from "../../models/user.model";
 })
 export class RegistrationComponent {
 
+  fields: String[] = ['Name', 'Surname', 'Phone Number', 'E-Mail', 'Password', 'Confirm Password'];
+  examples: String[] = ['Ex. Emily', "Ex. O'Brien", 'Ex. +38712345678', 'Ex. name.surname@gmail.com', 'Password', 'Password'];
+
   users: User[] = [];
-  
+
   public submit(): void {
 
   }

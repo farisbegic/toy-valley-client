@@ -27,6 +27,7 @@ import { TopChipsComponent } from "./features/common/top-chips/top-chips.compone
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
 import { RegistrationComponent } from './features/registration/registration.component';
+import { InputComponent } from './features/common/input/input.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { RegistrationComponent } from './features/registration/registration.comp
     TopLocationsComponent,
     FooterComponent,
     RegistrationComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
