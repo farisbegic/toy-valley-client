@@ -1,19 +1,8 @@
 .container {
   width: 1200px;
-  height: 50%;
-  margin: auto;
+  margin: 40px auto 0;
   text-align: center;
-
-}
-
-.page {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: black;
-  background-image: url('../../photos/background-image.jpg');
-  background-repeat: no-repeat;
-  opacity: 0.3;
+  position: relative;
 }
 
 h1 {
@@ -22,23 +11,37 @@ h1 {
   font-family: Roboto;
   padding: 50px;
 }
+
 .example-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
-  display: inline-block;
+  margin: auto;
 }
 
 .example-button-row .mat-button-base {
   margin: 8px 8px 8px 0;
 }
 
-.example-form p {
-  margin-top: 25px;
-  text-align: left;
-
-}
-
 .example-form button {
   width: 100%;
+  padding: 3px;
+}
+
+@media(max-width: 700px) {
+
+  .page {
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+
+  .example-form {
+    width: 70%;
+    margin: auto;
+  }
 }
