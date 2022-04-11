@@ -8,7 +8,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { RoutingModule } from './routing.module';
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
-import { FormsModule } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { HeaderComponent } from './features/common/header/header.component';
@@ -26,6 +26,8 @@ import { MatTableModule } from "@angular/material/table";
 import { TopChipsComponent } from "./features/common/top-chips/top-chips.component";
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
+import { RegistrationComponent } from './features/registration/registration.component';
+import { InputComponent } from './features/common/input/input.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { FooterComponent } from './features/common/footer/footer.component';
     TopTradersComponent,
     TopChipsComponent,
     TopLocationsComponent,
-    FooterComponent
+    FooterComponent,
+    RegistrationComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,9 +60,12 @@ import { FooterComponent } from './features/common/footer/footer.component';
     FlexLayoutModule,
     MatChipsModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}
