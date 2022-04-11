@@ -27,7 +27,7 @@ import { TopChipsComponent } from "./features/common/top-chips/top-chips.compone
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
 import { LoginComponent } from './features/login/login.component';
-import { InputComponent } from './features/common/ggg/input.component';
+import {InputComponent} from "./features/common/input/input.component";
 
 
 @NgModule({
