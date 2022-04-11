@@ -10,4 +10,8 @@ export class InputComponent {
   @Input() fields: String[] = [];
   @Input() examples: String[] = [];
 
+  public isPasswordField(field: String): boolean {
+    if (field == 'Password' || field == 'Confirm Password') return true;
+    return false;
+  }
 }

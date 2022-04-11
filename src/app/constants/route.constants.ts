@@ -1,5 +1,6 @@
 export class Route {
   public static EMPTY = '';
-  public static LOGIN = 'login';
   public static SEPARATOR = '/';
+  public static REGISTER = 'register';
+  public static LOGIN = 'login';
 }
