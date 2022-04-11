@@ -16,14 +16,12 @@ const routes: Routes = [
       {
         path: "",
         component: HomeComponent,
-        children: [
-          {
-            path: Route.REGISTER,
-            component: RegistrationComponent,
-          }
-        ]
       },
     ]
+  },
+  {
+    path: Route.REGISTER,
+    component: RegistrationComponent,
   }
 ]
 

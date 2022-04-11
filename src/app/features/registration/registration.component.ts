@@ -8,24 +8,9 @@ import {User} from "../../models/user.model";
 })
 export class RegistrationComponent {
 
-  @Output()
-  addUser: EventEmitter<User> = new EventEmitter<User>();
-
-  name: string = '';
-  surname : string = '';
-  phone_number : string = '';
-  e_mail : string = '';
-  password : string = '';
-
+  users: User[] = [];
+  
   public submit(): void {
-    const user = {
-      name: this.name,
-      surname: this.surname,
-      phone_number: this.phone_number,
-      e_mail: this.e_mail,
-      password: this.password,
-    };
 
-    this.addUser.emit(user);
   }
 }
