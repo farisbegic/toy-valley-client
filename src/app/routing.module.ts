@@ -17,16 +17,13 @@ const routes: Routes = [
         path: "",
         component: HomeComponent,
       },
-
-      {
+    ]
+  },
+  {
         path: Route.LOGIN,
         component: LoginComponent,
-      },
-
-    ]
   }
-]
-
+  ]
 
 @NgModule({
   declarations: [],
