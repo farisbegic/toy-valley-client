@@ -16,16 +16,12 @@ const routes: Routes = [
       {
         path: "",
         component: HomeComponent,
-        children:[
-          {
-           path: Route.LOGIN,
-          component: LoginComponent,
-           },
-
-        ],
-
       },
 
+      {
+        path: Route.LOGIN,
+        component: LoginComponent,
+      },
 
     ]
   }

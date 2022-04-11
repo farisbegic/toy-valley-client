@@ -5,7 +5,7 @@ import {User} from '../../models/user.model';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss','../../../styles.scss'] // dodani path
+  styleUrls: ['./login.component.scss','../../../styles.scss']
 })
 export class LoginComponent  {
 
