@@ -9,6 +9,7 @@ import { RoutingModule } from './routing.module';
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 import { HeaderComponent } from './features/common/header/header.component';
@@ -58,6 +59,7 @@ import {InputComponent} from "./features/common/input/input.component";
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     MatChipsModule,
     MatCardModule,
