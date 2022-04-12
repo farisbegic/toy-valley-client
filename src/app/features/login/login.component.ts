@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {User} from '../../models/user.model';
+import {Route} from "../../constants/route.constants";
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,12 @@ import {User} from '../../models/user.model';
   styleUrls: ['./login.component.scss','../../../styles.scss']
 })
 export class LoginComponent  {
+
+  fields: String[] = ['E-Mail', 'Password'];
+  examples: String[] = ['Ex. name.surname@gmail.com', 'Password'];
+
+  public route = Route;
+
 
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
@@ -27,3 +34,9 @@ private resetForm(): void {
   this.form.reset();
 }
 }
+
+
+
+
+
+

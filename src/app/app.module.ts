@@ -28,6 +28,7 @@ import { TopLocationsComponent } from './features/home/components/top-locations/
 import { FooterComponent } from './features/common/footer/footer.component';
 import { LoginComponent } from './features/login/login.component';
 import {InputComponent} from "./features/common/input/input.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import {InputComponent} from "./features/common/input/input.component";
     FlexLayoutModule,
     MatChipsModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
