@@ -4,7 +4,7 @@
     <form class="example-form" >
       <app-input [fields]="fields" [examples]="examples"></app-input>
       <button mat-raised-button color="primary">Log in</button>
-      <p>Don't have an account? <a href="" >Register here.</a></p>
+      <p>Don't have an account? <span class="link" [routerLink]="'/register'" >Register here.</span></p>
     </form>
   </div>
 
