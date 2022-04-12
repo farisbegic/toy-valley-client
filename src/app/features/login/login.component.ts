@@ -1,6 +1,5 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {User} from '../../models/user.model';
 import {Route} from "../../constants/route.constants";
 
 @Component({
