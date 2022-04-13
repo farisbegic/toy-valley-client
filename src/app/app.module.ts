@@ -28,6 +28,9 @@ import { TopLocationsComponent } from './features/home/components/top-locations/
 import { FooterComponent } from './features/common/footer/footer.component';
 import { RegistrationComponent } from './features/registration/registration.component';
 import { InputComponent } from './features/common/input/input.component';
+import { LoginComponent } from './features/login/login.component';
+
+
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { InputComponent } from './features/common/input/input.component';
     FooterComponent,
     RegistrationComponent,
     InputComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +70,4 @@ import { InputComponent } from './features/common/input/input.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }

@@ -6,5 +6,14 @@ export class HeaderButtonsConstants {
       link: Route.EMPTY,
       text: "Home"
     },
+    {
+      link: Route.EMPTY + Route.SEPARATOR + Route.LOGIN,
+      text: "Login"
+    },
+    {
+      link: Route.EMPTY + Route.SEPARATOR + Route.REGISTER,
+      text: "Register"
+    },
+
   ]
 }
