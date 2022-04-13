@@ -1,7 +1,6 @@
-<mat-form-field *ngFor="let field of fields" class="example-full-width" appearance="fill">
+<mat-form-field class="example-full-width" appearance="fill">
   <mat-label>{{field}}</mat-label>
-  <input *ngIf="isPasswordField(field)" matInput placeholder="" value="" type="password">
-  <input *ngIf="!isPasswordField(field)" matInput placeholder="" value="">
+  <input matInput placeholder="{{placeholder}}" value="{{value}}" type="{{type}}">
 </mat-form-field>
 
 

@@ -1,20 +1,31 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from "../../models/user.model";
 import {Route} from "../../constants/route.constants";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
 
-  fields: String[] = ['Name', 'Surname', 'Phone Number', 'E-Mail', 'Password', 'Confirm Password'];
-  examples: String[] = ['Ex. Emily', "Ex. O'Brien", 'Ex. +38712345678', 'Ex. name.surname@gmail.com', 'Password', 'Password'];
-
+  @Input() user: User | undefined;
   public route = Route;
+  public form!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+
+  }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+
+    })
+  }
 
   public submit(): void {
 
   }
+
 }
