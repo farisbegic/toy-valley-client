@@ -1,15 +1,9 @@
-
-  <div class="container">
-    <h1>Login</h1>
-    <form class="example-form" >
-      <app-input [fields]="fields" [examples]="examples"></app-input>
-      <button mat-raised-button color="primary">Log in</button>
-      <p>Don't have an account? <span class="link" [routerLink]="'/register'" >Register here.</span></p>
-    </form>
-  </div>
-
-
-
-
-
-
+<div class="container">
+  <h1>Login</h1>
+  <form class="example-form" >
+    <app-input [field]="'E-Mail'" [placeholder]="'Ex. name.surname@gmail.com'" [type]="'email'"></app-input>
+    <app-input [field]="'Password'" [placeholder]="'Your password'" [type]="'password'"></app-input>
+    <button mat-raised-button color="primary">Log in</button>
+    <p>Don't have an account? <span [routerLink]="route.REGISTER" >Register here.</span></p>
+  </form>
+</div>

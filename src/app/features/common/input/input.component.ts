@@ -7,11 +7,8 @@ import {Component, Input} from '@angular/core';
 })
 export class InputComponent {
 
-  @Input() fields: String[] = [];
-  @Input() examples: String[] = [];
-
-  public isPasswordField(field: String): boolean {
-    if (field == 'Password' || field == 'Confirm Password') return true;
-    return false;
-  }
+  @Input() placeholder: String = '';
+  @Input() value: String = '';
+  @Input() type: String = '';
+  @Input() field: String = '';
 }

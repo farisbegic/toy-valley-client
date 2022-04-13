@@ -9,11 +9,7 @@ import {Route} from "../../constants/route.constants";
 })
 export class LoginComponent  {
 
-  fields: String[] = ['E-Mail', 'Password'];
-  examples: String[] = ['Ex. name.surname@gmail.com', 'Password'];
-
   public route = Route;
-
 
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
