@@ -4,6 +4,6 @@
     <app-input [field]="'E-Mail'" [placeholder]="'Ex. name.surname@gmail.com'" [type]="'email'"></app-input>
     <app-input [field]="'Password'" [placeholder]="'Your password'" [type]="'password'"></app-input>
     <button mat-raised-button color="primary">Log in</button>
-    <p>Don't have an account? <a href="/register">Register here.</a></p>
+    <p>Don't have an account? <a href="{{route.SEPARATOR + route.REGISTER}}">Register here.</a>
   </form>
 </div>
