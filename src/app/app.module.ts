@@ -30,8 +30,6 @@ import { RegistrationComponent } from './features/registration/registration.comp
 import { InputComponent } from './features/common/input/input.component';
 import { LoginComponent } from './features/login/login.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +63,7 @@ import { LoginComponent } from './features/login/login.component';
     MatChipsModule,
     MatCardModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

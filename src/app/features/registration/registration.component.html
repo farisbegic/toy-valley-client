@@ -1,12 +1,37 @@
 <div class="container">
   <h1>Register</h1>
   <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-    <app-input [field]="'Name'" [placeholder]="'Ex. Emily'" [type]="'text'"></app-input>
-    <app-input [field]="'Surname'" [placeholder]="'Ex. Brien'" [type]="'text'"></app-input>
-    <app-input [field]="'Phone Number'" [placeholder]="'Ex. +38712345678'" [type]="'text'"></app-input>
-    <app-input [field]="'E-Mail'" [placeholder]="'Ex. name.surname@gmail.com'" [type]="'text'"></app-input>
-    <app-input [field]="'Password'" [placeholder]="'Your password'" [type]="'password'"></app-input>
-    <app-input [field]="'Confirm password'" [placeholder]="'Your password'" [type]="'password'"></app-input>
-    <button [routerLink]="route.EMPTY" mat-raised-button color="primary">Register</button>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Emily" type="text" [formControlName]="'name'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput placeholder="Ex. O'Brien" type="text" [formControlName]="'surname'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput placeholder="Ex. +38712345678" type="text" [formControlName]="'phone'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="name.surname@gmail.com" type="email" [formControlName]="'email'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Your password" type="password" [formControlName]="'password'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="Your password" type="password" [formControlName]="'confirm_password'">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Register</button>
   </form>
 </div>
