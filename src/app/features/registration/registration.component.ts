@@ -6,30 +6,30 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss', '../../../styles.scss']
 })
 export class RegistrationComponent implements OnInit {
 
-  public user : User | undefined;
-
   public route = Route;
   public form!: FormGroup;
+  public hide: boolean = true;
+  public validPassword: boolean = true;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
 
     this.form = this.formBuilder.group({
-      'name': [this.user?.name || '', Validators.required],
-      'surname': [this.user?.surname || '', Validators.required],
-      'phone': [this.user?.phone || '', Validators.required],
-      'email': [this.user?.email || '', [Validators.required, Validators.email]],
-      'password': [this.user?.password || '', Validators.required],
-      'confirm_password': [this.user?.confirm_password || '', Validators.required]
-    }, {
+      'name': [null, Validators.required],
+      'surname': [null, Validators.required],
+      'phone': [null, Validators.required],
+      'email': [null, Validators.compose([Validators.required, Validators.email])],
+      'password': [null, Validators.compose([Validators.required, Validators.min(8)])]
+    })
+  }
 
-      }
-    )
+  checkPassword(): boolean {
+    return this.form.value.password.length > 7;
   }
 
   public submit(): void {
