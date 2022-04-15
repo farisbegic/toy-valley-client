@@ -1,31 +1,39 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../../models/user.model";
 import {Route} from "../../constants/route.constants";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.scss']
+  styleUrls: ['./registration.component.scss', '../../../styles.scss']
 })
 export class RegistrationComponent implements OnInit {
 
-  @Input() user: User | undefined;
   public route = Route;
   public form!: FormGroup;
+  public hide: boolean = true;
+  public validPassword: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {
-
-  }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
 
+    this.form = this.formBuilder.group({
+      'name': [null, Validators.required],
+      'surname': [null, Validators.required],
+      'phone': [null, Validators.required],
+      'email': [null, Validators.compose([Validators.required, Validators.email])],
+      'password': [null, Validators.compose([Validators.required, Validators.min(8)])]
     })
   }
 
-  public submit(): void {
+  checkPassword(): boolean {
+    return this.form.value.password.length > 7;
+  }
 
+  public submit(): void {
+    console.log(this.form.value);
   }
 
 }

@@ -12,3 +12,4 @@ export class InputComponent {
   @Input() type: String = '';
   @Input() field: String = '';
 }
+
