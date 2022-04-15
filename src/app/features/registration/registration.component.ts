@@ -13,7 +13,6 @@ export class RegistrationComponent implements OnInit {
   public route = Route;
   public form!: FormGroup;
   public hide: boolean = true;
-  public validPassword: boolean = true;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -24,12 +23,8 @@ export class RegistrationComponent implements OnInit {
       'surname': [null, Validators.required],
       'phone': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
-      'password': [null, Validators.compose([Validators.required, Validators.min(8)])]
+      'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])]
     })
-  }
-
-  checkPassword(): boolean {
-    return this.form.value.password.length > 7;
   }
 
   public submit(): void {
