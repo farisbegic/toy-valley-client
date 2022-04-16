@@ -1,9 +1,9 @@
-
 .container {
   width: 1200px;
   height: 50%;
-  margin: 40px auto;
+  margin: 40px auto 60px;
   text-align: center;
+  position: relative;
 }
 
 h1 {
@@ -18,17 +18,42 @@ h1 {
   display: inline-block;
 }
 
+.example-full-width {
+  width: 100%;
+}
+
 .example-button-row .mat-button-base {
   margin: 8px 8px 8px 0;
 }
 
 .example-form p {
   margin-top: 25px;
-  text-align: left;
-
+  text-align: center;
 }
 
 .example-form button {
   width: 100%;
 }
 
+.register-button {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media(max-width: 700px) {
+
+  .page {
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    margin: auto;
+    position: relative;
+  }
+
+  .example-form {
+    width: 70%;
+    margin: auto;
+  }
+}

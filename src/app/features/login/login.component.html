@@ -1,9 +1,21 @@
 <div class="container">
   <h1>Login</h1>
-  <form class="example-form" >
-    <app-input [field]="'E-Mail'" [placeholder]="'Ex. name.surname@gmail.com'" [type]="'email'"></app-input>
-    <app-input [field]="'Password'" [placeholder]="'Your password'" [type]="'password'"></app-input>
+  <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="name.surname@gmail.com" type="email" [formControlName]="'email'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControlName]="'password'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
     <button mat-raised-button color="primary">Log in</button>
-    <p>Don't have an account? <a href="{{route.SEPARATOR + route.REGISTER}}">Register here.</a>
+    <p>Don't have an account? <span class="register-button"[routerLink]="[route.SEPARATOR, route.REGISTER]">Register here.</span>
   </form>
 </div>

@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Route} from "../../constants/route.constants";
 
 @Component({
@@ -7,17 +7,26 @@ import {Route} from "../../constants/route.constants";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss','../../../styles.scss']
 })
-export class LoginComponent  {
+export class LoginComponent implements OnInit {
 
   public route = Route;
+  public form!: FormGroup;
+  public hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {
+  }
+
+  checkPassword(): boolean {
+    return this.form.value.password.length > 7;
+  }
+
   ngOnInit(): void {
-  this.form = this.formBuilder.group({
-
-  });
+    this.form = this.formBuilder.group({
+      'email': [null, Validators.compose([Validators.required, Validators.email])],
+      'password': [null, Validators.compose([Validators.required, Validators.min(8)])]
+    })
 }
-public form!: FormGroup;
+
 public submit():void {
   if (!this.form.valid) {
   return;
@@ -28,6 +37,7 @@ this.resetForm();
 private resetForm(): void {
   this.form.reset();
 }
+
 }
 
 
