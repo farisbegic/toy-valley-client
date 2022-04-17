@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../models/user.model";
 import {Route} from "../../constants/route.constants";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -13,9 +13,8 @@ export class RegistrationComponent implements OnInit {
   public route = Route;
   public form!: FormGroup;
   public hide: boolean = true;
-  public validPassword: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -24,16 +23,13 @@ export class RegistrationComponent implements OnInit {
       'surname': [null, Validators.required],
       'phone': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
-      'password': [null, Validators.compose([Validators.required, Validators.min(8)])]
+      'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])]
     })
-  }
-
-  checkPassword(): boolean {
-    return this.form.value.password.length > 7;
   }
 
   public submit(): void {
     console.log(this.form.value);
+    this.router.navigate([this.route.EMPTY]);
   }
 
 }
