@@ -16,14 +16,10 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
   }
 
-  checkPassword(): boolean {
-    return this.form.value.password.length > 7;
-  }
-
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       'email': [null, Validators.compose([Validators.required, Validators.email])],
-      'password': [null, Validators.compose([Validators.required, Validators.min(8)])]
+      'password': [null, Validators.compose([Validators.required])],
     })
 }
 
