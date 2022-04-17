@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../models/user.model";
 import {Route} from "../../constants/route.constants";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +14,7 @@ export class RegistrationComponent implements OnInit {
   public form!: FormGroup;
   public hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -29,6 +29,7 @@ export class RegistrationComponent implements OnInit {
 
   public submit(): void {
     console.log(this.form.value);
+    this.router.navigate([this.route.EMPTY]);
   }
 
 }
