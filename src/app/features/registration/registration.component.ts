@@ -13,6 +13,9 @@ export class RegistrationComponent implements OnInit {
   public route = Route;
   public form!: FormGroup;
   public hide: boolean = true;
+  cities: string[] = [
+    'Sarajevo', 'Tuzla', 'Banja Luka', 'Mostar', 'Zenica', 'Travnik',
+  ];
 
   constructor(private formBuilder: FormBuilder, private router: Router) {}
 
@@ -22,6 +25,8 @@ export class RegistrationComponent implements OnInit {
       'name': [null, Validators.required],
       'surname': [null, Validators.required],
       'phone': [null, Validators.required],
+      'address': [null, Validators.required],
+      'city': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])]
     })
@@ -31,5 +36,4 @@ export class RegistrationComponent implements OnInit {
     console.log(this.form.value);
     this.router.navigate([this.route.EMPTY]);
   }
-
 }

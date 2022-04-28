@@ -27,8 +27,9 @@ import { TopChipsComponent } from "./features/common/top-chips/top-chips.compone
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
 import { RegistrationComponent } from './features/registration/registration.component';
-import { InputComponent } from './features/common/input/input.component';
 import { LoginComponent } from './features/login/login.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,6 @@ import { LoginComponent } from './features/login/login.component';
     TopLocationsComponent,
     FooterComponent,
     RegistrationComponent,
-    InputComponent,
     LoginComponent,
   ],
   imports: [
@@ -64,6 +64,8 @@ import { LoginComponent } from './features/login/login.component';
     MatCardModule,
     MatTableModule,
     ReactiveFormsModule,
+    MatDatepickerModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
