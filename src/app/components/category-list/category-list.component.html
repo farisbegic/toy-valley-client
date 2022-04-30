@@ -1,0 +1,37 @@
+<div class="container">
+  <ng-container *ngIf="categories.length > 0; else emptyList">
+    <div>
+      <div class="settings-container">
+        <button mat-flat-button color="primary" class="add-button"
+                [routerLink]="[route.SEPARATOR, route.CATEGORIES, route.ADD]">
+          Add new category
+        </button>
+      </div>
+      <hr/>
+    </div>
+
+    <div class="block-container" *ngFor="let category of categories">
+      <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
+           class="block">
+        <mat-icon>{{getCategoryName(category)}}</mat-icon>
+      </div>
+
+      <button mat-flat-button type="button"
+              class="remove-button"
+              color="warn"
+              *ngIf="removeAllowed"
+              (click)="remove(category)">Remove
+      </button>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #emptyList>
+  <div>
+    <mat-icon fontSet="material-icons-outlined" class="icon-margin">category</mat-icon>
+    <span>There are no categories.</span>
+  </div>
+  <button mat-flat-button color="primary" class="add-button"
+          [routerLink]="[route.SEPARATOR, route.CATEGORIES, route.ADD]">Add new category
+  </button>
+</ng-template>
