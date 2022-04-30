@@ -7,4 +7,5 @@ export class Route {
   public static EDIT = 'edit';
   public static CATEGORIES = 'categories';
   public static CATEGORY = 'category';
+  public static ID = ':id';
 }
