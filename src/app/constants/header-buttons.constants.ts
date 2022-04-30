@@ -14,6 +14,10 @@ export class HeaderButtonsConstants {
       link: Route.EMPTY + Route.SEPARATOR + Route.REGISTER,
       text: "Register"
     },
+    {
+      link: Route.EMPTY + Route.SEPARATOR + Route.CATEGORIES,
+      text: "Categories"
+    },
 
   ]
 }

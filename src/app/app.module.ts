@@ -29,10 +29,10 @@ import { FooterComponent } from './features/common/footer/footer.component';
 import { RegistrationComponent } from './features/registration/registration.component';
 import { InputComponent } from './features/common/input/input.component';
 import { LoginComponent } from './features/login/login.component';
-import {CategoryListContainerComponent} from "./features/home/containers/category-list-container/category-list-container.component";
-import {CategoryViewContainerComponent} from "./features/home/containers/category-view-container/category-view-container.component";
-import {CategoryViewComponent} from "./features/home/components/category-view/category-view.component";
-import {CategoryListComponent} from "./features/home/components/category-list/category-list.component";
+import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
+import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
+import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
+import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
 
 @NgModule({
   declarations: [

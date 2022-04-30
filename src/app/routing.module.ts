@@ -10,12 +10,12 @@ import {RegistrationComponent} from "./features/registration/registration.compon
 import {Route} from "./constants/route.constants";
 import {
   CategoryViewContainerComponent
-} from "./features/home/containers/category-view-container/category-view-container.component";
+} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
 import {CategoryResolver} from "./resolvers/category.resolver";
 import {
   CategoryListContainerComponent
-} from "./features/home/containers/category-list-container/category-list-container.component";
+} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 
 const routes: Routes = [
