@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Category} from "../../models/category.model";
-import {CategoryProperty} from "../../models/category-property.enum";
-import {Route} from "../../constants/route.constants";
-import {CategoryNameMapping} from "../../models/category-name.enum";
+import {Category} from "../../../../models/category.model";
+import {CategoryProperty} from "../../../../models/category-property.enum";
+import {Route} from "../../../../constants/route.constants";
+import {CategoryNameMapping} from "../../../../models/category-name.enum";
 
 @Component({
   selector: 'app-category-list',
