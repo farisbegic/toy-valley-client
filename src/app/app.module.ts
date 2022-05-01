@@ -33,6 +33,13 @@ import {CategoryListContainerComponent} from "./features/categories/containers/c
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
+import { ToysComponent } from './features/toys/components/toys/toys.component';
+import {ToysResolver} from "./resolvers/toys.resolver";
+import {ToysService} from "./services/toys.service";
+import {HttpClientModule} from "@angular/common/http";
+import { ToysViewContainerComponent } from './features/toys/containers/toys-view-container/toys-view-container.component';
+import { ToysViewComponent } from './features/toys/components/toys-view/toys-view.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -57,6 +64,9 @@ import {CategoryListComponent} from "./features/categories/components/category-l
     CategoryViewContainerComponent,
     CategoryViewComponent,
     CategoryListComponent,
+    ToysComponent,
+    ToysViewContainerComponent,
+    ToysViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,8 +82,13 @@ import {CategoryListComponent} from "./features/categories/components/category-l
     MatCardModule,
     MatTableModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    MatGridListModule
   ],
-  providers: [],
+  providers: [
+    ToysResolver,
+    ToysService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
