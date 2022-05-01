@@ -1,0 +1,14 @@
+<div class="container">
+  <button mat-flat-button color="primary" class="add-button"
+          [routerLink]="[route.CATEGORY + route.SEPARATOR + route.EDIT]">
+    Edit category
+  </button>
+
+      <mat-icon mat-list-icon>Category name</mat-icon>
+      <div mat-line>{{category[categoryProperty.name]}}</div>
+
+
+      <mat-icon mat-list-icon>Category description</mat-icon>
+      <div mat-line>{{category[categoryProperty.description]}}</div>
+
+</div>
