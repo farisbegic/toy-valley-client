@@ -2,9 +2,9 @@ export interface User {
   id?: number;
   name: string;
   surname : string;
-  address?: string;
-  phone : string;
+  phone: string;
+  address : string;
   email: string;
   password : string;
-  confirm_password : string;
+  active: boolean;
 }

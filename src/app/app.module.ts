@@ -26,10 +26,11 @@ import { MatTableModule } from "@angular/material/table";
 import { TopChipsComponent } from "./features/common/top-chips/top-chips.component";
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
-import { RegistrationComponent } from './features/registration/registration.component';
+import { RegistrationComponent } from './features/registration/components/registration.component';
 import { LoginComponent } from './features/login/login.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSelectModule} from "@angular/material/select";
+import { RegistrationContainerComponent } from './features/registration/containers/registration-container/registration-container.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import {MatSelectModule} from "@angular/material/select";
     FooterComponent,
     RegistrationComponent,
     LoginComponent,
+    RegistrationContainerComponent,
   ],
   imports: [
     BrowserModule,
