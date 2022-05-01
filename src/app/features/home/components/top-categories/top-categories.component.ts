@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ChipsModel} from "../../../../models/chips.model";
-import {ItemsModel} from "../../../../models/items.model";
+import {Route} from "../../../../constants/route.constants";
 
 @Component({
   selector: 'app-top-categories',
@@ -11,46 +11,23 @@ export class TopCategoriesComponent {
   public chips: Array<ChipsModel> = new Array<ChipsModel>(
     {
       name: "CARS",
-      url: "/"
+      url: `${Route.TOYS}/3`
     },
     {
       name: "DOLLS",
-      url: "/"
+      url: `${Route.TOYS}/3`
     },
     {
       name: "SOLDIERS",
-      url: "/"
+      url: `${Route.TOYS}/2`
     },
     {
       name: "CARDS",
-      url: "/"
+      url: `${Route.TOYS}/2`
     },
     {
       name: "VIEW MORE",
-      url: "/"
+      url: `${Route.TOYS}/3`
     },
   );
-
-  public items: Array<ItemsModel> = [
-    {
-      title: "Lorem Ipsum",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image: "https://material.angular.io/assets/img/examples/shiba2.jpg"
-    },
-    {
-      title: "Lorem Ipsum",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image: "https://material.angular.io/assets/img/examples/shiba2.jpg"
-    },
-    {
-      title: "Lorem Ipsum",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image: "https://material.angular.io/assets/img/examples/shiba2.jpg"
-    },
-    {
-      title: "Lorem Ipsum",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      image: "https://material.angular.io/assets/img/examples/shiba2.jpg"
-    },
-  ]
 }

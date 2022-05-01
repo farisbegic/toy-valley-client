@@ -3,12 +3,14 @@
     Toy Valley
   </span>
 
-  <div class="{{active}}" *ngFor="let button of buttons">
-    <button
-      class="nav__item"
-      routerLink="{{button.link}}"
-      mat-button
-    >{{button.text}}</button>
+  <div class="{{active}}">
+    <div *ngFor="let button of buttons">
+      <button
+        class="nav__item"
+        routerLink="{{button.link}}"
+        mat-button
+      >{{button.text}}</button>
+    </div>
   </div>
 
   <div class="nav__toggler" (click)="navToggle()">
