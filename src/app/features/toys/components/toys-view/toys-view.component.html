@@ -1,0 +1,14 @@
+<ng-container *ngIf="toys.length > 0; else empty">
+  <div class="toys-container">
+    <h1 class="title">TOYS CATEGORY</h1>
+    <div class="toys-list">
+      <app-card [title]="toy.name" [description]="getShortenedText(toy.description)" *ngFor="let toy of toys"></app-card>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #empty>
+  <div class="toys-container">
+    <h1 class="subtitle">We are sorry, but there are no toys for this category.</h1>
+  </div>
+</ng-template>
