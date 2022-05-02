@@ -1,0 +1,16 @@
+.toys-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.toys-list {
+  margin: 40px auto;
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  padding: 20px;
+  grid-gap: 40px;
+}
