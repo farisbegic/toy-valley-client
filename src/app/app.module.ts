@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {AppComponent} from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatIconModule} from "@angular/material/icon";
-import {RoutingModule} from './routing.module';
-import {MatButtonModule} from "@angular/material/button";
-import {MatInputModule} from "@angular/material/input";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { RoutingModule } from './routing.module';
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {HeaderComponent} from './features/common/header/header.component';
@@ -34,6 +35,12 @@ import {CategoryViewContainerComponent} from "./features/categories/containers/c
 import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
 import {HttpClientModule} from '@angular/common/http';
+import { ToysComponent } from './features/toys/components/toys/toys.component';
+import {ToysResolver} from "./resolvers/toys.resolver";
+import {ToysService} from "./services/toys.service";
+import { ToysViewContainerComponent } from './features/toys/containers/toys-view-container/toys-view-container.component';
+import { ToysViewComponent } from './features/toys/components/toys-view/toys-view.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -58,6 +65,9 @@ import {HttpClientModule} from '@angular/common/http';
     CategoryViewComponent,
     CategoryListComponent,
     RegistrationContainerComponent,
+    ToysComponent,
+    ToysViewContainerComponent,
+    ToysViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,11 +83,16 @@ import {HttpClientModule} from '@angular/common/http';
     MatCardModule,
     MatTableModule,
     ReactiveFormsModule,
-    MatDatepickerModule,
+    HttpClientModule,
+    MatGridListModule,
     MatSelectModule,
     HttpClientModule,
+    MatDatepickerModule,
   ],
-  providers: [],
+  providers: [
+    ToysResolver,
+    ToysService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

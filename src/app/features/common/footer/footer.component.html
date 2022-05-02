@@ -1,13 +1,15 @@
-<mat-toolbar color="primary" fxLayoutAlign="space-between center">
+<mat-toolbar color="primary" fxLayoutAlign="space-around center">
   <span
     class="nav-logo"
     routerLink="/"
   >Toy Valley</span>
   <span class="example-spacer"></span>
-  <ng-container *ngFor="let button of buttons">
-    <button
-      routerLink="{{button.link}}"
-      mat-button
-    >{{button.text}}</button>
-  </ng-container>
+  <div class="footer_menu">
+    <div *ngFor="let button of buttons">
+      <button
+        routerLink="{{button.link}}"
+        mat-button
+      >{{button.text}}</button>
+    </div>
+  </div>
 </mat-toolbar>

@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
-
-
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
 import {LoginComponent} from "./features/login/login.component";
 import {RegistrationComponent} from "./features/registration/components/registration.component";
 import {Route} from "./constants/route.constants";
-import {
-  CategoryViewContainerComponent
-} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {ResolverResponse} from "./constants/resolver-response.constants";
+import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryResolver} from "./resolvers/category.resolver";
-import {
-  CategoryListContainerComponent
-} from "./features/categories/containers/category-list-container/category-list-container.component";
+import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
+import {ToysComponent} from "./features/toys/components/toys/toys.component";
+import {ResolverResponse} from "./constants/resolver-response.constants";
+import {ToysResolver} from "./resolvers/toys.resolver";
 
 const routes: Routes = [
   {
@@ -49,6 +45,18 @@ const routes: Routes = [
           [ResolverResponse.CATEGORIES]: CategoriesResolver,
         }
       },
+      {
+        path: Route.TOYS,
+        children: [
+          {
+            path: Route.ID,
+            component: ToysComponent,
+            resolve: {
+              [ResolverResponse.TOYS]: ToysResolver
+            }
+          }
+        ]
+      }
       ]
   },
 ]
