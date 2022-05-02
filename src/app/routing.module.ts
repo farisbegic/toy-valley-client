@@ -13,6 +13,7 @@ import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {ToysComponent} from "./features/toys/components/toys/toys.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
 import {ToysResolver} from "./resolvers/toys.resolver";
+import {CitiesResolver} from "./resolvers/cities.resolver";
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       {
         path: Route.REGISTER,
         component: RegistrationComponent,
+        [ResolverResponse.CITIES]: CitiesResolver,
       },
       {
         path: Route.LOGIN,

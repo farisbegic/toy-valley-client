@@ -26,8 +26,7 @@ import { MatTableModule } from "@angular/material/table";
 import { TopChipsComponent } from "./features/common/top-chips/top-chips.component";
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
-import { RegistrationComponent } from './features/registration/registration.component';
-import { InputComponent } from './features/common/input/input.component';
+import { RegistrationComponent } from './features/registration/components/registration.component';
 import { LoginComponent } from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
@@ -60,7 +59,6 @@ import {RegistrationContainerComponent} from './features/registration/containers
     TopLocationsComponent,
     FooterComponent,
     RegistrationComponent,
-    InputComponent,
     LoginComponent,
     CategoryListContainerComponent,
     CategoryViewContainerComponent,
@@ -70,9 +68,6 @@ import {RegistrationContainerComponent} from './features/registration/containers
     ToysViewContainerComponent,
     ToysViewComponent,
     RegistrationContainerComponent,
-    ToysComponent,
-    ToysViewContainerComponent,
-    ToysViewComponent,
   ],
   imports: [
     BrowserModule,
