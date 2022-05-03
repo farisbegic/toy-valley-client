@@ -83,10 +83,8 @@ import {RegistrationContainerComponent} from './features/registration/containers
     MatCardModule,
     MatTableModule,
     ReactiveFormsModule,
-    HttpClientModule,
     MatGridListModule,
     MatSelectModule,
-    HttpClientModule,
     HttpClientModule,
     MatGridListModule
   ],

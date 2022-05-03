@@ -1,10 +1,10 @@
-export interface User {
+export class User {
   id?: number;
-  name: string;
-  surname : string;
-  phone: string;
-  address : string;
-  email: string;
-  password : string;
-  active: boolean;
+  name?: string;
+  surname? : string;
+  phone?: string;
+  address? : string;
+  email?: string;
+  password? : string;
+  active?: boolean;
 }

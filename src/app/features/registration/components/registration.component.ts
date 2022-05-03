@@ -1,8 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Route} from "../../../constants/route.constants";
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../../models/user.model";
+import {City} from "../../../models/city.model";
+import {ResolverResponse} from "../../../constants/resolver-response.constants";
 
 @Component({
   selector: 'app-registration',
@@ -11,19 +13,24 @@ import {User} from "../../../models/user.model";
 })
 export class RegistrationComponent implements OnInit {
 
-  @Output()
-  saveUser: EventEmitter<User> = new EventEmitter<User>();
+  /*@Output()
+  saveUser: EventEmitter<User> = new EventEmitter<User>();*/
 
   @Input()
-  user: User | undefined;
+  cities: City[] | undefined;
+
+  /*@Input()
+  user: User | undefined;*/
 
   public route = Route;
   public form!: FormGroup;
   public hide: boolean = true;
+  //cities: string[] = ['Sarajevo', 'Tuzla', 'Banja Luka', 'Mostar', 'Zenica', 'Travnik'];
 
-  cities: string[] = ['Sarajevo', 'Tuzla', 'Banja Luka', 'Mostar', 'Zenica', 'Travnik'];
-
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
 
@@ -39,11 +46,11 @@ export class RegistrationComponent implements OnInit {
   }
 
   public submit(): void {
-    if (!this.form.valid) {
+    /*if (!this.form.valid) {
       return;
     }
     this.saveUser.emit(this.form.value);
-    this.router.navigate([this.route.EMPTY]);
+    this.router.navigate([this.route.EMPTY]);*/
   }
 
   private resetForm(): void {
