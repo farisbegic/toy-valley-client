@@ -15,6 +15,9 @@ export class ToysViewComponent implements OnInit {
   }
 
   getShortenedText(description: string) : string {
+    if (description == null){
+      return '';
+    }
     const length = 50;
     let text = description.substring(0, length);
     if (text.length === length) {
