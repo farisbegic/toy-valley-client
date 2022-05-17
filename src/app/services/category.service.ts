@@ -2,11 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Category} from "../models/category.model";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class CategoryService {
 
-  private readonly baseUrl: string = 'http://localhost:8080/categories';
+  private readonly baseUrl: string = environment.backendUrl + '/categories';
 
   constructor(private http:HttpClient) {
   }
