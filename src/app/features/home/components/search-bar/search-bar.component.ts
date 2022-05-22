@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {SearchItemsModel} from "../../../../models/search-items.model";
 
 @Component({
   selector: 'app-search-bar',
@@ -7,6 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class SearchBarComponent {
   @Input() value: string = '';
+  @Input() searchList: SearchItemsModel[] = [];
   @Output() clear: EventEmitter<string> = new EventEmitter<string>();
   @Output() search: EventEmitter<string> = new EventEmitter<string>();
 
@@ -15,6 +17,6 @@ export class SearchBarComponent {
   }
 
   onSearch() {
-    this.search.emit();
+    this.search.emit(this.value);
   }
 }

@@ -40,6 +40,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ToysViewContainerComponent } from './features/toys/containers/toys-view-container/toys-view-container.component';
 import { ToysViewComponent } from './features/toys/components/toys-view/toys-view.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatOptionModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -68,23 +69,24 @@ import {MatGridListModule} from "@angular/material/grid-list";
     ToysViewContainerComponent,
     ToysViewComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    RoutingModule,
-    MatButtonModule,
-    MatInputModule,
-    FormsModule,
-    FlexLayoutModule,
-    MatChipsModule,
-    MatCardModule,
-    MatTableModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatGridListModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        RoutingModule,
+        MatButtonModule,
+        MatInputModule,
+        FormsModule,
+        FlexLayoutModule,
+        MatChipsModule,
+        MatCardModule,
+        MatTableModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatGridListModule,
+        MatOptionModule
+    ],
   providers: [
     ToysResolver,
     ToysService
