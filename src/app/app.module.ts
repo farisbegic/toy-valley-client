@@ -39,6 +39,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { ToysViewContainerComponent } from './features/toys/containers/toys-view-container/toys-view-container.component';
 import { ToysViewComponent } from './features/toys/components/toys-view/toys-view.component';
 import {MatGridListModule} from "@angular/material/grid-list";
+import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {RegistrationContainerComponent} from './features/registration/containers/registration-container/registration-container.component';
 import {CityService} from "./services/city.service";
@@ -91,16 +92,14 @@ import {CategoryService} from "./services/category.service";
     MatGridListModule,
     MatSelectModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatOptionModule,
   ],
   providers: [
     ToysResolver,
     ToysService,
-    CityService,
     CitiesResolver,
-    UserService,
-    CategoriesResolver,
-    CategoryService,
+    CityService,
   ],
   bootstrap: [AppComponent]
 })

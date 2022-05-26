@@ -3,13 +3,16 @@
     <h1 class="title">A LIFE FULL OF GAMES</h1>
     <p class="subtitle">Search for your next toy</p>
   </div>
-  <mat-form-field class="example-form-field" appearance="fill" (keypress)="onSearch()">
+  <mat-form-field class="example-form-field" appearance="fill" (keyup)="onSearch()">
     <mat-label>Search for new toys..</mat-label>
-    <input matInput type="text" [(ngModel)]="value">
+    <input matInput type="text" value="{{this.value}}" [(ngModel)]="value">
     <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
+  <div *ngIf="searchList.length !== 0">
+    <mat-option *ngFor="let list of searchList" routerLink="/toy/{{list.id}}">{{list.name}}</mat-option>
+  </div>
 </div>
 
 

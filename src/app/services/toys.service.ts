@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ItemsModel} from "../models/items.model";
 import {environment} from "../../environments/environment";
+import {SearchItemsModel} from "../models/search-items.model";
 
 @Injectable()
 export class ToysService {
@@ -13,5 +14,8 @@ export class ToysService {
 
   public getItems(categoryId: string): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/category/${categoryId}`);
+  }
+  public getItemsByName(name: string): Observable<SearchItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/search/${name}`)
   }
 }
