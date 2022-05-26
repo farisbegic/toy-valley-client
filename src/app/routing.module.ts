@@ -30,7 +30,9 @@ const routes: Routes = [
       {
         path: Route.REGISTER,
         component: RegistrationContainerComponent,
-        [ResolverResponse.CITIES]: CitiesResolver,
+        resolve: {
+          [ResolverResponse.CITIES]: CitiesResolver,
+        }
       },
       {
         path: Route.LOGIN,

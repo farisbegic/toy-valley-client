@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {City} from "../models/city.model";
 import {CityService} from "../services/city.service";
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class CitiesResolver implements Resolve<City[]> {
 
   constructor(private cityService:CityService) {

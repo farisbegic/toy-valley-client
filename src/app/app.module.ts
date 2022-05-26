@@ -41,6 +41,11 @@ import { ToysViewComponent } from './features/toys/components/toys-view/toys-vie
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSelectModule} from "@angular/material/select";
 import {RegistrationContainerComponent} from './features/registration/containers/registration-container/registration-container.component';
+import {CityService} from "./services/city.service";
+import {CitiesResolver} from "./resolvers/cities.resolver";
+import {UserService} from "./services/user.service";
+import {CategoriesResolver} from "./resolvers/categories.resolver";
+import {CategoryService} from "./services/category.service";
 
 @NgModule({
   declarations: [
@@ -90,7 +95,12 @@ import {RegistrationContainerComponent} from './features/registration/containers
   ],
   providers: [
     ToysResolver,
-    ToysService
+    ToysService,
+    CityService,
+    CitiesResolver,
+    UserService,
+    CategoriesResolver,
+    CategoryService,
   ],
   bootstrap: [AppComponent]
 })

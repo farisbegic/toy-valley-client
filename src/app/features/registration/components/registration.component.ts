@@ -13,19 +13,15 @@ import {ResolverResponse} from "../../../constants/resolver-response.constants";
 })
 export class RegistrationComponent implements OnInit {
 
-  /*@Output()
-  saveUser: EventEmitter<User> = new EventEmitter<User>();*/
+  @Output()
+  saveUser: EventEmitter<User> = new EventEmitter<User>();
 
   @Input()
   cities: City[] | undefined;
 
-  /*@Input()
-  user: User | undefined;*/
-
   public route = Route;
   public form!: FormGroup;
   public hide: boolean = true;
-  //cities: string[] = ['Sarajevo', 'Tuzla', 'Banja Luka', 'Mostar', 'Zenica', 'Travnik'];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -46,11 +42,17 @@ export class RegistrationComponent implements OnInit {
   }
 
   public submit(): void {
-    /*if (!this.form.valid) {
+    if (!this.form.valid) {
       return;
     }
+
+    console.log(this.form.value);
+
     this.saveUser.emit(this.form.value);
-    this.router.navigate([this.route.EMPTY]);*/
+
+    this.resetForm();
+
+    //this.router.navigate([this.route.EMPTY]);
   }
 
   private resetForm(): void {

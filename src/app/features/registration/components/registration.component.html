@@ -25,7 +25,7 @@
       <mat-label>City</mat-label>
       <mat-select [formControlName]="'city'">
         <mat-option *ngFor="let city of cities" [value]="city">
-          {{city}}
+          {{city.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
