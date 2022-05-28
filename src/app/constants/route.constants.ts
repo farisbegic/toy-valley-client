@@ -9,4 +9,5 @@ export class Route {
   public static CATEGORY = 'category';
   public static ID = ':id';
   public static TOYS = 'toys';
+  public static ADDTOY = 'addtoy';
 }

@@ -35,7 +35,7 @@ export class RegistrationComponent implements OnInit {
       'surname': [null, Validators.required],
       'phone': [null, Validators.required],
       'address': [null, Validators.required],
-      'city': [null],
+      'city': [null, Validators.required],
       'email': [null, Validators.compose([Validators.required, Validators.email])],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])]
     })
@@ -46,13 +46,9 @@ export class RegistrationComponent implements OnInit {
       return;
     }
 
-    console.log(this.form.value);
-
     this.saveUser.emit(this.form.value);
 
     this.resetForm();
-
-    //this.router.navigate([this.route.EMPTY]);
   }
 
   private resetForm(): void {

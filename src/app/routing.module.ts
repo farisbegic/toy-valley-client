@@ -17,6 +17,7 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {
   RegistrationContainerComponent
 } from "./features/registration/containers/registration-container/registration-container.component";
+import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 
 const routes: Routes = [
   {
@@ -63,7 +64,11 @@ const routes: Routes = [
             }
           }
         ]
-      }
+      },
+      {
+        path: Route.ADDTOY,
+        component: AddToyContainerComponent,
+      },
       ]
   },
 ]

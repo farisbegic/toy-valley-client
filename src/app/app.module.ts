@@ -47,6 +47,8 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {UserService} from "./services/user.service";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryService} from "./services/category.service";
+import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
+import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 
 @NgModule({
   declarations: [
@@ -74,6 +76,8 @@ import {CategoryService} from "./services/category.service";
     ToysViewContainerComponent,
     ToysViewComponent,
     RegistrationContainerComponent,
+    AddToyComponent,
+    AddToyContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +104,8 @@ import {CategoryService} from "./services/category.service";
     ToysService,
     CitiesResolver,
     CityService,
+    ToysService,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {ItemsModel} from "../models/items.model";
 import {environment} from "../../environments/environment";
 import {SearchItemsModel} from "../models/search-items.model";
+import {Toy} from "../models/toy.model";
 
 @Injectable()
 export class ToysService {
@@ -17,5 +18,9 @@ export class ToysService {
   }
   public getItemsByName(name: string): Observable<SearchItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/search/${name}`)
+  }
+
+  public create(toy: Toy): Observable<Toy> {
+    return this.http.post<Toy>(`${this.url}`, toy);
   }
 }
