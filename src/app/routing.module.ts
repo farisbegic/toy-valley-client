@@ -4,7 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
 import {LoginComponent} from "./features/login/login.component";
-import {RegistrationComponent} from "./features/registration/registration.component";
+import {RegistrationComponent} from "./features/registration/components/registration.component";
 import {Route} from "./constants/route.constants";
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryResolver} from "./resolvers/category.resolver";
@@ -13,6 +13,10 @@ import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {ToysComponent} from "./features/toys/components/toys/toys.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
 import {ToysResolver} from "./resolvers/toys.resolver";
+import {CitiesResolver} from "./resolvers/cities.resolver";
+import {
+  RegistrationContainerComponent
+} from "./features/registration/containers/registration-container/registration-container.component";
 
 const routes: Routes = [
   {
@@ -25,7 +29,10 @@ const routes: Routes = [
       },
       {
         path: Route.REGISTER,
-        component: RegistrationComponent,
+        component: RegistrationContainerComponent,
+        resolve: {
+          [ResolverResponse.CITIES]: CitiesResolver,
+        }
       },
       {
         path: Route.LOGIN,

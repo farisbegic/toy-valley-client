@@ -26,8 +26,7 @@ import { MatTableModule } from "@angular/material/table";
 import { TopChipsComponent } from "./features/common/top-chips/top-chips.component";
 import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
 import { FooterComponent } from './features/common/footer/footer.component';
-import { RegistrationComponent } from './features/registration/registration.component';
-import { InputComponent } from './features/common/input/input.component';
+import { RegistrationComponent } from './features/registration/components/registration.component';
 import { LoginComponent } from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
@@ -41,6 +40,13 @@ import { ToysViewContainerComponent } from './features/toys/containers/toys-view
 import { ToysViewComponent } from './features/toys/components/toys-view/toys-view.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
+import {RegistrationContainerComponent} from './features/registration/containers/registration-container/registration-container.component';
+import {CityService} from "./services/city.service";
+import {CitiesResolver} from "./resolvers/cities.resolver";
+import {UserService} from "./services/user.service";
+import {CategoriesResolver} from "./resolvers/categories.resolver";
+import {CategoryService} from "./services/category.service";
 
 @NgModule({
   declarations: [
@@ -59,7 +65,6 @@ import {MatOptionModule} from "@angular/material/core";
     TopLocationsComponent,
     FooterComponent,
     RegistrationComponent,
-    InputComponent,
     LoginComponent,
     CategoryListContainerComponent,
     CategoryViewContainerComponent,
@@ -68,28 +73,33 @@ import {MatOptionModule} from "@angular/material/core";
     ToysComponent,
     ToysViewContainerComponent,
     ToysViewComponent,
+    RegistrationContainerComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatToolbarModule,
-        MatIconModule,
-        RoutingModule,
-        MatButtonModule,
-        MatInputModule,
-        FormsModule,
-        FlexLayoutModule,
-        MatChipsModule,
-        MatCardModule,
-        MatTableModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MatGridListModule,
-        MatOptionModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    RoutingModule,
+    MatButtonModule,
+    MatInputModule,
+    FormsModule,
+    FlexLayoutModule,
+    MatChipsModule,
+    MatCardModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatGridListModule,
+    MatOptionModule,
+  ],
   providers: [
     ToysResolver,
-    ToysService
+    ToysService,
+    CitiesResolver,
+    CityService,
   ],
   bootstrap: [AppComponent]
 })
