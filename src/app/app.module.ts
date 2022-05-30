@@ -47,6 +47,7 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {UserService} from "./services/user.service";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryService} from "./services/category.service";
+import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import {CategoryService} from "./services/category.service";
     ToysViewContainerComponent,
     ToysViewComponent,
     RegistrationContainerComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
