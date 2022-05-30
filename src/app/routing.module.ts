@@ -66,9 +66,21 @@ const routes: Routes = [
         ]
       },
       {
+        path: Route.USERS,
+        children: [
+          {
+            path: Route.ADDTOY,
+            component: AddToyContainerComponent,
+          },
+          {
+            path: Route.ID + Route.SEPARATOR + Route.EDIT,
+          }
+        ]
+      },
+      /*{
         path: Route.ADDTOY,
         component: AddToyContainerComponent,
-      },
+      },*/
       ]
   },
 ]
