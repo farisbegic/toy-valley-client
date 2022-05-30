@@ -45,7 +45,7 @@ import {RegistrationContainerComponent} from './features/registration/containers
 import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
-import {PageNotFoundComponent} from './features/common/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
