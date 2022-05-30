@@ -17,6 +17,7 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {
   RegistrationContainerComponent
 } from "./features/registration/containers/registration-container/registration-container.component";
+import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
       {
         path: "",
         component: HomeComponent,
+        resolve: {
+          [ResolverResponse.TOP_TRADERS]: TopTradersResolver
+        }
       },
       {
         path: Route.REGISTER,
