@@ -17,6 +17,7 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {
   RegistrationContainerComponent
 } from "./features/registration/containers/registration-container/registration-container.component";
+import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {
@@ -65,6 +66,10 @@ const routes: Routes = [
         ]
       }
       ]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ]
 
