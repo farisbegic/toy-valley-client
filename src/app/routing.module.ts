@@ -4,7 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
 import {LoginComponent} from "./features/login/login.component";
-import {RegistrationComponent} from "./features/registration/components/registration.component";
 import {Route} from "./constants/route.constants";
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryResolver} from "./resolvers/category.resolver";
@@ -18,6 +17,7 @@ import {
   RegistrationContainerComponent
 } from "./features/registration/containers/registration-container/registration-container.component";
 import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
+import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 
 const routes: Routes = [
   {
@@ -27,6 +27,9 @@ const routes: Routes = [
       {
         path: "",
         component: HomeComponent,
+        resolve: {
+          [ResolverResponse.TOP_TRADERS]: TopTradersResolver
+        }
       },
       {
         path: Route.REGISTER,
