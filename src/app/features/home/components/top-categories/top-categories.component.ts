@@ -8,26 +8,27 @@ import {Route} from "../../../../constants/route.constants";
   styleUrls: ['./top-categories.component.scss', '../../../../../styles.scss']
 })
 export class TopCategoriesComponent {
+  public fullUrl: string = Route.TOYS + Route.SEPARATOR + Route.CATEGORY + Route.SEPARATOR;
   public chips: Array<ChipsModel> = new Array<ChipsModel>(
     {
       name: "CARS",
-      url: `${Route.TOYS}/3`
+      url: `${this.fullUrl}/3`
     },
     {
       name: "DOLLS",
-      url: `${Route.TOYS}/3`
+      url: `${this.fullUrl}/3`
     },
     {
       name: "SOLDIERS",
-      url: `${Route.TOYS}/2`
+      url: `${this.fullUrl}/2`
     },
     {
       name: "CARDS",
-      url: `${Route.TOYS}/2`
+      url: `${this.fullUrl}/2`
     },
     {
       name: "VIEW MORE",
-      url: `${Route.TOYS}/3`
+      url: `${this.fullUrl}/3`
     },
   );
 }

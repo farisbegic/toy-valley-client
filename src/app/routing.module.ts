@@ -60,7 +60,7 @@ const routes: Routes = [
         path: Route.TOYS,
         children: [
           {
-            path: Route.ID,
+            path: Route.CATEGORY + Route.SEPARATOR + Route.ID,
             component: ToysComponent,
             resolve: {
               [ResolverResponse.TOYS]: ToysResolver
