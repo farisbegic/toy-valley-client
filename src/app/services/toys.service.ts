@@ -12,10 +12,13 @@ export class ToysService {
   constructor(private http:HttpClient) {
   }
 
-  public getItems(categoryId: string): Observable<ItemsModel[]> {
+  public getItemsByCategory(categoryId: string): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/category/${categoryId}`);
   }
   public getItemsByName(name: string): Observable<SearchItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/search/${name}`)
+  }
+  public getItemsByLocation(locationId: string): Observable<ItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/city/${locationId}`)
   }
 }
