@@ -12,6 +12,12 @@
 
 .toy-details {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.toy-description {
+  padding: 20px 0;
 }
 
 @media screen and (max-width: 950px) {

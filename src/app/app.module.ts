@@ -53,6 +53,7 @@ import { ToyContainerComponent } from './features/toy/containers/toy-container/t
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
 import {MatListModule} from "@angular/material/list";
+import { TraderInformationComponent } from './features/toy/components/trader-information/trader-information.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import {MatListModule} from "@angular/material/list";
     ToyComponent,
     ToyContainerComponent,
     ToyInformationComponent,
+    TraderInformationComponent,
   ],
   imports: [
     BrowserModule,
