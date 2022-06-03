@@ -17,6 +17,8 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {
   RegistrationContainerComponent
 } from "./features/registration/containers/registration-container/registration-container.component";
+import {EditProfileContainerComponent} from "./features/edit-profile/containers/edit-profile-container.component";
+import {UserResolver} from "./resolvers/user.resolver";
 
 const routes: Routes = [
   {
@@ -57,13 +59,26 @@ const routes: Routes = [
         children: [
           {
             path: Route.ID,
-            component: ToysComponent,
+            component: EditProfileContainerComponent,
             resolve: {
-              [ResolverResponse.TOYS]: ToysResolver
+              [ResolverResponse.USER]: ToysResolver
             }
           }
         ]
-      }
+      },
+      {
+        path: Route.USERS,
+        children: [
+          {
+            path: Route.ID + Route.SEPARATOR + Route.EDIT,
+            component: EditProfileContainerComponent,
+            resolve: {
+              [ResolverResponse.USER]: UserResolver,
+              [ResolverResponse.CITIES]: CitiesResolver,
+            }
+          }
+        ]
+      },
       ]
   },
 ]

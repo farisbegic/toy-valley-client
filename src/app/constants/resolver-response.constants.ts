@@ -3,4 +3,5 @@ export class ResolverResponse {
   public static CATEGORY = 'category';
   public static CATEGORIES = 'categories';
   public static CITIES = 'cities';
+  public static USER = 'user';
 }

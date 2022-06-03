@@ -13,8 +13,16 @@ export class UserService {
   constructor(private http:HttpClient) {
   }
 
+  public getUser(id:string): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/${id}`);
+  }
+
   public create(user: User): Observable<User> {
-  return this.http.post<User>(`${this.baseUrl}`, user);
+    return this.http.post<User>(`${this.baseUrl}`, user);
+  }
+
+  public update(user: User, id: number | undefined): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/${id}`, user);
   }
 
 }

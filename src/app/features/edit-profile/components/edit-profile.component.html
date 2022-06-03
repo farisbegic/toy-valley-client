@@ -1,0 +1,50 @@
+<div class="container">
+  <h1>Change account information</h1>
+  <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Emily" type="text" [formControlName]="'name'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput placeholder="Ex. O'Brien" type="text" [formControlName]="'surname'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput placeholder="Ex. +38712345678" type="text" [formControlName]="'phone'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <input matInput placeholder="Ex. 2nd Street Dorm" type="text" [formControlName]="'address'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>City</mat-label>
+      <mat-select [formControlName]="'city'">
+        <mat-option *ngFor="let city of cities" [value]="city">
+          {{city.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>E-Mail</mat-label>
+      <input matInput placeholder="name.surname@gmail.com" type="email" [formControlName]="'email'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControlName]="'password'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              type="button" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+</div>
+

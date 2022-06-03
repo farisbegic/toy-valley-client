@@ -47,6 +47,9 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {UserService} from "./services/user.service";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryService} from "./services/category.service";
+import { EditProfileComponent } from './features/edit-profile/components/edit-profile.component';
+import { EditProfileContainerComponent } from './features/edit-profile/containers/edit-profile-container.component';
+import {UserResolver} from "./resolvers/user.resolver";
 
 @NgModule({
   declarations: [
@@ -74,6 +77,8 @@ import {CategoryService} from "./services/category.service";
     ToysViewContainerComponent,
     ToysViewComponent,
     RegistrationContainerComponent,
+    EditProfileComponent,
+    EditProfileContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,6 +105,8 @@ import {CategoryService} from "./services/category.service";
     ToysService,
     CitiesResolver,
     CityService,
+    UserResolver,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })
