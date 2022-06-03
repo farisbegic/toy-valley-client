@@ -48,6 +48,9 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -99,6 +102,9 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
     MatOptionModule,
   ],
   providers: [
+    provideAuthorizationInterceptor(),
+    AuthorizedGuard,
+    AuthService,
     CategoryToysResolver,
     LocationToysResolver,
     ToysService,

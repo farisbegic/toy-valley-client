@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
-import {LoginComponent} from "./features/login/login.component";
 import {Route} from "./constants/route.constants";
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryResolver} from "./resolvers/category.resolver";
@@ -20,6 +19,8 @@ import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-f
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {LoginComponent} from './features/login/login.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
       },
       {
         path: Route.ID + Route.SEPARATOR + Route.CATEGORY,
+        canActivateChild: [AuthorizedGuard],
         component: CategoryViewContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORY]: CategoryResolver,
@@ -53,6 +55,7 @@ const routes: Routes = [
       },
       {
         path: Route.CATEGORIES,
+        canActivateChild: [AuthorizedGuard],
         component: CategoryListContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORIES]: CategoriesResolver,
@@ -60,6 +63,7 @@ const routes: Routes = [
       },
       {
         path: Route.TOYS,
+        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.CATEGORY + Route.SEPARATOR + Route.ID,
@@ -83,7 +87,7 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent,
   },
-]
+];
 
 
 @NgModule({
@@ -96,4 +100,6 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class RoutingModule { }
+
+export class RoutingModule {
+}
