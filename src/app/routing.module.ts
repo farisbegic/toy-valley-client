@@ -18,6 +18,9 @@ import {
 } from "./features/registration/containers/registration-container/registration-container.component";
 import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {LoginComponent} from './features/common/login/login.component';
+
 
 const routes: Routes = [
   {
@@ -44,6 +47,7 @@ const routes: Routes = [
       },
       {
         path: Route.ID + Route.SEPARATOR + Route.CATEGORY,
+        canActivateChild: [AuthorizedGuard],
         component: CategoryViewContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORY]: CategoryResolver,
@@ -51,6 +55,7 @@ const routes: Routes = [
       },
       {
         path: Route.CATEGORIES,
+        canActivateChild: [AuthorizedGuard],
         component: CategoryListContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORIES]: CategoriesResolver,
@@ -58,6 +63,7 @@ const routes: Routes = [
       },
       {
         path: Route.TOYS,
+        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.ID,

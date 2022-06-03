@@ -25,3 +25,4 @@ export class CategoryResolver implements Resolve<Category> {
   }
 
 }
+

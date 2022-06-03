@@ -46,6 +46,10 @@ import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
+import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {LoginComponent} from './features/common/login/login.component';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [

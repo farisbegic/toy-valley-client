@@ -15,10 +15,10 @@ export class CategoryListContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe((response: any) => {
+    /*this.activatedRoute.data.subscribe((response: any) => {
       console.log(response);
       this.categories = response[ResolverResponse.CATEGORIES];
-    });
+    });*/
   }
 
   removeCategory(category: Category) {
