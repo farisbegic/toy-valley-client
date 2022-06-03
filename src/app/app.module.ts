@@ -48,6 +48,9 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import { ToyComponent } from './features/toy/components/toy/toy.component';
+import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
+import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 
 @NgModule({
   declarations: [
@@ -77,6 +80,8 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
     RegistrationContainerComponent,
     PageNotFoundComponent,
     LocationToysComponent,
+    ToyComponent,
+    ToyContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,6 +106,7 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
   providers: [
     CategoryToysResolver,
     LocationToysResolver,
+    ToyDetailResolver,
     ToysService,
     CitiesResolver,
     CityService,

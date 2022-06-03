@@ -6,5 +6,7 @@ export enum ItemProperty {
   gender = 'gender',
   condition = 'condition',
   age = 'age',
-  date_purchased = 'date_purchased'
+  date_purchased = 'date_purchased',
+  user = 'user',
+  preferences = 'preferences'
 }

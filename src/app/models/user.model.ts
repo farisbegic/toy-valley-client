@@ -8,6 +8,5 @@ export class User {
   address? : string;
   city? : City;
   email?: string;
-  password? : string;
   active?: boolean;
 }
