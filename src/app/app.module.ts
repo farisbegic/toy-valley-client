@@ -32,8 +32,8 @@ import {CategoryListContainerComponent} from "./features/categories/containers/c
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
-import {ToysComponent} from './features/toys/components/toys/toys.component';
-import {ToysResolver} from "./resolvers/toys.resolver";
+import {CategoryToysComponent} from './features/toys/components/category-toys/category-toys.component';
+import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
 import {ToysService} from "./services/toys.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ToysViewContainerComponent} from './features/toys/containers/toys-view-container/toys-view-container.component';
@@ -46,6 +46,8 @@ import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
+import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
+import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 
 @NgModule({
   declarations: [
@@ -69,11 +71,12 @@ import { PageNotFoundComponent } from './features/common/page-not-found/page-not
     CategoryViewContainerComponent,
     CategoryViewComponent,
     CategoryListComponent,
-    ToysComponent,
+    CategoryToysComponent,
     ToysViewContainerComponent,
     ToysViewComponent,
     RegistrationContainerComponent,
     PageNotFoundComponent,
+    LocationToysComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,7 +99,8 @@ import { PageNotFoundComponent } from './features/common/page-not-found/page-not
     MatOptionModule,
   ],
   providers: [
-    ToysResolver,
+    CategoryToysResolver,
+    LocationToysResolver,
     ToysService,
     CitiesResolver,
     CityService,
