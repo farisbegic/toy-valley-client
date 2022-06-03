@@ -14,6 +14,7 @@ export class SearchBarComponent {
 
   onClear() {
     this.clear.emit('');
+    this.searchList = []
   }
 
   onSearch() {

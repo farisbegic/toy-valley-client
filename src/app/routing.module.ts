@@ -10,15 +10,17 @@ import {CategoryViewContainerComponent} from "./features/categories/containers/c
 import {CategoryResolver} from "./resolvers/category.resolver";
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
-import {ToysComponent} from "./features/toys/components/toys/toys.component";
+import {CategoryToysComponent} from "./features/toys/components/category-toys/category-toys.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
-import {ToysResolver} from "./resolvers/toys.resolver";
+import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
 import {CitiesResolver} from "./resolvers/cities.resolver";
-import {
-  RegistrationContainerComponent
-} from "./features/registration/containers/registration-container/registration-container.component";
+import {RegistrationContainerComponent} from "./features/registration/containers/registration-container/registration-container.component";
 import {EditProfileContainerComponent} from "./features/edit-profile/containers/edit-profile-container.component";
 import {UserResolver} from "./resolvers/user.resolver";
+import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
+import {TopTradersResolver} from "./resolvers/top-traders.resolver";
+import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
+import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 
 const routes: Routes = [
   {
@@ -28,6 +30,9 @@ const routes: Routes = [
       {
         path: "",
         component: HomeComponent,
+        resolve: {
+          [ResolverResponse.TOP_TRADERS]: TopTradersResolver
+        }
       },
       {
         path: Route.REGISTER,
@@ -58,10 +63,17 @@ const routes: Routes = [
         path: Route.TOYS,
         children: [
           {
-            path: Route.ID,
-            component: EditProfileContainerComponent,
+            path: Route.CATEGORY + Route.SEPARATOR + Route.ID,
+            component: CategoryToysComponent,
             resolve: {
-              [ResolverResponse.USER]: ToysResolver
+              [ResolverResponse.TOYS]: CategoryToysResolver
+            }
+          },
+          {
+            path: Route.CITY + Route.SEPARATOR + Route.ID,
+            component: LocationToysComponent,
+            resolve: {
+              [ResolverResponse.TOYS]: LocationToysResolver
             }
           }
         ]
@@ -80,6 +92,10 @@ const routes: Routes = [
         ]
       },
       ]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
   },
 ]
 
