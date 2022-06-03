@@ -17,8 +17,6 @@ export class ToyContainerComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.toy = response[ResolverResponse.TOY];
-      console.log("USAO")
-      console.log(this.toy)
     })
   }
 

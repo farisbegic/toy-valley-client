@@ -51,6 +51,8 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import { ToyComponent } from './features/toy/components/toy/toy.component';
 import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
+import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
     LocationToysComponent,
     ToyComponent,
     ToyContainerComponent,
+    ToyInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,6 +105,7 @@ import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
     HttpClientModule,
     MatGridListModule,
     MatOptionModule,
+    MatListModule,
   ],
   providers: [
     CategoryToysResolver,
