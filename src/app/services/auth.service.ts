@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   public goToLogin():void {
-    this.router.navigate([Route.LOGIN]);
+    this.router.navigate([Route.CATEGORIES]);
   }
 
 }
