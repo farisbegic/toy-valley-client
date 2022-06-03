@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ChipsModel} from "../../../../models/chips.model";
+import {Route} from "../../../../constants/route.constants";
 
 @Component({
   selector: 'app-top-locations',
@@ -7,26 +8,27 @@ import {ChipsModel} from "../../../../models/chips.model";
   styleUrls: ['./top-locations.component.scss']
 })
 export class TopLocationsComponent {
+  public fullUrl: string = Route.TOYS + Route.SEPARATOR + Route.CITY + Route.SEPARATOR;
   public chips: Array<ChipsModel> = [
     {
       name: "VISOKO",
-      url: "/"
+      url: `${this.fullUrl}/1`
     },
     {
       name: "SARAJEVO",
-      url: "/"
+      url: `${this.fullUrl}/2`
     },
     {
       name: "TUZLA",
-      url: "/"
+      url: `${this.fullUrl}/3`
     },
     {
       name: "MOSTAR",
-      url: "/"
+      url: `${this.fullUrl}/4`
     },
     {
       name: "VIEW MORE",
-      url: "/"
+      url: `${this.fullUrl}/5`
     },
   ]
 

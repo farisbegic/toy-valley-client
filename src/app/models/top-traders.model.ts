@@ -1,5 +1,6 @@
 export interface TopTraders {
-  rank: number;
-  name: string;
+  id: number
+  firstName: string;
+  lastName: string;
   trades: number;
 }

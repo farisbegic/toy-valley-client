@@ -7,34 +7,23 @@ import {TopTraders} from "../../../../models/top-traders.model";
   styleUrls: ['./top-traders.component.scss', '../../../../../styles.scss']
 })
 export class TopTradersComponent {
-  topTraders: Array<TopTraders> = [
-    {
-      rank: 1,
-      name: "Faris Begić",
-      trades: 128
-    },
-    {
-      rank: 2,
-      name: "Adna Salković",
-      trades: 128
-    },
-    {
-      rank: 3,
-      name: "Azra Kurtić",
-      trades: 128
-    },
-  ]
+  @Input() dataSource: TopTraders[] = [];
 
   columns = [
     {
-      columnDef: 'rank',
-      header: 'Rank',
-      cell: (element: TopTraders) => `${element.rank}`,
+      columnDef: 'id',
+      header: 'ID',
+      cell: (element: TopTraders) => `${element.id}`,
     },
     {
-      columnDef: 'name',
+      columnDef: 'firstName',
+      header: 'First Name',
+      cell: (element: TopTraders) => `${element.firstName}`,
+    },
+    {
+      columnDef: 'lastName',
       header: 'Full Name',
-      cell: (element: TopTraders) => `${element.name}`,
+      cell: (element: TopTraders) => `${element.lastName}`,
     },
     {
       columnDef: 'trades',
@@ -42,6 +31,7 @@ export class TopTradersComponent {
       cell: (element: TopTraders) => `${element.trades}`,
     }
   ];
-  dataSource = this.topTraders;
+
   displayedColumns = this.columns.map(c => c.columnDef);
+
 }

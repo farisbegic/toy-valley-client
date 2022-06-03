@@ -13,7 +13,7 @@ export class ToysService {
   constructor(private http:HttpClient) {
   }
 
-  public getItems(categoryId: string): Observable<ItemsModel[]> {
+  public getItemsByCategory(categoryId: string): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/category/${categoryId}`);
   }
   public getItemsByName(name: string): Observable<SearchItemsModel[]> {
@@ -22,5 +22,8 @@ export class ToysService {
 
   public create(toy: Toy): Observable<Toy> {
     return this.http.post<Toy>(`${this.url}`, toy);
+  }
+  public getItemsByLocation(locationId: string): Observable<ItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/city/${locationId}`)
   }
 }
