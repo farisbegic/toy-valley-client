@@ -52,7 +52,6 @@ const routes: Routes = [
       },
       {
         path: Route.CATEGORIES,
-        canActivateChild: [AuthorizedGuard],
         component: CategoryListContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORIES]: CategoriesResolver,
