@@ -18,7 +18,7 @@ export class ToysViewComponent implements OnInit {
     if (description == null){
       return '';
     }
-    const length = 50;
+    const length = 100;
     let text = description.substring(0, length);
     if (text.length === length) {
       text += '...';

@@ -46,6 +46,16 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import { ToyComponent } from './features/toy/components/toy/toy.component';
+import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
+import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
+import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
+import {MatListModule} from "@angular/material/list";
+import { TraderInformationComponent } from './features/toy/components/trader-information/trader-information.component';
+import { ExchangeRequestDialogComponent } from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {UserToysResolver} from "./resolvers/user-toys.resolver";
+import {ToyExchangeService} from "./services/toy-exchange.service";
 import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
 import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
@@ -80,6 +90,11 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
     RegistrationContainerComponent,
     PageNotFoundComponent,
     LocationToysComponent,
+    ToyComponent,
+    ToyContainerComponent,
+    ToyInformationComponent,
+    TraderInformationComponent,
+    ExchangeRequestDialogComponent,
     GenderToysComponent,
     ConditionToysComponent,
   ],
@@ -102,14 +117,19 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
     HttpClientModule,
     MatGridListModule,
     MatOptionModule,
+    MatListModule,
+    MatDialogModule,
   ],
   providers: [
     provideAuthorizationInterceptor(),
     AuthorizedGuard,
     AuthService,
     CategoryToysResolver,
+    UserToysResolver,
     LocationToysResolver,
+    ToyDetailResolver,
     ToysService,
+    ToyExchangeService,
     CitiesResolver,
     CityService,
     TopTradersResolver,

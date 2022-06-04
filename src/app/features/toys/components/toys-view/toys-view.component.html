@@ -2,7 +2,7 @@
   <div class="toys-container">
     <h1 class="title">TOYS CATEGORY</h1>
     <div class="toys-list">
-      <app-card [title]="toy.name" [description]="getShortenedText(toy.description)" *ngFor="let toy of toys"></app-card>
+      <app-card [title]="toy.name" [description]="getShortenedText(toy.description)" [id]="toy.id" *ngFor="let toy of toys"></app-card>
     </div>
   </div>
 </ng-container>
