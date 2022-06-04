@@ -54,6 +54,10 @@ import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
 import {MatListModule} from "@angular/material/list";
 import { TraderInformationComponent } from './features/toy/components/trader-information/trader-information.component';
+import { ExchangeRequestDialogComponent } from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {UserToysResolver} from "./resolvers/user-toys.resolver";
+import {ToyExchangeService} from "./services/toy-exchange.service";
 
 @NgModule({
   declarations: [
@@ -87,6 +91,7 @@ import { TraderInformationComponent } from './features/toy/components/trader-inf
     ToyContainerComponent,
     ToyInformationComponent,
     TraderInformationComponent,
+    ExchangeRequestDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -108,12 +113,15 @@ import { TraderInformationComponent } from './features/toy/components/trader-inf
     MatGridListModule,
     MatOptionModule,
     MatListModule,
+    MatDialogModule,
   ],
   providers: [
     CategoryToysResolver,
+    UserToysResolver,
     LocationToysResolver,
     ToyDetailResolver,
     ToysService,
+    ToyExchangeService,
     CitiesResolver,
     CityService,
     TopTradersResolver

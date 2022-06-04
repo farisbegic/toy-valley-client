@@ -22,6 +22,9 @@ export class ToysService {
   public getItemsByLocation(locationId: string): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/city/${locationId}`)
   }
+  public getItemsByUser(userId: string): Observable<ItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/user/${userId}`);
+  }
   public getItemDetails(itemId: string): Observable<ToyDetail> {
     return this.http.get<ToyDetail>(`${this.url}/${itemId}`)
   }

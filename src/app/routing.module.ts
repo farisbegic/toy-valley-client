@@ -22,6 +22,7 @@ import {LocationToysComponent} from "./features/toys/components/location-toys/lo
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
+import {UserToysResolver} from "./resolvers/user-toys.resolver";
 
 const routes: Routes = [
   {
@@ -83,7 +84,8 @@ const routes: Routes = [
         path: Route.TOY + Route.SEPARATOR + Route.ID,
         component: ToyComponent,
         resolve: {
-          [ResolverResponse.TOY]: ToyDetailResolver
+          [ResolverResponse.TOY]: ToyDetailResolver,
+          [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver
         }
       },
       ]

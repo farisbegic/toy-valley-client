@@ -11,12 +11,14 @@ import {ToyDetail} from "../../../../models/toy-detail";
 export class ToyContainerComponent implements OnInit {
 
   public toy: ToyDetail | undefined;
+  public visitorToys: ItemsModel[] | undefined
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.data.subscribe((response: any) => {
       this.toy = response[ResolverResponse.TOY];
+      this.visitorToys = response[ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY];
     })
   }
 
