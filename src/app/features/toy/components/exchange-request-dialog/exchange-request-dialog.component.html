@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Request Exchange</h2>
+<mat-dialog-content class="mat-typography">
+  <p>Please select the dropdown menu to see all of the toys listed on your profile that will be sent in a trade request. You can also add a comment to the trade if you want.</p>
+
+  <form class="exchange-form" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>User Toys</mat-label>
+      <mat-select [formControlName]="'visitorToy'">
+        <mat-option *ngFor="let toy of visitorToys" [value]="toy.id">
+          {{toy.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Comment</mat-label>
+      <input matInput placeholder="Add additional message to the trade.." type="text" [formControlName]="'comment'">
+    </mat-form-field>
+
+    <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Send Exchange Request</button>
+  </form>
+</mat-dialog-content>

@@ -1,0 +1,21 @@
+<div class="toy-information-container container-width">
+  <img mat-card-image src="{{image}}" alt="{{toy?.name}}" class="toy-image">
+  <div class="toy-details">
+    <mat-list>
+      <mat-list-item><b>Name:</b> &nbsp; {{toy?.name}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Brand:</b> &nbsp; {{toy?.brand}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Gender:</b> &nbsp; {{toy?.gender}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Condition:</b> &nbsp; {{toy?.condition}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Age:</b> &nbsp; {{toy?.age}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Date purchased:</b> &nbsp; {{toy?.date_purchased}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <p class="toy-description">{{toy?.description}}</p>
+    </mat-list>
+    <button mat-raised-button color="primary" (click)="openDialog()">Exchange Toys</button>
+  </div>
+</div>

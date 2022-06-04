@@ -10,4 +10,5 @@ export class Route {
   public static CITY = 'city';
   public static ID = ':id';
   public static TOYS = 'toys';
+  public static TOY = 'toy';
 }
