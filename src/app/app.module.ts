@@ -29,8 +29,6 @@ import {FooterComponent} from './features/common/footer/footer.component';
 import {RegistrationComponent} from './features/registration/components/registration.component';
 import {LoginComponent} from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
-import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
 import {CategoryToysComponent} from './features/toys/components/category-toys/category-toys.component';
 import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
@@ -51,6 +49,10 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
 import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
+import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
+import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 
 @NgModule({
   declarations: [
@@ -71,8 +73,6 @@ import {AuthService} from './services/auth.service';
     RegistrationComponent,
     LoginComponent,
     CategoryListContainerComponent,
-    CategoryViewContainerComponent,
-    CategoryViewComponent,
     CategoryListComponent,
     CategoryToysComponent,
     ToysViewContainerComponent,
@@ -80,6 +80,8 @@ import {AuthService} from './services/auth.service';
     RegistrationContainerComponent,
     PageNotFoundComponent,
     LocationToysComponent,
+    GenderToysComponent,
+    ConditionToysComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +112,9 @@ import {AuthService} from './services/auth.service';
     ToysService,
     CitiesResolver,
     CityService,
-    TopTradersResolver
+    TopTradersResolver,
+    GenderToysResolver,
+    ConditionToysResolver
   ],
   bootstrap: [AppComponent]
 })

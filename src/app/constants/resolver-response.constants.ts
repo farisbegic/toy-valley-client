@@ -4,4 +4,6 @@ export class ResolverResponse {
   public static CATEGORIES = 'categories';
   public static CITIES = 'cities';
   public static TOP_TRADERS = 'top-traders'
+  public static GENDER = 'gender';
+  public static CONDITION = 'condition';
 }

@@ -1,11 +1,27 @@
 <div class="container">
   <ng-container *ngIf="categories.length > 0; else emptyList">
 
-    <div class="block-container" *ngFor="let category of categories">
+    <div class="block-container" *ngFor="let category of categories | slice:0:5">
       <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
            class="block">
         <mat-icon>{{getCategoryName(category)}}</mat-icon>
       </div>
+
+      <ng-container *ngIf="expanded">
+        <ng-container *ngFor="let expandedCategory of categories; let i = index">
+          <li *ngIf="i >= 5">
+            {{ <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
+                    class="block">
+            <mat-icon>{{getCategoryName(category)}}</mat-icon>
+          </div>}}
+          </li>
+        </ng-container>
+      </ng-container>
+      <li *ngIf="categories.length > 5 && !expanded">
+        <button mat-button (click)="expandItems()">
+          Show all
+        </button>
+      </li>
 
       <button mat-flat-button type="button"
               class="remove-button"
@@ -16,6 +32,7 @@
     </div>
   </ng-container>
 </div>
+
 
 <ng-template #emptyList>
   <div>
