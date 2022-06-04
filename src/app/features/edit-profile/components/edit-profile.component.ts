@@ -39,7 +39,7 @@ export class EditProfileComponent implements OnInit {
       'address': [this.user?.address, Validators.required],
       'city': [this.user?.city, Validators.required],
       'email': [this.user?.email, Validators.required],
-      'password': [this.user?.password, Validators.compose([Validators.required, Validators.minLength(8)])]
+      'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])]
     })
   }
 
@@ -50,11 +50,15 @@ export class EditProfileComponent implements OnInit {
 
     this.updateUser.emit(this.form.value);
 
-    this.resetForm();
+    //this.resetForm();
   }
 
   private resetForm(): void {
     this.form.reset();
+  }
+
+  public goBack(): void {
+    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id]);
   }
 
 }

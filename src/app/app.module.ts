@@ -54,6 +54,8 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import { ProfileComponent } from './features/profile/components/profile.component';
+import { ProfileContainerComponent } from './features/profile/containers/profile-container.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +87,8 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
     LocationToysComponent,
     EditProfileComponent,
     EditProfileContainerComponent,
+    ProfileComponent,
+    ProfileContainerComponent,
   ],
   imports: [
     BrowserModule,

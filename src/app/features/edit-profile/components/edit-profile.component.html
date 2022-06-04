@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Change account information</h1>
+
   <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Name</mat-label>
@@ -46,5 +47,8 @@
 
     <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Submit</button>
   </form>
+
+  <button type="button" mat-raised-button color="primary" (click)="goBack()" class="back-button">Cancel</button>
+
 </div>
 

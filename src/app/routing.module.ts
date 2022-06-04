@@ -21,6 +21,7 @@ import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-f
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import {ProfileContainerComponent} from "./features/profile/containers/profile-container.component";
 
 const routes: Routes = [
   {
@@ -79,16 +80,23 @@ const routes: Routes = [
         ]
       },
       {
-        path: Route.USERS,
+        path: Route.USERS + Route.SEPARATOR + Route.ID,
         children: [
           {
-            path: Route.ID + Route.SEPARATOR + Route.EDIT,
+            path: Route.EMPTY,
+            component: ProfileContainerComponent,
+            resolve: {
+              [ResolverResponse.USER]: UserResolver,
+            }
+          },
+          {
+            path: Route.EDIT,
             component: EditProfileContainerComponent,
             resolve: {
               [ResolverResponse.USER]: UserResolver,
               [ResolverResponse.CITIES]: CitiesResolver,
             }
-          }
+          },
         ]
       },
       ]

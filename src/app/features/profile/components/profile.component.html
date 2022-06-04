@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="about-user">
+    <div class="user-image">
+      <img src="https://www.corporatephotographerslondon.com/wp-content/uploads/2016/06/Studio-headshots-London-7.jpg" alt="User profile picture">
+    </div>
+    <div *ngIf="user" class="user-info">
+      <p>{{user.name}} {{user.surname}}</p>
+      <br>
+      <p>{{user.phone}}</p>
+      <br>
+      <p>{{user.address}}</p>
+      <br>
+      <p>{{user.city?.name}}</p>
+      <br>
+      <button type="button" mat-raised-button color="primary" (click)="edit()">Edit profile</button>
+    </div>
+  </div>
+</div>

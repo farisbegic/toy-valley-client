@@ -1,0 +1,33 @@
+.container {
+  width: 1200px;
+  margin: auto;
+  padding: 50px;
+}
+
+.about-user {
+  width: 80%;  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.user-image {
+  width: 45%;
+}
+
+.user-image img {
+  margin: 30px;
+  height: 70%;
+  width: 70%;
+}
+
+.user-info {
+  font-family: Roboto;
+  font-size: 20px;
+  width: 45%;
+  margin: 30px;
+}
+
+button {
+  width: 30%;
+  padding: 10px;
+}
