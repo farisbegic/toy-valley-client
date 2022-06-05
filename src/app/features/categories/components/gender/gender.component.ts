@@ -22,6 +22,5 @@ export class GenderComponent {
       name: "UNISEX",
       url: `${this.fullUrl}/3`
     },
-
   );
 }

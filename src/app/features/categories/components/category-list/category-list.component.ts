@@ -2,7 +2,6 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Category} from "../../../../models/category.model";
 import {CategoryProperty} from "../../../../models/enums/category-property.enum";
 import {Route} from "../../../../constants/route.constants";
-import {CategoryNameMapping} from "../../../../models/enums/category-name.enum";
 
 @Component({
   selector: 'app-category-list',
@@ -10,19 +9,17 @@ import {CategoryNameMapping} from "../../../../models/enums/category-name.enum";
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent {
-  @Input()
-  categories: Category[] = [];
+  @Output() removeCategory: EventEmitter<Category> = new EventEmitter<Category>()
 
-  @Input()
-  expanded: boolean = false;
+  @Input() categories: Category[] = [];
+  @Input() id: number = 0;
+  @Input() title: string = '';
+  @Input() description: string = '';
 
-  @Output()
-  removeCategory: EventEmitter<Category> = new EventEmitter<Category>()
-
+  image: string = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
+  public fullUrl: string = Route.TOYS + Route.SEPARATOR + Route.CATEGORY + Route.SEPARATOR;
   public categoryProperty = CategoryProperty;
   public route = Route;
-
-
   public removeAllowed: boolean = false;
 
 
@@ -33,33 +30,4 @@ export class CategoryListComponent {
   public remove(category: Category): void {
     this.removeCategory.emit(category);
   }
-
-  getCategoryName(category: Category) {
-    return CategoryNameMapping[category[CategoryProperty.name]];
-  }
-
-  expandItems(): void {
-    this.expanded = true;
-  }
-
-  @Input() id: number = 0;
-  @Input() title: string = '';
-  @Input() description: string = '';
-  image: string = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
-
-
-  public fullUrl: string = Route.TOYS + Route.SEPARATOR + Route.CATEGORY + Route.SEPARATOR;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-

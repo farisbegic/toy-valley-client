@@ -18,6 +18,5 @@ export class ConditionComponent {
       name: "Used",
       url: `${this.fullUrl}/2`
     },
-
   );
 }

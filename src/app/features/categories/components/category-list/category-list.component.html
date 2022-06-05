@@ -2,10 +2,6 @@
   <div class="categories-container">
     <h1 class="title">CATEGORIES</h1>
     <div class="categories-list">
-
-
-
-
       <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-between center" *ngFor="let category of categories">
         <img mat-card-image src="{{image}}" alt="{{category.name}}">
         <mat-card-title>{{category.name}}</mat-card-title>
@@ -16,14 +12,9 @@
           <button mat-button routerLink="/{{fullUrl}}/{{category[categoryProperty.id]}}">VIEW MORE </button>
         </mat-card-actions>
       </mat-card>
-
       </div>
   </div>
 </ng-container>
-
-
-
-
 
 
 <ng-template #emptyList>

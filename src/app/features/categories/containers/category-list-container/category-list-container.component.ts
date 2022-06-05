@@ -11,19 +11,13 @@ import {ResolverResponse} from "../../../../constants/resolver-response.constant
 export class CategoryListContainerComponent implements OnInit {
 
   public categories: Category[] = [];
-  public expanded: boolean = false;
-
-
 
   constructor(
     private activatedRoute: ActivatedRoute,
   ) {}
 
   ngOnInit(): void {
-
-
     this.activatedRoute.data.subscribe((response: any) => {
-
       this.categories = response[ResolverResponse.CATEGORIES];
     });
   }
@@ -34,9 +28,4 @@ export class CategoryListContainerComponent implements OnInit {
       this.categories.splice(index, 1);
     }
   }
-
-  isExpanded(): void {
-    this.expanded = !this.expanded;
-  }
-
 }
