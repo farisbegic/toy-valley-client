@@ -1,0 +1,17 @@
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px 0;
+}
+
+.categories-list {
+  margin: 40px auto;
+  width: 70%;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 300px);
+  padding: 20px;
+  grid-gap: 40px;
+}

@@ -1,41 +1,28 @@
-<div class="container">
-  <ng-container *ngIf="categories.length > 0; else emptyList">
-
-    <div class="block-container" *ngFor="let category of categories | slice:0:5">
-      <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
-           class="block">
-        <mat-icon>{{getCategoryName(category)}}</mat-icon>
-      </div>
-
-      <ng-container *ngIf="expanded">
-        <ng-container *ngFor="let expandedCategory of categories; let i = index">
-          <li *ngIf="i >= 5">
-            {{ <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
-                    class="block">
-            <mat-icon>{{getCategoryName(category)}}</mat-icon>
-          </div>}}
-          </li>
-        </ng-container>
-      </ng-container>
-      <li *ngIf="categories.length > 5 && !expanded">
-        <button mat-button (click)="expandItems()">
-          Show all
-        </button>
-      </li>
-
-      <button mat-flat-button type="button"
-              class="remove-button"
-              color="warn"
-              *ngIf="removeAllowed"
-              (click)="remove(category)">Remove
-      </button>
+<ng-container *ngIf="categories.length > 0; else emptyList">
+  <div class="categories-container">
+    <h1 class="title">CATEGORIES</h1>
+    <div class="categories-list">
+      <app-card [title]="category.name" [description]="category.description" *ngFor="let category of categories | slice:0:5"></app-card>
     </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="expanded">
+  <ng-container *ngFor="let expandedCategory of categories; let i = index">
+    <li *ngIf="i >= 5">
+      {{  <app-card [title]="category.name" [description]="category.description" *ngFor="let category of categories | slice:0:5"></app-card>}}
+    </li>
   </ng-container>
-</div>
+</ng-container>
+<li *ngIf="categories.length > 5 && !expanded">
+  <button mat-button (click)="expandItems()" >
+    Show all
+  </button>
+</li>
 
 
 <ng-template #emptyList>
-  <div>
+  <div class="category-contianer">
     <mat-icon fontSet="material-icons-outlined" class="icon-margin">category</mat-icon>
     <span>There are no categories.</span>
   </div>
