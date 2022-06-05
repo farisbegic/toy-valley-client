@@ -31,6 +31,7 @@ import {ConditionToysComponent} from "./features/toys/components/condition-toys/
 import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
 import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
 import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
+import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
 
 
 const routes: Routes = [
@@ -114,10 +115,19 @@ const routes: Routes = [
           },
           {
             path: Route.CITY,
-            component: DashboardCityContainerComponent,
-            resolve: {
-              [ResolverResponse.CITIES]: CitiesResolver
-            }
+            children: [
+              {
+                path: Route.EMPTY,
+                component: DashboardCityContainerComponent,
+                resolve: {
+                  [ResolverResponse.CITIES]: CitiesResolver
+                }
+              },
+              {
+                path: Route.ADD,
+                component: AddCityContainerComponent
+              },
+            ]
           },
           {
             path: Route.CATEGORY,

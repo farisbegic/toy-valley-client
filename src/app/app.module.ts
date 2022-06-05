@@ -69,6 +69,8 @@ import { DashboardOverviewComponent } from './features/dashboard/components/dash
 import { DashboardViewAllComponent } from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
 import { DashboardCityContainerComponent } from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
 import { DashboardCategoryContainerComponent } from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
+import { AddCityComponent } from "./features/dashboard/components/add-city/add-city.component";
+import { AddCityContainerComponent } from './features/dashboard/containers/add-city-container/add-city-container.component';
 
 
 @NgModule({
@@ -109,6 +111,8 @@ import { DashboardCategoryContainerComponent } from './features/dashboard/contai
     DashboardViewAllComponent,
     DashboardCityContainerComponent,
     DashboardCategoryContainerComponent,
+    AddCityComponent,
+    AddCityContainerComponent,
   ],
   imports: [
     BrowserModule,

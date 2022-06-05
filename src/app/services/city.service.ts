@@ -13,4 +13,8 @@ export class CityService {
   public getCities(): Observable<City[]> {
     return this.http.get<City[]>(this.baseUrl);
   }
+
+  public addCity(name: string): Observable<City[]> {
+    return this.http.post<City[]>(this.baseUrl, { name })
+  }
 }

@@ -18,5 +18,4 @@ export class DashboardCityContainerComponent implements OnInit {
       this.cities = response[ResolverResponse.CITIES];
     });
   }
-
 }

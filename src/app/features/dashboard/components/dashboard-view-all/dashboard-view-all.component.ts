@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {AddCityComponent} from "../add-city/add-city.component";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard-view-all',
@@ -10,7 +13,7 @@ export class DashboardViewAllComponent implements OnInit {
   @Input() dataSource: any | undefined;
   @Input() displayedColumns: string[] | undefined;
 
-  constructor() { }
+  constructor(public dialog: MatDialog, public activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
