@@ -15,6 +15,11 @@ import {
 } from "./features/registration/containers/registration-container/registration-container.component";
 import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
+
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {LoginComponent} from './features/common/login/login.component';
+
+
 import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
@@ -26,6 +31,7 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+
 
 const routes: Routes = [
   {
@@ -52,6 +58,7 @@ const routes: Routes = [
       },
       {
         path: Route.CATEGORIES,
+        canActivateChild: [AuthorizedGuard],
         component: CategoryListContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORIES]: CategoriesResolver,

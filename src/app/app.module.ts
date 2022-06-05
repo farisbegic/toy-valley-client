@@ -44,6 +44,12 @@ import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
+
+import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {LoginComponent} from './features/common/login/login.component';
+import {AuthService} from './services/auth.service';
+
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import { ToyComponent } from './features/toy/components/toy/toy.component';
@@ -63,6 +69,7 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+
 
 @NgModule({
   declarations: [

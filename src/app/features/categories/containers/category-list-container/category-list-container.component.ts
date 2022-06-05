@@ -22,7 +22,10 @@ export class CategoryListContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+
     this.activatedRoute.data.subscribe((response: any) => {
+
       this.categories = response[ResolverResponse.CATEGORIES];
     });
   }
