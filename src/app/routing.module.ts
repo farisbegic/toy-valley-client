@@ -16,9 +16,6 @@ import {
 import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 
-import {AuthorizedGuard} from './guards/authorized.guard';
-import {LoginComponent} from './features/common/login/login.component';
-
 
 import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
