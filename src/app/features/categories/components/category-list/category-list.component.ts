@@ -42,4 +42,24 @@ export class CategoryListComponent {
     this.expanded = true;
   }
 
+  @Input() id: number = 0;
+  @Input() title: string = '';
+  @Input() description: string = '';
+  image: string = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
+
+
+  public fullUrl: string = Route.TOYS + Route.SEPARATOR + Route.CATEGORY + Route.SEPARATOR;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -4,7 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
 import {Route} from "./constants/route.constants";
-import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryToysComponent} from "./features/toys/components/category-toys/category-toys.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
@@ -29,6 +28,7 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {CategoryComponent} from "./features/categories/components/category/category.component";
+
 
 
 const routes: Routes = [
