@@ -1,0 +1,19 @@
+.trader-information-container {
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.trader-information {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.trader-details {
+  width: 100%
+}

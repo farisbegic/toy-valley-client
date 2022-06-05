@@ -29,11 +29,9 @@ import {FooterComponent} from './features/common/footer/footer.component';
 import {RegistrationComponent} from './features/registration/components/registration.component';
 import {LoginComponent} from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
-import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
-import {ToysComponent} from './features/toys/components/toys/toys.component';
-import {ToysResolver} from "./resolvers/toys.resolver";
+import {CategoryToysComponent} from './features/toys/components/category-toys/category-toys.component';
+import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
 import {ToysService} from "./services/toys.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ToysViewContainerComponent} from './features/toys/containers/toys-view-container/toys-view-container.component';
@@ -46,10 +44,32 @@ import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
+
 import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
 import {AuthorizedGuard} from './guards/authorized.guard';
 import {LoginComponent} from './features/common/login/login.component';
 import {AuthService} from './services/auth.service';
+
+import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
+import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import { ToyComponent } from './features/toy/components/toy/toy.component';
+import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
+import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
+import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
+import {MatListModule} from "@angular/material/list";
+import { TraderInformationComponent } from './features/toy/components/trader-information/trader-information.component';
+import { ExchangeRequestDialogComponent } from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {UserToysResolver} from "./resolvers/user-toys.resolver";
+import {ToyExchangeService} from "./services/toy-exchange.service";
+import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {AuthService} from './services/auth.service';
+import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
+import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+
 
 @NgModule({
   declarations: [
@@ -70,14 +90,20 @@ import {AuthService} from './services/auth.service';
     RegistrationComponent,
     LoginComponent,
     CategoryListContainerComponent,
-    CategoryViewContainerComponent,
-    CategoryViewComponent,
     CategoryListComponent,
-    ToysComponent,
+    CategoryToysComponent,
     ToysViewContainerComponent,
     ToysViewComponent,
     RegistrationContainerComponent,
     PageNotFoundComponent,
+    LocationToysComponent,
+    ToyComponent,
+    ToyContainerComponent,
+    ToyInformationComponent,
+    TraderInformationComponent,
+    ExchangeRequestDialogComponent,
+    GenderToysComponent,
+    ConditionToysComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,13 +124,24 @@ import {AuthService} from './services/auth.service';
     HttpClientModule,
     MatGridListModule,
     MatOptionModule,
+    MatListModule,
+    MatDialogModule,
   ],
   providers: [
-    ToysResolver,
+    provideAuthorizationInterceptor(),
+    AuthorizedGuard,
+    AuthService,
+    CategoryToysResolver,
+    UserToysResolver,
+    LocationToysResolver,
+    ToyDetailResolver,
     ToysService,
+    ToyExchangeService,
     CitiesResolver,
     CityService,
-    TopTradersResolver
+    TopTradersResolver,
+    GenderToysResolver,
+    ConditionToysResolver
   ],
   bootstrap: [AppComponent]
 })

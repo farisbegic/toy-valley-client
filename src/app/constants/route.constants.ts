@@ -7,6 +7,10 @@ export class Route {
   public static EDIT = 'edit';
   public static CATEGORIES = 'categories';
   public static CATEGORY = 'category';
+  public static CITY = 'city';
   public static ID = ':id';
   public static TOYS = 'toys';
+  public static CONDITION = 'condition';
+  public static GENDER = 'gender';
+  public static TOY = 'toy';
 }

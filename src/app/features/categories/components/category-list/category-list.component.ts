@@ -13,15 +13,20 @@ export class CategoryListComponent {
   @Input()
   categories: Category[] = [];
 
+  @Input()
+  expanded: boolean = false;
+
   @Output()
   removeCategory: EventEmitter<Category> = new EventEmitter<Category>()
 
   public categoryProperty = CategoryProperty;
   public route = Route;
 
+
   public removeAllowed: boolean = false;
 
-  public toggleAllowRemove(): void {
+
+    public toggleAllowRemove(): void {
     this.removeAllowed = !this.removeAllowed;
   }
 
@@ -31,6 +36,10 @@ export class CategoryListComponent {
 
   getCategoryName(category: Category) {
     return CategoryNameMapping[category[CategoryProperty.name]];
+  }
+
+  expandItems(): void {
+    this.expanded = true;
   }
 
 }
