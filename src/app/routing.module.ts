@@ -3,10 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
-import {LoginComponent} from "./features/login/login.component";
 import {Route} from "./constants/route.constants";
-import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {CategoryResolver} from "./resolvers/category.resolver";
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryToysComponent} from "./features/toys/components/category-toys/category-toys.component";
@@ -23,6 +20,12 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {LoginComponent} from './features/login/login.component';
+import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
+import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 
 const routes: Routes = [
   {
@@ -48,13 +51,6 @@ const routes: Routes = [
         component: LoginComponent,
       },
       {
-        path: Route.ID + Route.SEPARATOR + Route.CATEGORY,
-        component: CategoryViewContainerComponent,
-        resolve: {
-          [ResolverResponse.CATEGORY]: CategoryResolver,
-        }
-      },
-      {
         path: Route.CATEGORIES,
         component: CategoryListContainerComponent,
         resolve: {
@@ -63,6 +59,7 @@ const routes: Routes = [
       },
       {
         path: Route.TOYS,
+        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.CATEGORY + Route.SEPARATOR + Route.ID,
@@ -76,6 +73,20 @@ const routes: Routes = [
             component: LocationToysComponent,
             resolve: {
               [ResolverResponse.TOYS]: LocationToysResolver
+            }
+          },
+          {
+            path: Route.GENDER + Route.SEPARATOR + Route.ID,
+            component: GenderToysComponent,
+            resolve: {
+              [ResolverResponse.TOYS]: GenderToysResolver
+            }
+          },
+          {
+            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
+            component: ConditionToysComponent,
+            resolve: {
+              [ResolverResponse.TOYS]: ConditionToysResolver
             }
           }
         ]
@@ -94,7 +105,7 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent,
   },
-]
+];
 
 
 @NgModule({
@@ -107,4 +118,6 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class RoutingModule { }
+
+export class RoutingModule {
+}

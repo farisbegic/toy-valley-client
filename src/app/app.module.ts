@@ -29,8 +29,6 @@ import {FooterComponent} from './features/common/footer/footer.component';
 import {RegistrationComponent} from './features/registration/components/registration.component';
 import {LoginComponent} from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
-import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
 import {CategoryToysComponent} from './features/toys/components/category-toys/category-toys.component';
 import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
@@ -58,6 +56,13 @@ import { ExchangeRequestDialogComponent } from './features/toy/components/exchan
 import {MatDialogModule} from "@angular/material/dialog";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
 import {ToyExchangeService} from "./services/toy-exchange.service";
+import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {AuthService} from './services/auth.service';
+import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
+import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 
 @NgModule({
   declarations: [
@@ -78,8 +83,6 @@ import {ToyExchangeService} from "./services/toy-exchange.service";
     RegistrationComponent,
     LoginComponent,
     CategoryListContainerComponent,
-    CategoryViewContainerComponent,
-    CategoryViewComponent,
     CategoryListComponent,
     CategoryToysComponent,
     ToysViewContainerComponent,
@@ -92,6 +95,8 @@ import {ToyExchangeService} from "./services/toy-exchange.service";
     ToyInformationComponent,
     TraderInformationComponent,
     ExchangeRequestDialogComponent,
+    GenderToysComponent,
+    ConditionToysComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,6 +121,9 @@ import {ToyExchangeService} from "./services/toy-exchange.service";
     MatDialogModule,
   ],
   providers: [
+    provideAuthorizationInterceptor(),
+    AuthorizedGuard,
+    AuthService,
     CategoryToysResolver,
     UserToysResolver,
     LocationToysResolver,
@@ -124,7 +132,9 @@ import {ToyExchangeService} from "./services/toy-exchange.service";
     ToyExchangeService,
     CitiesResolver,
     CityService,
-    TopTradersResolver
+    TopTradersResolver,
+    GenderToysResolver,
+    ConditionToysResolver
   ],
   bootstrap: [AppComponent]
 })
