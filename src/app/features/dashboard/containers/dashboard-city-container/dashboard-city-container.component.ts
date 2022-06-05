@@ -19,6 +19,7 @@ export class DashboardCityContainerComponent implements OnInit {
       this.cities = response[ResolverResponse.CITIES];
     });
   }
+
   public deleteCities(city: number): void {
     this.cityService.removeCity(city).subscribe(() => {
       this.cityService.getCities().subscribe(response => {

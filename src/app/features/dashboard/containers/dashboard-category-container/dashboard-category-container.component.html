@@ -1,1 +1,1 @@
-<app-dashboard-view-all [displayedColumns]="categoryAttributes" [dataSource]="categories"></app-dashboard-view-all>
+<app-dashboard-view-all [displayedColumns]="categoryAttributes" [dataSource]="categories" (deleteItems)="deleteCategories($event)"></app-dashboard-view-all>
