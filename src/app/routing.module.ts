@@ -63,7 +63,6 @@ const routes: Routes = [
       },
       {
         path: Route.TOYS,
-        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.CATEGORY + Route.SEPARATOR + Route.ID,
