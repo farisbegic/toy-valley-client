@@ -65,6 +65,10 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import {CategoryCardComponent} from "./features/common/category_card/category_card.component";
+import {CategoryComponent} from "./features/categories/components/category/category.component";
+import {GenderComponent} from "./features/categories/components/gender/gender.component";
+import {ConditionComponent} from "./features/categories/components/condition/condition.component";
 
 
 @NgModule({
@@ -100,6 +104,10 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
     ExchangeRequestDialogComponent,
     GenderToysComponent,
     ConditionToysComponent,
+    CategoryCardComponent,
+    CategoryComponent,
+    GenderComponent,
+    ConditionComponent,
   ],
   imports: [
     BrowserModule,

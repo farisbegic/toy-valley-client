@@ -2,27 +2,16 @@
   <div class="categories-container">
     <h1 class="title">CATEGORIES</h1>
     <div class="categories-list">
-      <app-card [title]="category.name" [description]="category.description" *ngFor="let category of categories | slice:0:5"></app-card>
-    </div>
+      <app-category-card [title]="category.name" [description]="category.description" *ngFor="let category of categories" ></app-category-card>
+      <button mat-button *ngFor="let category of categories" [routerLink]="[route.SEPARATOR, route.TOYS, route.SEPARATOR, route.CATEGORY, route.SEPARATOR, category[categoryProperty.id]]">VIEW ALL</button>
+      </div>
   </div>
 </ng-container>
 
-<ng-container *ngIf="expanded">
-  <ng-container *ngFor="let expandedCategory of categories; let i = index">
-    <li *ngIf="i >= 5">
-      {{  <app-card [title]="category.name" [description]="category.description" *ngFor="let category of categories | slice:0:5"></app-card>}}
-    </li>
-  </ng-container>
-</ng-container>
-<li *ngIf="categories.length > 5 && !expanded">
-  <button mat-button (click)="expandItems()" >
-    Show all
-  </button>
-</li>
 
 
 <ng-template #emptyList>
-  <div class="category-contianer">
+  <div class="category-container">
     <mat-icon fontSet="material-icons-outlined" class="icon-margin">category</mat-icon>
     <span>There are no categories.</span>
   </div>

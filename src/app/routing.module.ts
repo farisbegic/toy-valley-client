@@ -22,12 +22,13 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
-import {AuthorizedGuard} from './guards/authorized.guard';
+
 import {LoginComponent} from './features/login/login.component';
 import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {CategoryComponent} from "./features/categories/components/category/category.component";
 
 
 const routes: Routes = [
@@ -55,15 +56,13 @@ const routes: Routes = [
       },
       {
         path: Route.CATEGORIES,
-        canActivateChild: [AuthorizedGuard],
-        component: CategoryListContainerComponent,
+        component: CategoryComponent,
         resolve: {
           [ResolverResponse.CATEGORIES]: CategoriesResolver,
         }
       },
       {
         path: Route.TOYS,
-        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.CATEGORY + Route.SEPARATOR + Route.ID,

@@ -12,4 +12,7 @@ export class CardComponent {
   @Input() title: string = '';
   @Input() description: string = '';
   image: string = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
+
+
+
 }

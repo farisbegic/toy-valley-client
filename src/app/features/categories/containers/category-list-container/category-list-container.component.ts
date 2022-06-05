@@ -1,10 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {Category} from "../../../../models/category.model";
 import {ResolverResponse} from "../../../../constants/resolver-response.constants";
-import {CategoryService} from "../../../../services/category.service";
-import {User} from "../../../../models/user.model";
-import {Route} from "../../../../constants/route.constants";
+
 
 @Component({
   selector: 'app-category-list-container',
