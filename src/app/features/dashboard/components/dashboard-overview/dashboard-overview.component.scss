@@ -1,0 +1,17 @@
+.dashboard-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 100px 0;
+}
+
+.example-card {
+  width: 300px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+}

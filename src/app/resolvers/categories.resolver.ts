@@ -5,7 +5,6 @@ import {Category} from "../models/category.model";
 import {CategoryService} from "../services/category.service";
 
 
-
 @Injectable({providedIn: 'root'})
 export class CategoriesResolver implements Resolve<Category[]> {
 
