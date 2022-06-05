@@ -28,6 +28,11 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
+import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
+import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
+import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
+import {AddCategoryContainerComponent} from "./features/dashboard/containers/add-category-container/add-category-container.component";
 
 
 const routes: Routes = [
@@ -63,7 +68,6 @@ const routes: Routes = [
       },
       {
         path: Route.TOYS,
-        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.CATEGORY + Route.SEPARATOR + Route.ID,
@@ -102,6 +106,47 @@ const routes: Routes = [
           [ResolverResponse.TOY]: ToyDetailResolver,
           [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver
         }
+      },
+      {
+        path: Route.DASHBOARD,
+        children: [
+          {
+            path: "",
+            component: DashboardComponent
+          },
+          {
+            path: Route.CITY,
+            children: [
+              {
+                path: Route.EMPTY,
+                component: DashboardCityContainerComponent,
+                resolve: {
+                  [ResolverResponse.CITIES]: CitiesResolver
+                }
+              },
+              {
+                path: Route.ADD,
+                component: AddCityContainerComponent
+              },
+            ]
+          },
+          {
+            path: Route.CATEGORY,
+            children: [
+              {
+                path: Route.EMPTY,
+                component: DashboardCategoryContainerComponent,
+                resolve: {
+                  [ResolverResponse.CATEGORIES]: CategoriesResolver
+                }
+              },
+              {
+                path: Route.ADD,
+                component: AddCategoryContainerComponent
+              }
+            ]
+          }
+        ]
       },
       ]
   },

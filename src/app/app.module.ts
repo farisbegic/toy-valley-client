@@ -64,6 +64,15 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component';
+import { DashboardOverviewComponent } from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
+import { DashboardViewAllComponent } from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
+import { DashboardCityContainerComponent } from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
+import { DashboardCategoryContainerComponent } from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
+import { AddCityComponent } from "./features/dashboard/components/add-city/add-city.component";
+import { AddCityContainerComponent } from './features/dashboard/containers/add-city-container/add-city-container.component';
+import { AddCategoryContainerComponent } from './features/dashboard/containers/add-category-container/add-category-container.component';
+import { AddCategoryComponent } from './features/dashboard/components/add-category/add-category.component';
 
 
 @NgModule({
@@ -99,6 +108,15 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
     ExchangeRequestDialogComponent,
     GenderToysComponent,
     ConditionToysComponent,
+    DashboardComponent,
+    DashboardOverviewComponent,
+    DashboardViewAllComponent,
+    DashboardCityContainerComponent,
+    DashboardCategoryContainerComponent,
+    AddCityComponent,
+    AddCityContainerComponent,
+    AddCategoryContainerComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,
