@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Category} from "../models/category.model";
+import {CreateCategoryModel} from "../models/create-category.model";
 
 
 @Injectable({
@@ -22,7 +23,7 @@ export class CategoryService {
     return this.http.get<Category>(`${this.baseUrl}/${id}`);
   }
 
-  public create(category:Category): Observable<Category> {
+  public addCategory(category:CreateCategoryModel): Observable<Category> {
     return this.http.post<Category>(`${this.baseUrl}`, category);
   }
 

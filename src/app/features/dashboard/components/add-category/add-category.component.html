@@ -1,0 +1,13 @@
+<form class="exchange-form" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name: </mat-label>
+    <input matInput placeholder="Add city name" type="text" [formControlName]="'name'">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Description: </mat-label>
+    <input matInput placeholder="Add city name" type="text" [formControlName]="'description'">
+  </mat-form-field>
+
+  <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Add Category</button>
+</form>

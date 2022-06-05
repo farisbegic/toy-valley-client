@@ -32,6 +32,7 @@ import {DashboardComponent} from "./features/dashboard/components/dashboard/dash
 import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
 import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
 import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
+import {AddCategoryContainerComponent} from "./features/dashboard/containers/add-category-container/add-category-container.component";
 
 
 const routes: Routes = [
@@ -131,10 +132,19 @@ const routes: Routes = [
           },
           {
             path: Route.CATEGORY,
-            component: DashboardCategoryContainerComponent,
-            resolve: {
-              [ResolverResponse.CATEGORIES]: CategoriesResolver
-            }
+            children: [
+              {
+                path: Route.EMPTY,
+                component: DashboardCategoryContainerComponent,
+                resolve: {
+                  [ResolverResponse.CATEGORIES]: CategoriesResolver
+                }
+              },
+              {
+                path: Route.ADD,
+                component: AddCategoryContainerComponent
+              }
+            ]
           }
         ]
       },
