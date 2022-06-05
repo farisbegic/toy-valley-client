@@ -29,6 +29,8 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
+import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
+import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
 
 
 const routes: Routes = [
@@ -105,7 +107,26 @@ const routes: Routes = [
       },
       {
         path: Route.DASHBOARD,
-        component: DashboardComponent
+        children: [
+          {
+            path: "",
+            component: DashboardComponent
+          },
+          {
+            path: Route.CITY,
+            component: DashboardCityContainerComponent,
+            resolve: {
+              [ResolverResponse.CITIES]: CitiesResolver
+            }
+          },
+          {
+            path: Route.CATEGORY,
+            component: DashboardCategoryContainerComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: CategoriesResolver
+            }
+          }
+        ]
       },
       ]
   },

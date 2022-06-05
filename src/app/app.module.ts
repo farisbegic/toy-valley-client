@@ -65,7 +65,10 @@ import {ConditionToysComponent} from "./features/toys/components/condition-toys/
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component';
-import { DashboardViewComponent } from './features/dashboard/components/dashboard-view/dashboard-view.component';
+import { DashboardOverviewComponent } from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
+import { DashboardViewAllComponent } from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
+import { DashboardCityContainerComponent } from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
+import { DashboardCategoryContainerComponent } from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
 
 
 @NgModule({
@@ -102,7 +105,10 @@ import { DashboardViewComponent } from './features/dashboard/components/dashboar
     GenderToysComponent,
     ConditionToysComponent,
     DashboardComponent,
-    DashboardViewComponent,
+    DashboardOverviewComponent,
+    DashboardViewAllComponent,
+    DashboardCityContainerComponent,
+    DashboardCategoryContainerComponent,
   ],
   imports: [
     BrowserModule,
