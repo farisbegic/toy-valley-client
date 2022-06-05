@@ -1,0 +1,26 @@
+<div class="trader-information-container container-width">
+  <div class="trader-information">
+    <h3 class="subtitle">Trader Preferences</h3>
+    <mat-chip-list aria-label="Preferences selection" style="padding: 20px 0;">
+      <mat-chip *ngFor="let chip of preferences" selected style="text-transform: uppercase; padding: 20px">
+        {{chip}}
+      </mat-chip>
+    </mat-chip-list>
+  </div>
+  <div class="trader-information">
+    <h3 class="subtitle">Trader Information</h3>
+    <mat-list class="trader-details">
+      <mat-list-item><b>Name:</b> &nbsp; {{user?.name}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Surname:</b> &nbsp; {{user?.surname}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Phone:</b> &nbsp; {{user?.phone}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Address:</b> &nbsp; {{user?.address}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>City:</b> &nbsp; {{user?.city?.name}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><b>Email:</b> &nbsp; {{user?.email}}</mat-list-item>
+    </mat-list>
+  </div>
+</div>

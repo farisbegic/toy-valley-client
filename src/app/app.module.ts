@@ -1,33 +1,33 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatIconModule } from "@angular/material/icon";
-import { RoutingModule } from './routing.module';
-import { MatButtonModule } from "@angular/material/button";
-import { MatInputModule } from "@angular/material/input";
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {RoutingModule} from './routing.module';
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
-import { HeaderComponent } from './features/common/header/header.component';
-import { MainComponent } from './features/common/main/main.component';
-import { HomeComponent } from "./features/home/components/home/home.component";
-import { SearchBarContainerComponent } from "./features/home/containers/search-bar-container/search-bar-container.component";
-import { SearchBarComponent } from "./features/home/components/search-bar/search-bar.component";
-import { TopCategoriesComponent } from './features/home/components/top-categories/top-categories.component';
-import { MatChipsModule } from "@angular/material/chips";
-import { MatCardModule } from "@angular/material/card";
-import { CardComponent } from './features/common/card/card.component';
-import { TopTradersComponent } from './features/home/components/top-traders/top-traders.component';
-import { TopTradersContainerComponent } from './features/home/containers/top-traders-container/top-traders-container.component';
-import { MatTableModule } from "@angular/material/table";
-import { TopChipsComponent } from "./features/common/top-chips/top-chips.component";
-import { TopLocationsComponent } from './features/home/components/top-locations/top-locations.component';
-import { FooterComponent } from './features/common/footer/footer.component';
-import { RegistrationComponent } from './features/registration/components/registration.component';
-import { LoginComponent } from './features/login/login.component';
+import {HeaderComponent} from './features/common/header/header.component';
+import {MainComponent} from './features/common/main/main.component';
+import {HomeComponent} from "./features/home/components/home/home.component";
+import {SearchBarContainerComponent} from "./features/home/containers/search-bar-container/search-bar-container.component";
+import {SearchBarComponent} from "./features/home/components/search-bar/search-bar.component";
+import {TopCategoriesComponent} from './features/home/components/top-categories/top-categories.component';
+import {MatChipsModule} from "@angular/material/chips";
+import {MatCardModule} from "@angular/material/card";
+import {CardComponent} from './features/common/card/card.component';
+import {TopTradersComponent} from './features/home/components/top-traders/top-traders.component';
+import {TopTradersContainerComponent} from './features/home/containers/top-traders-container/top-traders-container.component';
+import {MatTableModule} from "@angular/material/table";
+import {TopChipsComponent} from "./features/common/top-chips/top-chips.component";
+import {TopLocationsComponent} from './features/home/components/top-locations/top-locations.component';
+import {FooterComponent} from './features/common/footer/footer.component';
+import {RegistrationComponent} from './features/registration/components/registration.component';
+import {LoginComponent} from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
 import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
@@ -54,6 +54,16 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import { ToyComponent } from './features/toy/components/toy/toy.component';
+import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
+import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
+import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
+import {MatListModule} from "@angular/material/list";
+import { TraderInformationComponent } from './features/toy/components/trader-information/trader-information.component';
+import { ExchangeRequestDialogComponent } from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {UserToysResolver} from "./resolvers/user-toys.resolver";
+import {ToyExchangeService} from "./services/toy-exchange.service";
 import { ProfileComponent } from './features/profile/components/profile.component';
 import { ProfileContainerComponent } from './features/profile/containers/profile-container.component';
 
@@ -89,6 +99,11 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     EditProfileContainerComponent,
     ProfileComponent,
     ProfileContainerComponent,
+    ToyComponent,
+    ToyContainerComponent,
+    ToyInformationComponent,
+    TraderInformationComponent,
+    ExchangeRequestDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,16 +124,21 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     HttpClientModule,
     MatGridListModule,
     MatOptionModule,
+    MatListModule,
+    MatDialogModule,
   ],
   providers: [
     CategoryToysResolver,
+    UserToysResolver,
     LocationToysResolver,
+    ToyDetailResolver,
     ToysService,
+    ToyExchangeService,
     CitiesResolver,
     CityService,
     UserResolver,
     UserService,
-    TopTradersResolver
+    TopTradersResolver,
   ],
   bootstrap: [AppComponent]
 })

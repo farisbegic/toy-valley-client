@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {ItemsModel} from "../models/items.model";
 import {environment} from "../../environments/environment";
 import {SearchItemsModel} from "../models/search-items.model";
+import {ToyDetail} from "../models/toy-detail";
 
 @Injectable()
 export class ToysService {
@@ -20,5 +21,11 @@ export class ToysService {
   }
   public getItemsByLocation(locationId: string): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/city/${locationId}`)
+  }
+  public getItemsByUser(userId: string): Observable<ItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/user/${userId}`);
+  }
+  public getItemDetails(itemId: string): Observable<ToyDetail> {
+    return this.http.get<ToyDetail>(`${this.url}/${itemId}`)
   }
 }

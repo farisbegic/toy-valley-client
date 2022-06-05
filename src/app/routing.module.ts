@@ -22,6 +22,9 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ProfileContainerComponent} from "./features/profile/containers/profile-container.component";
+import {ToyComponent} from "./features/toy/components/toy/toy.component";
+import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
+import {UserToysResolver} from "./resolvers/user-toys.resolver";
 
 const routes: Routes = [
   {
@@ -80,6 +83,14 @@ const routes: Routes = [
         ]
       },
       {
+        path: Route.TOY + Route.SEPARATOR + Route.ID,
+        component: ToyComponent,
+        resolve: {
+          [ResolverResponse.TOY]: ToyDetailResolver,
+          [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver
+        }
+      },
+      {
         path: Route.USERS + Route.SEPARATOR + Route.ID,
         children: [
           {
@@ -87,6 +98,7 @@ const routes: Routes = [
             component: ProfileContainerComponent,
             resolve: {
               [ResolverResponse.USER]: UserResolver,
+              [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver,
             }
           },
           {

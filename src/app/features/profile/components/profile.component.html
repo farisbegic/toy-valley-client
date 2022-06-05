@@ -12,7 +12,15 @@
       <br>
       <p>{{user.city?.name}}</p>
       <br>
-      <button type="button" mat-raised-button color="primary" (click)="edit()">Edit profile</button>
+      <div class="buttons">
+        <button type="button" mat-raised-button color="primary" (click)="edit()">Edit profile</button>
+        <button type="button" mat-raised-button color="primary" (click)="add()">Add toy</button>
+      </div>
     </div>
   </div>
+
+  <div class="toys">
+    <p>{{toys}}</p>
+  </div>
+
 </div>
