@@ -64,6 +64,8 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component';
+import { DashboardViewComponent } from './features/dashboard/components/dashboard-view/dashboard-view.component';
 
 
 @NgModule({
@@ -99,6 +101,8 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
     ExchangeRequestDialogComponent,
     GenderToysComponent,
     ConditionToysComponent,
+    DashboardComponent,
+    DashboardViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -28,6 +28,7 @@ import {GenderToysComponent} from "./features/toys/components/gender-toys/gender
 import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
 
 
 const routes: Routes = [
@@ -101,6 +102,10 @@ const routes: Routes = [
           [ResolverResponse.TOY]: ToyDetailResolver,
           [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver
         }
+      },
+      {
+        path: Route.DASHBOARD,
+        component: DashboardComponent
       },
       ]
   },

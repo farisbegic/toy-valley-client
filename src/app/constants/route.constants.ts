@@ -13,4 +13,5 @@ export class Route {
   public static CONDITION = 'condition';
   public static GENDER = 'gender';
   public static TOY = 'toy';
+  public static DASHBOARD = 'dashboard'
 }
