@@ -45,6 +45,7 @@ import {CitiesResolver} from "./resolvers/cities.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 
+
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import { ToyComponent } from './features/toy/components/toy/toy.component';
@@ -62,8 +63,10 @@ import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
 import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
-import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
-import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolver";
+import {CategoryComponent} from "./features/categories/components/category/category.component";
+import {GenderComponent} from "./features/categories/components/gender/gender.component";
+import {ConditionComponent} from "./features/categories/components/condition/condition.component";
 import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component';
 import { DashboardOverviewComponent } from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
 import { DashboardViewAllComponent } from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
@@ -73,6 +76,10 @@ import { AddCityComponent } from "./features/dashboard/components/add-city/add-c
 import { AddCityContainerComponent } from './features/dashboard/containers/add-city-container/add-city-container.component';
 import { AddCategoryContainerComponent } from './features/dashboard/containers/add-category-container/add-category-container.component';
 import { AddCategoryComponent } from './features/dashboard/components/add-category/add-category.component';
+import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver";
+import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
+import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
+import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-new.resolver";
 
 
 @NgModule({
@@ -117,6 +124,9 @@ import { AddCategoryComponent } from './features/dashboard/components/add-catego
     AddCityContainerComponent,
     AddCategoryContainerComponent,
     AddCategoryComponent,
+    CategoryComponent,
+    GenderComponent,
+    ConditionComponent,
   ],
   imports: [
     BrowserModule,
@@ -153,8 +163,11 @@ import { AddCategoryComponent } from './features/dashboard/components/add-catego
     CitiesResolver,
     CityService,
     TopTradersResolver,
-    GenderToysResolver,
-    ConditionToysResolver
+    GenderToysResolverFemale,
+    GenderToysResolverMale,
+    GenderToysResolverUnisex,
+    ConditionToysUsedResolver,
+    ConditionToysBrandNewResolver,
   ],
   bootstrap: [AppComponent]
 })

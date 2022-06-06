@@ -4,9 +4,9 @@ import {Observable} from "rxjs";
 import {ItemsModel} from "../models/items.model";
 import {environment} from "../../environments/environment";
 import {SearchItemsModel} from "../models/search-items.model";
+import {ToyDetail} from "../models/toy-detail";
 import {Gender} from "../models/enums/gender.enum";
 import {Condition} from "../models/enums/condition.enum";
-import {ToyDetail} from "../models/toy-detail";
 
 @Injectable()
 export class ToysService {
@@ -31,11 +31,11 @@ export class ToysService {
     return this.http.get<ToyDetail>(`${this.url}/${itemId}`)
   }
 
-  public getItemsByGender(genderId: string): Observable<ItemsModel[]> {
+  public getItemsByGender(genderId: Gender): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/gender/${genderId}`)
   }
 
-  public getItemsByCondition(conditionId: string): Observable<ItemsModel[]> {
+  public getItemsByCondition(conditionId: Condition): Observable<ItemsModel[]> {
     return this.http.get<ItemsModel[]>(`${this.url}/condition/${conditionId}`)
   }
 

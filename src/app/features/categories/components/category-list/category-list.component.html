@@ -1,41 +1,24 @@
-<div class="container">
-  <ng-container *ngIf="categories.length > 0; else emptyList">
-
-    <div class="block-container" *ngFor="let category of categories | slice:0:5">
-      <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
-           class="block">
-        <mat-icon>{{getCategoryName(category)}}</mat-icon>
+<ng-container *ngIf="categories.length > 0; else emptyList">
+  <div class="categories-container">
+    <h1 class="title">CATEGORIES</h1>
+    <div class="categories-list">
+      <mat-card class="example-card" fxLayout="column" fxLayoutAlign="space-between center" *ngFor="let category of categories">
+        <img mat-card-image src="{{image}}" alt="{{category.name}}">
+        <mat-card-title>{{category.name}}</mat-card-title>
+        <mat-card-content>
+          <p>{{category.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="/{{fullUrl}}/{{category[categoryProperty.id]}}">VIEW MORE </button>
+        </mat-card-actions>
+      </mat-card>
       </div>
-
-      <ng-container *ngIf="expanded">
-        <ng-container *ngFor="let expandedCategory of categories; let i = index">
-          <li *ngIf="i >= 5">
-            {{ <div [routerLink]="[route.SEPARATOR, route.CATEGORIES, category[categoryProperty.id]]"
-                    class="block">
-            <mat-icon>{{getCategoryName(category)}}</mat-icon>
-          </div>}}
-          </li>
-        </ng-container>
-      </ng-container>
-      <li *ngIf="categories.length > 5 && !expanded">
-        <button mat-button (click)="expandItems()">
-          Show all
-        </button>
-      </li>
-
-      <button mat-flat-button type="button"
-              class="remove-button"
-              color="warn"
-              *ngIf="removeAllowed"
-              (click)="remove(category)">Remove
-      </button>
-    </div>
-  </ng-container>
-</div>
+  </div>
+</ng-container>
 
 
 <ng-template #emptyList>
-  <div>
+  <div class="category-container">
     <mat-icon fontSet="material-icons-outlined" class="icon-margin">category</mat-icon>
     <span>There are no categories.</span>
   </div>

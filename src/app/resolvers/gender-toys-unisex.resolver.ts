@@ -3,16 +3,16 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/rou
 import {ItemsModel} from "../models/items.model";
 import {Observable} from "rxjs";
 import {ToysService} from "../services/toys.service";
-import {Route} from "../constants/route.constants";
+import {Gender} from "../models/enums/gender.enum";
 
 
 @Injectable({providedIn: "root"})
-export class GenderToysResolver implements Resolve<ItemsModel[]>{
+export class GenderToysResolverUnisex implements Resolve<ItemsModel[]>{
   constructor(private toyService: ToysService) {
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ItemsModel[]> | Promise<ItemsModel[]> | ItemsModel[] {
-    const gender: string | null = route.paramMap.get(Route.ID.substring(1));
-    return this.toyService.getItemsByGender(gender!);
+
+    return this.toyService.getItemsByGender(Gender.unisex);
   }
 }
 

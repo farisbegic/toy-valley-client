@@ -4,7 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { MainComponent } from "./features/common/main/main.component";
 import { HomeComponent } from "./features/home/components/home/home.component";
 import {Route} from "./constants/route.constants";
-import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryToysComponent} from "./features/toys/components/category-toys/category-toys.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
@@ -22,17 +21,22 @@ import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
-import {AuthorizedGuard} from './guards/authorized.guard';
+
 import {LoginComponent} from './features/login/login.component';
 import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
-import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
-import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {CategoryComponent} from "./features/categories/components/category/category.component";
+
 import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
 import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
 import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
 import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
 import {AddCategoryContainerComponent} from "./features/dashboard/containers/add-category-container/add-category-container.component";
+import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver";
+import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
+import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
+import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-new.resolver";
 
 
 const routes: Routes = [
@@ -60,11 +64,50 @@ const routes: Routes = [
       },
       {
         path: Route.CATEGORIES,
-        canActivateChild: [AuthorizedGuard],
-        component: CategoryListContainerComponent,
-        resolve: {
-          [ResolverResponse.CATEGORIES]: CategoriesResolver,
-        }
+        children: [
+          {
+            path: "",
+            component: CategoryComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: CategoriesResolver
+            }
+          },
+          {
+            path: Route.GENDER + Route.SEPARATOR + Route.FEMALE,
+            component: GenderToysComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: GenderToysResolverFemale
+            }
+          },
+          {
+            path: Route.GENDER + Route.SEPARATOR + Route.MALE,
+            component: GenderToysComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: GenderToysResolverMale
+            }
+          },
+          {
+            path: Route.GENDER + Route.SEPARATOR + Route.UNISEX,
+            component: GenderToysComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: GenderToysResolverUnisex
+            }
+          },
+          {
+            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
+            component: ConditionToysComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: ConditionToysUsedResolver
+            }
+          },
+          {
+            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
+            component: ConditionToysComponent,
+            resolve: {
+              [ResolverResponse.CATEGORIES]: ConditionToysBrandNewResolver
+            }
+          }
+        ]
       },
       {
         path: Route.TOYS,
@@ -81,20 +124,6 @@ const routes: Routes = [
             component: LocationToysComponent,
             resolve: {
               [ResolverResponse.TOYS]: LocationToysResolver
-            }
-          },
-          {
-            path: Route.GENDER + Route.SEPARATOR + Route.ID,
-            component: GenderToysComponent,
-            resolve: {
-              [ResolverResponse.TOYS]: GenderToysResolver
-            }
-          },
-          {
-            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
-            component: ConditionToysComponent,
-            resolve: {
-              [ResolverResponse.TOYS]: ConditionToysResolver
             }
           }
         ]
