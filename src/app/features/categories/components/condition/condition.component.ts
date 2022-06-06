@@ -12,11 +12,11 @@ export class ConditionComponent {
   public chips: Array<ChipsModel> = new Array<ChipsModel>(
     {
       name: "Brand New",
-      url: `${this.fullUrl}/1`
+      url: `${this.fullUrl}/brand_new`
     },
     {
       name: "Used",
-      url: `${this.fullUrl}/2`
+      url: `${this.fullUrl}/used`
     },
   );
 }

@@ -12,15 +12,15 @@ export class GenderComponent {
   public chips: Array<ChipsModel> = new Array<ChipsModel>(
     {
       name: "FEMALE",
-      url: `${this.fullUrl}/1`
+      url: `${this.fullUrl}/female`
     },
     {
       name: "MALE",
-      url: `${this.fullUrl}/2`
+      url: `${this.fullUrl}/male`
     },
     {
       name: "UNISEX",
-      url: `${this.fullUrl}/3`
+      url: `${this.fullUrl}/unisex`
     },
   );
 }

@@ -3,16 +3,16 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/rou
 import {ItemsModel} from "../models/items.model";
 import {Observable} from "rxjs";
 import {ToysService} from "../services/toys.service";
-import {Route} from "../constants/route.constants";
+import {Condition} from "../models/enums/condition.enum";
 
 
 @Injectable({providedIn: "root"})
-export class ConditionToysResolver implements Resolve<ItemsModel[]>{
+export class ConditionToysBrandNewResolver implements Resolve<ItemsModel[]>{
   constructor(private toyService: ToysService) {
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ItemsModel[]> | Promise<ItemsModel[]> | ItemsModel[] {
-    const condition: string | null = route.paramMap.get(Route.ID.substring(1));
-    return this.toyService.getItemsByCondition(condition!);
+
+    return this.toyService.getItemsByCondition(Condition.brandNew);
   }
 }
 

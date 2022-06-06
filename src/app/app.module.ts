@@ -63,8 +63,7 @@ import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
 import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
-import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
-import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolver";
 import {CategoryComponent} from "./features/categories/components/category/category.component";
 import {GenderComponent} from "./features/categories/components/gender/gender.component";
 import {ConditionComponent} from "./features/categories/components/condition/condition.component";
@@ -77,6 +76,10 @@ import { AddCityComponent } from "./features/dashboard/components/add-city/add-c
 import { AddCityContainerComponent } from './features/dashboard/containers/add-city-container/add-city-container.component';
 import { AddCategoryContainerComponent } from './features/dashboard/containers/add-category-container/add-category-container.component';
 import { AddCategoryComponent } from './features/dashboard/components/add-category/add-category.component';
+import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver";
+import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
+import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
+import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-new.resolver";
 
 
 @NgModule({
@@ -160,8 +163,11 @@ import { AddCategoryComponent } from './features/dashboard/components/add-catego
     CitiesResolver,
     CityService,
     TopTradersResolver,
-    GenderToysResolver,
-    ConditionToysResolver
+    GenderToysResolverFemale,
+    GenderToysResolverMale,
+    GenderToysResolverUnisex,
+    ConditionToysUsedResolver,
+    ConditionToysBrandNewResolver,
   ],
   bootstrap: [AppComponent]
 })
