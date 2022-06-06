@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../../../../constants/resolver-response.constants";
 import {City} from "../../../../models/city.model";

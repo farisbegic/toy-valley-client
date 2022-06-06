@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../../../../models/user.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {UserService} from "../../../../services/user.service";
 import {Route} from "../../../../constants/route.constants";
 import {City} from "../../../../models/city.model";
-import {CityService} from "../../../../services/city.service";
 import {ResolverResponse} from "../../../../constants/resolver-response.constants";
-import {conditionallyCreateMapObjectLiteral} from "@angular/compiler/src/render3/view/util";
 
 @Component({
   selector: 'app-registration-container',

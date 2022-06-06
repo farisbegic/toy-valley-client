@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from "@angular/router";
-import { MainComponent } from "./features/common/main/main.component";
-import { HomeComponent } from "./features/home/components/home/home.component";
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from "@angular/router";
+import {MainComponent} from "./features/common/main/main.component";
+import {HomeComponent} from "./features/home/components/home/home.component";
 import {Route} from "./constants/route.constants";
-import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
+import {
+  CategoryListContainerComponent
+} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryToysComponent} from "./features/toys/components/category-toys/category-toys.component";
 import {ResolverResponse} from "./constants/resolver-response.constants";
@@ -29,10 +31,18 @@ import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
 import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
-import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
-import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
-import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
-import {AddCategoryContainerComponent} from "./features/dashboard/containers/add-category-container/add-category-container.component";
+import {
+  DashboardCityContainerComponent
+} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
+import {
+  DashboardCategoryContainerComponent
+} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
+import {
+  AddCityContainerComponent
+} from "./features/dashboard/containers/add-city-container/add-city-container.component";
+import {
+  AddCategoryContainerComponent
+} from "./features/dashboard/containers/add-category-container/add-category-container.component";
 
 
 const routes: Routes = [
