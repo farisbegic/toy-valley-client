@@ -21,6 +21,7 @@ import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-f
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import {LocationToysComponent} from "./features/toys/components/location-toys/location-toys.component";
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 import {ProfileContainerComponent} from "./features/profile/containers/profile-container.component";
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";

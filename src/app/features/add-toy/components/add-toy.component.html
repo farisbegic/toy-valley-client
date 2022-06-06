@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>Add a toy</h1>
+  <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Lego cubes" type="text" [formControlName]="'name'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Brand</mat-label>
+      <input matInput placeholder="Ex. Lego" type="text" [formControlName]="'brand'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput placeholder="Ex. 2 years old" type="number" [formControlName]="'age'">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Gender</mat-label>
+      <mat-select [formControlName]="'gender'">
+        <mat-option *ngFor="let gender of genders" [value]="gender">
+          {{gender}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Condition</mat-label>
+      <mat-select [formControlName]="'condition'">
+        <mat-option *ngFor="let condition of conditions" [value]="condition">
+          {{condition}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput placeholder="Ex. The toy is..." [formControlName]="'description'" type="text"></textarea>
+    </mat-form-field>
+
+    <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+</div>
+

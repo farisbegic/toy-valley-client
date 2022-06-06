@@ -54,6 +54,8 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
+import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 import { ToyComponent } from './features/toy/components/toy/toy.component';
 import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
@@ -95,6 +97,8 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     RegistrationContainerComponent,
     PageNotFoundComponent,
     LocationToysComponent,
+    AddToyComponent,
+    AddToyContainerComponent,
     EditProfileComponent,
     EditProfileContainerComponent,
     ProfileComponent,
@@ -136,6 +140,9 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     ToyExchangeService,
     CitiesResolver,
     CityService,
+    ToysService,
+    UserService,
+    TopTradersResolver,
     UserResolver,
     UserService,
     TopTradersResolver,
