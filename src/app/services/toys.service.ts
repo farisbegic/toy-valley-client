@@ -4,6 +4,8 @@ import {Observable} from "rxjs";
 import {ItemsModel} from "../models/items.model";
 import {environment} from "../../environments/environment";
 import {SearchItemsModel} from "../models/search-items.model";
+import {Gender} from "../models/enums/gender.enum";
+import {Condition} from "../models/enums/condition.enum";
 import {ToyDetail} from "../models/toy-detail";
 import {Toy} from "../models/toy.model";
 
@@ -22,8 +24,8 @@ export class ToysService {
     return this.http.get<ItemsModel[]>(`${this.url}/search/${name}`)
   }
 
-  public create(toy: Toy): Observable<Toy> {
-    return this.http.post<Toy>(`${this.url}`, toy);
+  public create(userId: number | undefined, toy: Toy): Observable<Toy> {
+    return this.http.post<Toy>(`${this.url}/${userId}`, toy);
   }
 
   public getItemsByLocation(locationId: string): Observable<ItemsModel[]> {
@@ -37,4 +39,14 @@ export class ToysService {
   public getItemDetails(itemId: string): Observable<ToyDetail> {
     return this.http.get<ToyDetail>(`${this.url}/${itemId}`)
   }
+
+  public getItemsByGender(genderId: string): Observable<ItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/gender/${genderId}`)
+  }
+
+  public getItemsByCondition(conditionId: string): Observable<ItemsModel[]> {
+    return this.http.get<ItemsModel[]>(`${this.url}/condition/${conditionId}`)
+  }
+
+
 }

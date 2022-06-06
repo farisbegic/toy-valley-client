@@ -24,6 +24,9 @@ export class AddToyComponent implements OnInit {
   @Input()
   conditions: Condition[] | undefined;
 
+  @Input()
+  user: User | undefined;
+
   @Output()
   saveToy: EventEmitter<Toy> = new EventEmitter<Toy>();
 
@@ -40,7 +43,7 @@ export class AddToyComponent implements OnInit {
       'age': [null, Validators.required],
       'gender': [null, Validators.required],
       'condition': [null, Validators.required],
-      'description': [null, Validators.required],
+      'description': [null],
     })
   }
 
@@ -54,6 +57,10 @@ export class AddToyComponent implements OnInit {
 
   private resetForm(): void {
     this.form.reset();
+  }
+
+  public goBack(): void {
+    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id]);
   }
 
 }

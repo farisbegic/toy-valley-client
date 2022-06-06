@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Route} from "../../constants/route.constants";
+import {Router} from '@angular/router';
+import {AuthService} from "../../services/auth.service";
+
 
 @Component({
   selector: 'app-login',
@@ -13,7 +16,7 @@ export class LoginComponent implements OnInit {
   public form!: FormGroup;
   public hide: boolean = true;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -23,18 +26,23 @@ export class LoginComponent implements OnInit {
     })
 }
 
-public submit():void {
-  if (!this.form.valid) {
-  return;
-}
-this.resetForm();
+
+public handleFormSubmit(): void{
+    this.form!.markAllAsTouched();
+
+    if (this.form!.valid) {
+      this.authService.logIn({ ...this.form!.value }).subscribe(() => {
+        this.router.navigate([Route.CATEGORIES]);
+      });
+    }
+  }
 }
 
-private resetForm(): void {
-  this.form.reset();
-}
 
-}
+
+
+
+
 
 
 

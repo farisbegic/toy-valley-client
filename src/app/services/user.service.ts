@@ -3,13 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from "../models/user.model";
 import {TopTraders} from "../models/top-traders.model";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private readonly baseUrl: string = 'http://localhost:8080/users';
+  private readonly baseUrl: string = environment.backendUrl + '/users';
 
   constructor(private http:HttpClient) {
   }

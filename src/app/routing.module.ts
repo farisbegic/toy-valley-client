@@ -6,8 +6,6 @@ import { HomeComponent } from "./features/home/components/home/home.component";
 import {LoginComponent} from "./features/login/login.component";
 import {RegistrationComponent} from "./features/registration/components/registration.component";
 import {Route} from "./constants/route.constants";
-import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {CategoryResolver} from "./resolvers/category.resolver";
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
 import {CategoriesResolver} from "./resolvers/categories.resolver";
 import {CategoryToysComponent} from "./features/toys/components/category-toys/category-toys.component";
@@ -26,6 +24,17 @@ import {ProfileContainerComponent} from "./features/profile/containers/profile-c
 import {ToyComponent} from "./features/toy/components/toy/toy.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
+import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
+import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
+import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
+import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
+import {AddCategoryContainerComponent} from "./features/dashboard/containers/add-category-container/add-category-container.component";
+
 
 const routes: Routes = [
   {
@@ -51,14 +60,8 @@ const routes: Routes = [
         component: LoginComponent,
       },
       {
-        path: Route.ID + Route.SEPARATOR + Route.CATEGORY,
-        component: CategoryViewContainerComponent,
-        resolve: {
-          [ResolverResponse.CATEGORY]: CategoryResolver,
-        }
-      },
-      {
         path: Route.CATEGORIES,
+        canActivateChild: [AuthorizedGuard],
         component: CategoryListContainerComponent,
         resolve: {
           [ResolverResponse.CATEGORIES]: CategoriesResolver,
@@ -79,6 +82,20 @@ const routes: Routes = [
             component: LocationToysComponent,
             resolve: {
               [ResolverResponse.TOYS]: LocationToysResolver
+            }
+          },
+          {
+            path: Route.GENDER + Route.SEPARATOR + Route.ID,
+            component: GenderToysComponent,
+            resolve: {
+              [ResolverResponse.TOYS]: GenderToysResolver
+            }
+          },
+          {
+            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
+            component: ConditionToysComponent,
+            resolve: {
+              [ResolverResponse.TOYS]: ConditionToysResolver
             }
           }
         ]
@@ -113,7 +130,51 @@ const routes: Routes = [
           {
             path: Route.ADDTOY,
             component: AddToyContainerComponent,
+            resolve: {
+              [ResolverResponse.USER]: UserResolver,
+            }
           },
+        ]
+      },
+      {
+        path: Route.DASHBOARD,
+        children: [
+          {
+            path: "",
+            component: DashboardComponent
+          },
+          {
+            path: Route.CITY,
+            children: [
+              {
+                path: Route.EMPTY,
+                component: DashboardCityContainerComponent,
+                resolve: {
+                  [ResolverResponse.CITIES]: CitiesResolver
+                }
+              },
+              {
+                path: Route.ADD,
+                component: AddCityContainerComponent
+              },
+            ]
+          },
+          {
+            path: Route.CATEGORY,
+            children: [
+              {
+                path: Route.EMPTY,
+                component: DashboardCategoryContainerComponent,
+                resolve: {
+                  [ResolverResponse.CATEGORIES]: CategoriesResolver
+                }
+              },
+              {
+                path: Route.ADD,
+                component: AddCategoryContainerComponent
+              }
+            ]
+          }
         ]
       },
       ]
@@ -122,7 +183,7 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent,
   },
-]
+];
 
 
 @NgModule({

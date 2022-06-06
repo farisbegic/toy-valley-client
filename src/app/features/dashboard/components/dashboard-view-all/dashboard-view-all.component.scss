@@ -1,0 +1,24 @@
+.dashboard-view-all {
+  margin: 50px;
+}
+table {
+  width: 100%;
+}
+
+.add-button {
+  margin: 15px 0;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

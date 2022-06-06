@@ -29,8 +29,6 @@ import {FooterComponent} from './features/common/footer/footer.component';
 import {RegistrationComponent} from './features/registration/components/registration.component';
 import {LoginComponent} from './features/login/login.component';
 import {CategoryListContainerComponent} from "./features/categories/containers/category-list-container/category-list-container.component";
-import {CategoryViewContainerComponent} from "./features/categories/containers/category-view-container/category-view-container.component";
-import {CategoryViewComponent} from "./features/categories/components/category-view/category-view.component";
 import {CategoryListComponent} from "./features/categories/components/category-list/category-list.component";
 import {CategoryToysComponent} from './features/toys/components/category-toys/category-toys.component';
 import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
@@ -68,6 +66,23 @@ import {UserToysResolver} from "./resolvers/user-toys.resolver";
 import {ToyExchangeService} from "./services/toy-exchange.service";
 import { ProfileComponent } from './features/profile/components/profile.component';
 import { ProfileContainerComponent } from './features/profile/containers/profile-container.component';
+import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
+import {AuthorizedGuard} from './guards/authorized.guard';
+import {AuthService} from './services/auth.service';
+import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
+import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
+import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
+import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component';
+import { DashboardOverviewComponent } from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
+import { DashboardViewAllComponent } from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
+import { DashboardCityContainerComponent } from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
+import { DashboardCategoryContainerComponent } from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
+import { AddCityComponent } from "./features/dashboard/components/add-city/add-city.component";
+import { AddCityContainerComponent } from './features/dashboard/containers/add-city-container/add-city-container.component';
+import { AddCategoryContainerComponent } from './features/dashboard/containers/add-category-container/add-category-container.component';
+import { AddCategoryComponent } from './features/dashboard/components/add-category/add-category.component';
+
 
 @NgModule({
   declarations: [
@@ -88,8 +103,6 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     RegistrationComponent,
     LoginComponent,
     CategoryListContainerComponent,
-    CategoryViewContainerComponent,
-    CategoryViewComponent,
     CategoryListComponent,
     CategoryToysComponent,
     ToysViewContainerComponent,
@@ -108,6 +121,17 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     ToyInformationComponent,
     TraderInformationComponent,
     ExchangeRequestDialogComponent,
+    GenderToysComponent,
+    ConditionToysComponent,
+    DashboardComponent,
+    DashboardOverviewComponent,
+    DashboardViewAllComponent,
+    DashboardCityContainerComponent,
+    DashboardCategoryContainerComponent,
+    AddCityComponent,
+    AddCityContainerComponent,
+    AddCategoryContainerComponent,
+    AddCategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,6 +156,9 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     MatDialogModule,
   ],
   providers: [
+    provideAuthorizationInterceptor(),
+    AuthorizedGuard,
+    AuthService,
     CategoryToysResolver,
     UserToysResolver,
     LocationToysResolver,
@@ -146,6 +173,9 @@ import { ProfileContainerComponent } from './features/profile/containers/profile
     UserResolver,
     UserService,
     TopTradersResolver,
+    TopTradersResolver,
+    GenderToysResolver,
+    ConditionToysResolver
   ],
   bootstrap: [AppComponent]
 })

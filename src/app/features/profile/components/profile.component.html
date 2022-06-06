@@ -19,8 +19,15 @@
     </div>
   </div>
 
-  <div class="toys">
-    <p>{{toys}}</p>
+  <div class="toys-section">
+    <h1>My toys</h1>
+    <div *ngIf="(toys) && (toys.length != 0); else noToys" class="toys">
+      <app-card *ngFor="let toy of toys" [id]="toy.id" [title]="toy.name" [description]="toy.description"></app-card>
+    </div>
+
+    <ng-template #noToys>
+      You don't have any toys added.
+    </ng-template>
   </div>
 
 </div>

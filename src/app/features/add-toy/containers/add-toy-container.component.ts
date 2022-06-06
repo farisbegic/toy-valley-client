@@ -17,6 +17,7 @@ export class AddToyContainerComponent implements OnInit {
 
   public genders: Gender[] = [Gender.male, Gender.female, Gender.unisex];
   public conditions: Condition[] = [Condition.used, Condition.brandNew];
+  public user: User | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,12 +26,14 @@ export class AddToyContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+    this.activatedRoute.data.subscribe((response: any) => {
+      this.user = response[ResolverResponse.USER];
+    });
   }
 
   saveToy(toy: Toy): void {
-    this.toysService.create(toy).subscribe(value => {
-      this.router.navigate([Route.EMPTY]);
+    this.toysService.create(this.user!.id, toy).subscribe(value => {
+      this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id]);
     });
   }
 }

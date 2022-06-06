@@ -13,12 +13,24 @@ export class UserToysResolver implements Resolve<ItemsModel[]> {
   constructor(private toyService: ToysService) {
   }
 
+  /*resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<ItemsModel[]> | Promise<ItemsModel[]> | ItemsModel[] {
+    const id: string | null = "50";
+    return this.toyService.getItemsByUser(id!);
+  }*/
+
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<ItemsModel[]> | Promise<ItemsModel[]> | ItemsModel[] {
-    const id: string | null = "1";
-    return this.toyService.getItemsByUser(id!);
+    const id = route.paramMap.get(Route.ID.substring(1));
+    const toys = this.toyService.getItemsByUser(id!);
+    if(!toys) {
+      throw 'Toys not found!';
+    }
+    return toys;
   }
 
 }
