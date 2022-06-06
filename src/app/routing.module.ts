@@ -110,6 +110,10 @@ const routes: Routes = [
               [ResolverResponse.CITIES]: CitiesResolver,
             }
           },
+          {
+            path: Route.ADDTOY,
+            component: AddToyContainerComponent,
+          },
         ]
       },
       ]

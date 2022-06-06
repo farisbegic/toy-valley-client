@@ -18,7 +18,6 @@ export class ProfileComponent implements OnInit {
   @Input()
   toys: ItemsModel[] | undefined;
 
-  //public image: string = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
   public route = Route;
 
   constructor(
@@ -33,6 +32,6 @@ export class ProfileComponent implements OnInit {
   }
 
   public add(): void {
-    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id + Route.SEPARATOR + Route.EDIT]);
+    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id + Route.SEPARATOR + Route.ADDTOY]);
   }
 }

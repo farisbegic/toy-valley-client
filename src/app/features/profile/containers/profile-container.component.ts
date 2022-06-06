@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {User} from "../../../models/user.model";
 import {ActivatedRoute} from "@angular/router";
 import {ResolverResponse} from "../../../constants/resolver-response.constants";
-import {ToyDetail} from "../../../models/toy-detail";
 import {ItemsModel} from "../../../models/items.model";
 
 @Component({
@@ -23,6 +22,7 @@ export class ProfileContainerComponent implements OnInit {
 
     this.activatedRoute.data.subscribe((response: any) => {
       this.toys = response[ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY];
+      console.log(this.toys);
     });
   }
 

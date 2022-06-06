@@ -50,8 +50,6 @@ export class AddToyComponent implements OnInit {
     }
 
     this.saveToy.emit(this.form.value);
-
-    this.resetForm();
   }
 
   private resetForm(): void {
