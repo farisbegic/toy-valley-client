@@ -12,7 +12,7 @@ export class Route {
   public static TOYS = 'toys';
   public static CONDITION = 'condition';
   public static GENDER = 'gender';
-  public static ADDTOY = 'addtoy';
+  public static ADDTOY = 'add_toy';
   public static USERS = 'users';
   public static FEMALE = 'female';
   public static MALE = 'male';

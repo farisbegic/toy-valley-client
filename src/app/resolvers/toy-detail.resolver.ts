@@ -1,6 +1,5 @@
 import {Injectable} from "@angular/core";
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
-import {ItemsModel} from "../models/items.model";
 import {Observable} from "rxjs";
 import {ToysService} from "../services/toys.service";
 import {Route} from "../constants/route.constants";

@@ -10,7 +10,9 @@ import {CategoryToysComponent} from "./features/toys/components/category-toys/ca
 import {ResolverResponse} from "./constants/resolver-response.constants";
 import {CategoryToysResolver} from "./resolvers/category-toys.resolver";
 import {CitiesResolver} from "./resolvers/cities.resolver";
-import {RegistrationContainerComponent} from "./features/registration/containers/registration-container/registration-container.component";
+import {
+  RegistrationContainerComponent
+} from "./features/registration/containers/registration-container/registration-container.component";
 import {EditProfileContainerComponent} from "./features/edit-profile/containers/edit-profile-container.component";
 import {UserResolver} from "./resolvers/user.resolver";
 import {PageNotFoundComponent} from "./features/common/page-not-found/page-not-found.component";
@@ -27,10 +29,18 @@ import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolve
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
 import {CategoryComponent} from "./features/categories/components/category/category.component";
 import {DashboardComponent} from "./features/dashboard/components/dashboard/dashboard.component";
-import {DashboardCityContainerComponent} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
-import {DashboardCategoryContainerComponent} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
-import {AddCityContainerComponent} from "./features/dashboard/containers/add-city-container/add-city-container.component";
-import {AddCategoryContainerComponent} from "./features/dashboard/containers/add-category-container/add-category-container.component";
+import {
+  DashboardCityContainerComponent
+} from "./features/dashboard/containers/dashboard-city-container/dashboard-city-container.component";
+import {
+  DashboardCategoryContainerComponent
+} from "./features/dashboard/containers/dashboard-category-container/dashboard-category-container.component";
+import {
+  AddCityContainerComponent
+} from "./features/dashboard/containers/add-city-container/add-city-container.component";
+import {
+  AddCategoryContainerComponent
+} from "./features/dashboard/containers/add-category-container/add-category-container.component";
 import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver";
 import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
 import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";

@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ToyDetail} from "../../../../models/toy-detail";
 import {User} from "../../../../models/user.model";
 
 @Component({

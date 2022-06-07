@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   public route = Route;
   public form!: FormGroup;
   public hide: boolean = true;
+ // public id: long = preko servisa nekako dohvatiti
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
   }
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
     this.form = this.formBuilder.group({
       'email': [null, Validators.compose([Validators.required, Validators.email])],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])],
-    })
+  //    localStorage.setItem(this.id, );
+   })
 }
 
 
@@ -36,6 +38,10 @@ public handleFormSubmit(): void{
       });
     }
   }
+
+
+
+ // localStorage.setItem('id', this.id);
 }
 
 

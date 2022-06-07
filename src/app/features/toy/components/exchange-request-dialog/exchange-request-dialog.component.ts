@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import { Inject } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {ItemsModel} from "../../../../models/items.model";
-import {ActivatedRoute} from "@angular/router";
-import {Route} from "../../../../constants/route.constants";
 import {ToyExchangeService} from "../../../../services/toy-exchange.service";
 
 @Component({
