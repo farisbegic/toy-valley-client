@@ -102,14 +102,14 @@ const routes: Routes = [
             }
           },
           {
-            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
+            path: Route.CONDITION + Route.SEPARATOR + Route.USED,
             component: ConditionToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: ConditionToysUsedResolver
             }
           },
           {
-            path: Route.CONDITION + Route.SEPARATOR + Route.ID,
+            path: Route.CONDITION + Route.SEPARATOR + Route.BRAND_NEW,
             component: ConditionToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: ConditionToysBrandNewResolver
