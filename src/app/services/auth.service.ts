@@ -32,6 +32,10 @@ export class AuthService {
 
     return this.http.post<AuthResponse>(`${this.baseUrl}`, body).pipe(
       mergeMap(response => {
+        console.log(response)
+        localStorage.setItem('token', response.token);
+        localStorage.setItem('userId', response.userId);
+        localStorage.setItem('isAdmin', response.admin)
         this.jwt = response.token;
         return of(undefined);
       })
