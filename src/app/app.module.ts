@@ -58,22 +58,14 @@ import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import {PageNotFoundComponent} from './features/common/page-not-found/page-not-found.component';
 
 import {LocationToysComponent} from './features/toys/components/location-toys/location-toys.component';
-import {PageNotFoundComponent} from './features/common/page-not-found/page-not-found.component';
-import {LocationToysComponent} from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
 import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 import {ToyComponent} from './features/toy/components/toy/toy.component';
 import {ToyContainerComponent} from './features/toy/containers/toy-container/toy-container.component';
-import {ToyComponent} from './features/toy/components/toy/toy.component';
-import {ToyContainerComponent} from './features/toy/containers/toy-container/toy-container.component';
-import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
-import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import {ToyInformationComponent} from './features/toy/components/toy-information/toy-information.component';
 import {MatListModule} from "@angular/material/list";
-import {TraderInformationComponent} from './features/toy/components/trader-information/trader-information.component';
-import {ExchangeRequestDialogComponent} from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
 import {TraderInformationComponent} from './features/toy/components/trader-information/trader-information.component';
 import {
   ExchangeRequestDialogComponent
@@ -92,15 +84,6 @@ import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolve
 import {CategoryComponent} from "./features/categories/components/category/category.component";
 import {GenderComponent} from "./features/categories/components/gender/gender.component";
 import {ConditionComponent} from "./features/categories/components/condition/condition.component";
-import {DashboardComponent} from './features/dashboard/components/dashboard/dashboard.component';
-import {DashboardOverviewComponent} from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
-import {DashboardViewAllComponent} from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
-import {DashboardCityContainerComponent} from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
-import {DashboardCategoryContainerComponent} from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
-import {AddCityComponent} from "./features/dashboard/components/add-city/add-city.component";
-import {AddCityContainerComponent} from './features/dashboard/containers/add-city-container/add-city-container.component';
-import {AddCategoryContainerComponent} from './features/dashboard/containers/add-category-container/add-category-container.component';
-import {AddCategoryComponent} from './features/dashboard/components/add-category/add-category.component';
 import {DashboardComponent} from './features/dashboard/components/dashboard/dashboard.component';
 import {
   DashboardOverviewComponent
