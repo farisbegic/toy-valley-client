@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderButtonsConstants} from "../../../constants/header-buttons.constants";
 
 @Component({
@@ -6,8 +6,11 @@ import {HeaderButtonsConstants} from "../../../constants/header-buttons.constant
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   public buttons = HeaderButtonsConstants.buttons
+  public admin: string = '';
+  public jwt: string = '';
+  public userId: string = '';
   public active = "nav__menu";
   public icon = "menu";
 
@@ -23,5 +26,15 @@ export class HeaderComponent {
     } else {
       this.icon = "menu";
     }
+  }
+
+  ngOnInit(): void {
+    this.admin = localStorage.getItem('isAdmin') || '';
+    this.jwt = localStorage.getItem('token') || '';
+    this.userId = localStorage.getItem('userId') || '';
+  }
+
+  public logout(): void {
+    localStorage.clear();
   }
 }
