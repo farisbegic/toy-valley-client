@@ -2,12 +2,11 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {City} from "../models/city.model";
-import {ItemsModel} from "../models/items.model";
-import {ExchangeRequestsModel} from "../models/exchange-requests.model";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class ToyExchangeService {
-  private readonly baseUrl: string = 'http://localhost:8080/toy-exchange';
+  private readonly baseUrl: string = `${environment.backendUrl}/toy-exchange`;
 
   constructor(private http:HttpClient) {
   }
