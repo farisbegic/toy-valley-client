@@ -8,11 +8,10 @@ import {Gender} from "../models/enums/gender.enum";
 import {Condition} from "../models/enums/condition.enum";
 import {ToyDetail} from "../models/toy-detail";
 import {Toy} from "../models/toy.model";
-import {ItemProperty} from "../models/enums/item-property.enum";
 
 @Injectable()
 export class ToysService {
-  private readonly url: string = environment.backendUrl + '/toys';
+  private readonly url: string = `${environment.backendUrl}/toys`;
 
   constructor(private http:HttpClient) {
   }

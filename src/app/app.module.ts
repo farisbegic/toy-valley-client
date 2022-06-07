@@ -43,29 +43,27 @@ import {RegistrationContainerComponent} from './features/registration/containers
 import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
 import {UserService} from "./services/user.service";
-import {CategoriesResolver} from "./resolvers/categories.resolver";
-import {CategoryService} from "./services/category.service";
-import { EditProfileComponent } from './features/edit-profile/components/edit-profile.component';
-import { EditProfileContainerComponent } from './features/edit-profile/containers/edit-profile-container.component';
+import {EditProfileComponent} from './features/edit-profile/components/edit-profile.component';
+import {EditProfileContainerComponent} from './features/edit-profile/containers/edit-profile-container.component';
 import {UserResolver} from "./resolvers/user.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
-import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
-import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
+import {PageNotFoundComponent} from './features/common/page-not-found/page-not-found.component';
+import {LocationToysComponent} from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
 import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
-import { ToyComponent } from './features/toy/components/toy/toy.component';
-import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
+import {ToyComponent} from './features/toy/components/toy/toy.component';
+import {ToyContainerComponent} from './features/toy/containers/toy-container/toy-container.component';
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
-import { ToyInformationComponent } from './features/toy/components/toy-information/toy-information.component';
+import {ToyInformationComponent} from './features/toy/components/toy-information/toy-information.component';
 import {MatListModule} from "@angular/material/list";
-import { TraderInformationComponent } from './features/toy/components/trader-information/trader-information.component';
-import { ExchangeRequestDialogComponent } from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
+import {TraderInformationComponent} from './features/toy/components/trader-information/trader-information.component';
+import {ExchangeRequestDialogComponent} from './features/toy/components/exchange-request-dialog/exchange-request-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
 import {ToyExchangeService} from "./services/toy-exchange.service";
-import { ProfileComponent } from './features/profile/components/profile.component';
-import { ProfileContainerComponent } from './features/profile/containers/profile-container.component';
+import {ProfileComponent} from './features/profile/components/profile.component';
+import {ProfileContainerComponent} from './features/profile/containers/profile-container.component';
 import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
 import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
@@ -75,15 +73,15 @@ import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolve
 import {CategoryComponent} from "./features/categories/components/category/category.component";
 import {GenderComponent} from "./features/categories/components/gender/gender.component";
 import {ConditionComponent} from "./features/categories/components/condition/condition.component";
-import { DashboardComponent } from './features/dashboard/components/dashboard/dashboard.component';
-import { DashboardOverviewComponent } from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
-import { DashboardViewAllComponent } from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
-import { DashboardCityContainerComponent } from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
-import { DashboardCategoryContainerComponent } from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
-import { AddCityComponent } from "./features/dashboard/components/add-city/add-city.component";
-import { AddCityContainerComponent } from './features/dashboard/containers/add-city-container/add-city-container.component';
-import { AddCategoryContainerComponent } from './features/dashboard/containers/add-category-container/add-category-container.component';
-import { AddCategoryComponent } from './features/dashboard/components/add-category/add-category.component';
+import {DashboardComponent} from './features/dashboard/components/dashboard/dashboard.component';
+import {DashboardOverviewComponent} from './features/dashboard/components/dashboard-overview/dashboard-overview.component';
+import {DashboardViewAllComponent} from './features/dashboard/components/dashboard-view-all/dashboard-view-all.component';
+import {DashboardCityContainerComponent} from './features/dashboard/containers/dashboard-city-container/dashboard-city-container.component';
+import {DashboardCategoryContainerComponent} from './features/dashboard/containers/dashboard-category-container/dashboard-category-container.component';
+import {AddCityComponent} from "./features/dashboard/components/add-city/add-city.component";
+import {AddCityContainerComponent} from './features/dashboard/containers/add-city-container/add-city-container.component';
+import {AddCategoryContainerComponent} from './features/dashboard/containers/add-category-container/add-category-container.component';
+import {AddCategoryComponent} from './features/dashboard/components/add-category/add-category.component';
 import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver";
 import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
 import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
@@ -187,4 +185,5 @@ import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-ne
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
