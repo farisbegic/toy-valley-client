@@ -8,4 +8,6 @@ export class ResolverResponse {
   public static SEPARATOR = '-';
   public static GENDER = 'gender';
   public static CONDITION = 'condition';
+  public static EXCHANGE = 'exchange';
+  public static REQUEST = 'request';
 }
