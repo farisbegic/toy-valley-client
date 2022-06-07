@@ -42,12 +42,18 @@ import {MatSelectModule} from "@angular/material/select";
 import {RegistrationContainerComponent} from './features/registration/containers/registration-container/registration-container.component';
 import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
+import {UserService} from "./services/user.service";
+import {CategoriesResolver} from "./resolvers/categories.resolver";
+import {CategoryService} from "./services/category.service";
+import { EditProfileComponent } from './features/edit-profile/components/edit-profile.component';
+import { EditProfileContainerComponent } from './features/edit-profile/containers/edit-profile-container.component';
+import {UserResolver} from "./resolvers/user.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import { PageNotFoundComponent } from './features/common/page-not-found/page-not-found.component';
-
-
 import { LocationToysComponent } from './features/toys/components/location-toys/location-toys.component';
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
+import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
+import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 import { ToyComponent } from './features/toy/components/toy/toy.component';
 import { ToyContainerComponent } from './features/toy/containers/toy-container/toy-container.component';
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
@@ -58,6 +64,8 @@ import { ExchangeRequestDialogComponent } from './features/toy/components/exchan
 import {MatDialogModule} from "@angular/material/dialog";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
 import {ToyExchangeService} from "./services/toy-exchange.service";
+import { ProfileComponent } from './features/profile/components/profile.component';
+import { ProfileContainerComponent } from './features/profile/containers/profile-container.component';
 import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
 import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
@@ -108,6 +116,12 @@ import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-ne
     RegistrationContainerComponent,
     PageNotFoundComponent,
     LocationToysComponent,
+    AddToyComponent,
+    AddToyContainerComponent,
+    EditProfileComponent,
+    EditProfileContainerComponent,
+    ProfileComponent,
+    ProfileContainerComponent,
     ToyComponent,
     ToyContainerComponent,
     ToyInformationComponent,
@@ -158,10 +172,12 @@ import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-ne
     UserToysResolver,
     LocationToysResolver,
     ToyDetailResolver,
-    ToysService,
     ToyExchangeService,
     CitiesResolver,
     CityService,
+    ToysService,
+    UserService,
+    UserResolver,
     TopTradersResolver,
     GenderToysResolverFemale,
     GenderToysResolverMale,

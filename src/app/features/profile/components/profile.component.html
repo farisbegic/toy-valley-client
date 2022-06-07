@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="about-user">
+    <div class="user-image">
+      <img src="https://www.corporatephotographerslondon.com/wp-content/uploads/2016/06/Studio-headshots-London-7.jpg" alt="User profile picture">
+    </div>
+    <div *ngIf="user" class="user-info">
+      <p>{{user.name}} {{user.surname}}</p>
+      <br>
+      <p>{{user.phone}}</p>
+      <br>
+      <p>{{user.address}}</p>
+      <br>
+      <p>{{user.city?.name}}</p>
+      <br>
+      <div class="buttons">
+        <button type="button" mat-raised-button color="primary" (click)="edit()">Edit profile</button>
+        <button type="button" mat-raised-button color="primary" (click)="add()">Add toy</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toys-section">
+    <h1>My toys</h1>
+
+    <div *ngIf="(toys) && (toys.length != 0); else noToys" class="toys">
+      <mat-card *ngFor="let toy of toys" class="example-card" fxLayout="column" fxLayoutAlign="space-between center">
+        <img mat-card-image src="{{image}}" alt="{{toy.name}}">
+        <mat-card-title>{{toy.name}}</mat-card-title>
+        <mat-card-content>
+          <p>{{toy.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button routerLink="/{{url}}/{{toy.id}}">VIEW MORE</button>
+          <br>
+          <button mat-button (click)="delete(toy.id)">DELETE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <ng-template #noToys>
+      You don't have any toys added.
+    </ng-template>
+  </div>
+
+</div>
