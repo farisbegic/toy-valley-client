@@ -40,10 +40,8 @@ export class AuthService {
     };
 
     return this.http.post<AuthResponse>(`${this.baseUrl}`, body).pipe(
-      mergeMap(({ token, userId, admin }) => {
-        this.jwt = token;
-        this.userId = userId;
-        this.admin = admin;
+      mergeMap(response => {
+        this.jwt = response.token;
         return of(undefined);
       })
     );
