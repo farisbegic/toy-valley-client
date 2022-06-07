@@ -1,5 +1,5 @@
 ## Overview
-ToyValley is a web application which has a goal to recycle as many toys as possible by enabling parents to exchange toys their kids are not using anymore between each other. Every person is able to create a profile where one can upload all the toys for the exchange. Other people can view the toys and make exchange requests using the toys from their profile. The application contains quick filters useful to the users such as most popular categories and most popular cities.
+ToyValley is a web application that aims to recycle as many toys as possible by allowing parents to trade toys that their children are no longer using. Each person can create a profile and submit all of their toys for the exchange. Other people can look at the toys and make swap requests using their profile. Users will find easy filters such as most popular categories and most popular cities on the application.
 
 This repository contains frontend implementation, which is deployed to [Heroku](https://toy-valley.netlify.app/)
 
