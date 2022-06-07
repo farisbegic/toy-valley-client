@@ -28,7 +28,7 @@ export class RegistrationContainerComponent implements OnInit {
 
   saveUser(user: User): void {
     this.userService.create(user).subscribe(value => {
-      this.router.navigate([Route.EMPTY]);
+      this.router.navigate([Route.LOGIN]);
     });
   }
 

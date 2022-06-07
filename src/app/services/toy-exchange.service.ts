@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {City} from "../models/city.model";
+import {ItemsModel} from "../models/items.model";
+import {ExchangeRequestsModel} from "../models/exchange-requests.model";
 
 @Injectable()
 export class ToyExchangeService {

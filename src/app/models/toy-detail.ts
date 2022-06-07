@@ -1,3 +1,4 @@
+
 import {ItemProperty} from "./enums/item-property.enum";
 import {Condition} from "./enums/condition.enum";
 import {Gender} from "./enums/gender.enum";

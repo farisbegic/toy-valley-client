@@ -50,6 +50,10 @@ import {
 } from './features/registration/containers/registration-container/registration-container.component';
 import {CityService} from "./services/city.service";
 import {CitiesResolver} from "./resolvers/cities.resolver";
+import {UserService} from "./services/user.service";
+import {EditProfileComponent} from './features/edit-profile/components/edit-profile.component';
+import {EditProfileContainerComponent} from './features/edit-profile/containers/edit-profile-container.component';
+import {UserResolver} from "./resolvers/user.resolver";
 import {TopTradersResolver} from "./resolvers/top-traders.resolver";
 import {PageNotFoundComponent} from './features/common/page-not-found/page-not-found.component';
 
@@ -57,6 +61,8 @@ import {LocationToysComponent} from './features/toys/components/location-toys/lo
 import {LocationToysResolver} from "./resolvers/location-toys.resolver";
 import {ToyComponent} from './features/toy/components/toy/toy.component';
 import {ToyContainerComponent} from './features/toy/containers/toy-container/toy-container.component';
+import {AddToyComponent} from "./features/add-toy/components/add-toy.component";
+import {AddToyContainerComponent} from "./features/add-toy/containers/add-toy-container.component";
 import {ToyDetailResolver} from "./resolvers/toy-detail.resolver";
 import {ToyInformationComponent} from './features/toy/components/toy-information/toy-information.component';
 import {MatListModule} from "@angular/material/list";
@@ -67,13 +73,17 @@ import {
 import {MatDialogModule} from "@angular/material/dialog";
 import {UserToysResolver} from "./resolvers/user-toys.resolver";
 import {ToyExchangeService} from "./services/toy-exchange.service";
+import {ProfileComponent} from './features/profile/components/profile.component';
+import {ProfileContainerComponent} from './features/profile/containers/profile-container.component';
 import {provideAuthorizationInterceptor} from './interceptors/authorization.interceptor';
 import {AuthorizedGuard} from './guards/authorized.guard';
 import {AuthService} from './services/auth.service';
 import {GenderToysComponent} from "./features/toys/components/gender-toys/gender-toys.component";
 import {ConditionToysComponent} from "./features/toys/components/condition-toys/condition-toys.component";
-import {GenderToysResolver} from "./resolvers/gender-toys.resolver";
-import {ConditionToysResolver} from "./resolvers/condition-toys.resolver";
+import {ConditionToysUsedResolver} from "./resolvers/condition-toys-used.resolver";
+import {CategoryComponent} from "./features/categories/components/category/category.component";
+import {GenderComponent} from "./features/categories/components/gender/gender.component";
+import {ConditionComponent} from "./features/categories/components/condition/condition.component";
 import {DashboardComponent} from './features/dashboard/components/dashboard/dashboard.component';
 import {
   DashboardOverviewComponent
@@ -95,6 +105,10 @@ import {
   AddCategoryContainerComponent
 } from './features/dashboard/containers/add-category-container/add-category-container.component';
 import {AddCategoryComponent} from './features/dashboard/components/add-category/add-category.component';
+import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver";
+import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
+import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
+import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-new.resolver";
 
 
 @NgModule({
@@ -123,6 +137,12 @@ import {AddCategoryComponent} from './features/dashboard/components/add-category
     RegistrationContainerComponent,
     PageNotFoundComponent,
     LocationToysComponent,
+    AddToyComponent,
+    AddToyContainerComponent,
+    EditProfileComponent,
+    EditProfileContainerComponent,
+    ProfileComponent,
+    ProfileContainerComponent,
     ToyComponent,
     ToyContainerComponent,
     ToyInformationComponent,
@@ -139,6 +159,9 @@ import {AddCategoryComponent} from './features/dashboard/components/add-category
     AddCityContainerComponent,
     AddCategoryContainerComponent,
     AddCategoryComponent,
+    CategoryComponent,
+    GenderComponent,
+    ConditionComponent,
   ],
   imports: [
     BrowserModule,
@@ -170,13 +193,18 @@ import {AddCategoryComponent} from './features/dashboard/components/add-category
     UserToysResolver,
     LocationToysResolver,
     ToyDetailResolver,
-    ToysService,
     ToyExchangeService,
     CitiesResolver,
     CityService,
+    ToysService,
+    UserService,
+    UserResolver,
     TopTradersResolver,
-    GenderToysResolver,
-    ConditionToysResolver
+    GenderToysResolverFemale,
+    GenderToysResolverMale,
+    GenderToysResolverUnisex,
+    ConditionToysUsedResolver,
+    ConditionToysBrandNewResolver,
   ],
   bootstrap: [AppComponent]
 })

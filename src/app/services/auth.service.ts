@@ -26,7 +26,7 @@ export class AuthService {
 
   public logIn(signInForm: SignInForm): Observable<void> {
     const body = {
-      username: signInForm.email,
+      email: signInForm.email,
       password: signInForm.password,
     };
 
