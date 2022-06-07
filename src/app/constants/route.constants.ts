@@ -14,6 +14,11 @@ export class Route {
   public static GENDER = 'gender';
   public static ADDTOY = 'addtoy';
   public static USERS = 'users';
+  public static FEMALE = 'female';
+  public static MALE = 'male';
+  public static UNISEX = 'unisex';
+  public static BRAND_NEW = 'brand_new';
+  public static USED = 'used';
   public static TOY = 'toy';
   public static DASHBOARD = 'dashboard'
 }
