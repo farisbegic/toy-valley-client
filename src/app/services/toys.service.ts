@@ -11,7 +11,7 @@ import {Condition} from "../models/enums/condition.enum";
 
 @Injectable()
 export class ToysService {
-  private readonly url: string = environment.backendUrl + '/toys';
+  private readonly url: string = `${environment.backendUrl}/toys`;
 
   constructor(private http:HttpClient) {
   }
