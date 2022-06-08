@@ -34,7 +34,7 @@ public handleFormSubmit(): void{
 
     if (this.form!.valid) {
       this.authService.logIn({ ...this.form!.value }).subscribe(() => {
-        this.router.navigate([Route.CATEGORIES]);
+        this.router.navigate([Route.EMPTY]);
       });
     }
   }

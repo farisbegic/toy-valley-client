@@ -45,6 +45,7 @@ import {GenderToysResolverFemale} from "./resolvers/gender-toys-female.resolver"
 import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
 import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
 import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-new.resolver";
+import {AuthorizedGuard} from "./guards/authorized.guard";
 
 
 const routes: Routes = [
@@ -68,7 +69,7 @@ const routes: Routes = [
       },
       {
         path: Route.LOGIN,
-        component: LoginComponent,
+        component: LoginComponent
       },
       {
         path: Route.CATEGORIES,
@@ -146,6 +147,7 @@ const routes: Routes = [
       },
       {
         path: Route.USERS + Route.SEPARATOR + Route.ID,
+        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: Route.EMPTY,
@@ -153,7 +155,7 @@ const routes: Routes = [
             resolve: {
               [ResolverResponse.USER]: UserResolver,
               [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver,
-            }
+            },
           },
           {
             path: Route.EDIT,
@@ -174,6 +176,7 @@ const routes: Routes = [
       },
       {
         path: Route.DASHBOARD,
+        canActivateChild: [AuthorizedGuard],
         children: [
           {
             path: "",
