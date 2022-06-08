@@ -7,13 +7,13 @@ import {AuthService} from "../../../services/auth.service";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   public buttons = HeaderButtonsConstants.buttons
-  public admin: string = '';
-  public jwt: string = '';
-  public userId: string = '';
   public active = "nav__menu";
   public icon = "menu";
+
+  constructor(public authService: AuthService) {
+  }
 
   public navToggle = () => {
     if (this.active === 'nav__menu') {
@@ -27,22 +27,5 @@ export class HeaderComponent implements OnInit {
     } else {
       this.icon = "menu";
     }
-  }
-
-  constructor(private authService: AuthService) {
-  }
-
-  ngOnInit(): void {
-    this.authService.watchStorage().subscribe(data => {
-      this.jwt = data.token;
-      this.userId = data.userId;
-      this.admin = data.admin;
-    })
-  }
-
-  public logout(): void {
-    this.jwt = '';
-    this.userId = '';
-    this.admin = '';
   }
 }

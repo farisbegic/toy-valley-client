@@ -11,8 +11,9 @@ import {SignInForm} from "../models/auth/login-form-interface";
 export class AuthService {
 
   private readonly baseUrl: string = `${environment.backendUrl}/authenticate`;
-  private storageSub = new Subject();
   private jwt: string | null = null;
+  private userId: string | null = null;
+  private admin: string | null = null;
 
   constructor(
     private http: HttpClient,
@@ -24,8 +25,12 @@ export class AuthService {
     return this.jwt;
   }
 
-  watchStorage(): Observable<any> {
-    return this.storageSub.asObservable();
+  public getUserId(): string | null {
+    return this.userId;
+  }
+
+  public getAdmin(): string | null {
+    return this.admin;
   }
 
   public logIn(signInForm: SignInForm): Observable<void> {
@@ -35,11 +40,19 @@ export class AuthService {
     };
 
     return this.http.post<AuthResponse>(`${this.baseUrl}`, body).pipe(
-      mergeMap(response => {
-        this.storageSub.next(response);
+      mergeMap(({ token, userId, admin }) => {
+        this.jwt = token;
+        this.userId = userId;
+        this.admin = admin;
         return of(undefined);
       })
     );
+  }
+
+  public logout(): void {
+    this.jwt = null;
+    this.userId = null;
+    this.admin = null;
   }
 
   public goToLogin():void {

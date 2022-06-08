@@ -11,38 +11,38 @@
         mat-button
       >{{button.text}}</button>
     </div>
-    <div *ngIf="admin == 'true'">
+    <div *ngIf="this.authService.getAdmin() == 'true'">
       <button
         class="nav__item"
         routerLink="/dashboard"
         mat-button
       >Dashboard</button>
     </div>
-    <div *ngIf="jwt == ''">
+    <div *ngIf="this.authService.getToken() == null">
       <button
         class="nav__item"
         routerLink="/login"
         mat-button
       >Login</button>
     </div>
-    <div *ngIf="jwt == ''">
+    <div *ngIf="this.authService.getToken() == null">
       <button
         class="nav__item"
         routerLink="/register"
         mat-button
       >Register</button>
     </div>
-    <div *ngIf="jwt != ''">
+    <div *ngIf="this.authService.getToken() != null">
       <button
         class="nav__item"
-        routerLink="/users/{{userId}}"
+        routerLink="/users/{{this.authService.getUserId()}}"
         mat-button
       >Profile</button>
     </div>
-    <div *ngIf="jwt != ''">
+    <div *ngIf="this.authService.getToken() != null">
       <button
         class="nav__item"
-        (click)="logout()"
+        (click)="this.authService.logout()"
         mat-button
       >Logout</button>
     </div>
