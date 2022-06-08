@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {mergeMap, Observable, of, Subject} from 'rxjs';
+import {mergeMap, Observable, of} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {AuthResponse} from '../models/auth/auth-response.interface';
 import {Router} from '@angular/router';
@@ -40,8 +40,10 @@ export class AuthService {
     };
 
     return this.http.post<AuthResponse>(`${this.baseUrl}`, body).pipe(
-      mergeMap(response => {
-        this.jwt = response.token;
+      mergeMap(({ token, admin, userId }) => {
+        this.jwt = token;
+        this.admin = admin;
+        this.userId = userId
         return of(undefined);
       })
     );

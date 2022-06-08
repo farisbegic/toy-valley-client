@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HeaderButtonsConstants} from "../../../constants/header-buttons.constants";
 import {AuthService} from "../../../services/auth.service";
+import {Route} from "../../../constants/route.constants";
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ export class HeaderComponent {
   public buttons = HeaderButtonsConstants.buttons
   public active = "nav__menu";
   public icon = "menu";
+  public Route = Route;
 
   constructor(public authService: AuthService) {
   }

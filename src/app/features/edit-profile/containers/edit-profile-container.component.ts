@@ -33,7 +33,7 @@ export class EditProfileContainerComponent implements OnInit {
 
   updateUser(user: User): void {
     this.userService.update(user, this.user?.id).subscribe(value => {
-      this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id]);
+      this.router.navigate([Route.SEPARATOR + Route.PROFILE]);
     });
   }
 

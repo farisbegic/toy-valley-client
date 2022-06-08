@@ -20,5 +20,6 @@ export class Route {
   public static BRAND_NEW = 'brand_new';
   public static USED = 'used';
   public static TOY = 'toy';
-  public static DASHBOARD = 'dashboard'
+  public static DASHBOARD = 'dashboard';
+  public static PROFILE = 'profile';
 }

@@ -14,28 +14,28 @@
     <div *ngIf="this.authService.getAdmin() == 'true'">
       <button
         class="nav__item"
-        routerLink="/dashboard"
+        routerLink="{{Route.SEPARATOR + Route.DASHBOARD}}"
         mat-button
       >Dashboard</button>
     </div>
     <div *ngIf="this.authService.getToken() == null">
       <button
         class="nav__item"
-        routerLink="/login"
+        routerLink="{{Route.SEPARATOR + Route.LOGIN}}"
         mat-button
       >Login</button>
     </div>
     <div *ngIf="this.authService.getToken() == null">
       <button
         class="nav__item"
-        routerLink="/register"
+        routerLink="{{Route.SEPARATOR + Route.REGISTER}}"
         mat-button
       >Register</button>
     </div>
     <div *ngIf="this.authService.getToken() != null">
       <button
         class="nav__item"
-        routerLink="/users/{{this.authService.getUserId()}}"
+        routerLink="{{Route.SEPARATOR + Route.PROFILE}}"
         mat-button
       >Profile</button>
     </div>

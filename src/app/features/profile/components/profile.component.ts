@@ -56,11 +56,11 @@ export class ProfileComponent implements OnInit {
   }
 
   public edit(): void {
-    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id + Route.SEPARATOR + Route.EDIT]);
+    this.router.navigate([Route.PROFILE + Route.SEPARATOR + Route.EDIT]);
   }
 
   public add(): void {
-    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id + Route.SEPARATOR + Route.ADDTOY]);
+    this.router.navigate([Route.PROFILE + Route.SEPARATOR + Route.ADDTOY]);
   }
 
   public delete(toyId: number): void {

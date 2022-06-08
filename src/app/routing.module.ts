@@ -146,7 +146,7 @@ const routes: Routes = [
         }
       },
       {
-        path: Route.USERS + Route.SEPARATOR + Route.ID,
+        path: Route.PROFILE,
         canActivateChild: [AuthorizedGuard],
         children: [
           {
