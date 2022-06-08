@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {mergeMap, Observable, of} from 'rxjs';
+import {mergeMap, Observable, of, Subject} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {AuthResponse} from '../models/auth/auth-response.interface';
 import {Router} from '@angular/router';
@@ -11,7 +11,7 @@ import {SignInForm} from "../models/auth/login-form-interface";
 export class AuthService {
 
   private readonly baseUrl: string = `${environment.backendUrl}/authenticate`;
-
+  private storageSub = new Subject();
   private jwt: string | null = null;
 
   constructor(
@@ -24,6 +24,10 @@ export class AuthService {
     return this.jwt;
   }
 
+  watchStorage(): Observable<any> {
+    return this.storageSub.asObservable();
+  }
+
   public logIn(signInForm: SignInForm): Observable<void> {
     const body = {
       email: signInForm.email,
@@ -32,10 +36,7 @@ export class AuthService {
 
     return this.http.post<AuthResponse>(`${this.baseUrl}`, body).pipe(
       mergeMap(response => {
-        localStorage.setItem('token', response.token);
-        localStorage.setItem('userId', response.userId);
-        localStorage.setItem('isAdmin', response.admin)
-        this.jwt = response.token;
+        this.storageSub.next(response);
         return of(undefined);
       })
     );

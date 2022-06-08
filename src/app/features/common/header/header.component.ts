@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HeaderButtonsConstants} from "../../../constants/header-buttons.constants";
+import {AuthService} from "../../../services/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -28,13 +29,20 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  constructor(private authService: AuthService) {
+  }
+
   ngOnInit(): void {
-    this.admin = localStorage.getItem('isAdmin') || '';
-    this.jwt = localStorage.getItem('token') || '';
-    this.userId = localStorage.getItem('userId') || '';
+    this.authService.watchStorage().subscribe(data => {
+      this.jwt = data.token;
+      this.userId = data.userId;
+      this.admin = data.admin;
+    })
   }
 
   public logout(): void {
-    localStorage.clear();
+    this.jwt = '';
+    this.userId = '';
+    this.admin = '';
   }
 }
