@@ -19,15 +19,6 @@ export class ProfileComponent implements OnInit {
   @Input()
   toys: ItemsModel[] | undefined;
 
-  @Input()
-  id: number = 0;
-
-  @Input()
-  title: string = '';
-
-  @Input()
-  description: string = '';
-
   @Output()
   deleteToy: EventEmitter<ItemsModel> = new EventEmitter<ItemsModel>();
 
