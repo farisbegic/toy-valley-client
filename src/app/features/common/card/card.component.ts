@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import { Route } from "../../../constants/route.constants";
+import {Route} from "../../../constants/route.constants";
 
 @Component({
   selector: 'app-card',

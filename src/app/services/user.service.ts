@@ -10,12 +10,12 @@ import {environment} from "../../environments/environment";
 })
 export class UserService {
 
-  private readonly baseUrl: string = environment.backendUrl + '/users';
+  private readonly baseUrl: string = `${environment.backendUrl}/users`;
 
-  constructor(private http:HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
-  public getUser(id:string): Observable<User> {
+  public getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`);
   }
 

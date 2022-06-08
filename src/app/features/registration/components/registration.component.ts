@@ -4,7 +4,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../../models/user.model";
 import {City} from "../../../models/city.model";
-import {ResolverResponse} from "../../../constants/resolver-response.constants";
 
 @Component({
   selector: 'app-registration',

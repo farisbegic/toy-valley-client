@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {ChipsModel} from "../../../../models/chips.model";
 import {Route} from "../../../../constants/route.constants";
 

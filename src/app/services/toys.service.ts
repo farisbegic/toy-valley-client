@@ -4,15 +4,14 @@ import {Observable} from "rxjs";
 import {ItemsModel} from "../models/items.model";
 import {environment} from "../../environments/environment";
 import {SearchItemsModel} from "../models/search-items.model";
-import {Gender} from "../models/enums/gender.enum";
-import {Condition} from "../models/enums/condition.enum";
 import {ToyDetail} from "../models/toy-detail";
 import {Toy} from "../models/toy.model";
-import {ItemProperty} from "../models/enums/item-property.enum";
+import {Gender} from "../models/enums/gender.enum";
+import {Condition} from "../models/enums/condition.enum";
 
 @Injectable()
 export class ToysService {
-  private readonly url: string = environment.backendUrl + '/toys';
+  private readonly url: string = `${environment.backendUrl}/toys`;
 
   constructor(private http:HttpClient) {
   }

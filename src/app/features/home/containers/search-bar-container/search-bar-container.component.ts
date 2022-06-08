@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ToysService} from "../../../../services/toys.service";
 import {SearchItemsModel} from "../../../../models/search-items.model";
-import {debounce, interval, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-search-bar-container',

@@ -11,6 +11,41 @@
         mat-button
       >{{button.text}}</button>
     </div>
+    <div *ngIf="this.authService.getAdmin() == 'true'">
+      <button
+        class="nav__item"
+        routerLink="{{Route.SEPARATOR + Route.DASHBOARD}}"
+        mat-button
+      >Dashboard</button>
+    </div>
+    <div *ngIf="this.authService.getToken() == null">
+      <button
+        class="nav__item"
+        routerLink="{{Route.SEPARATOR + Route.LOGIN}}"
+        mat-button
+      >Login</button>
+    </div>
+    <div *ngIf="this.authService.getToken() == null">
+      <button
+        class="nav__item"
+        routerLink="{{Route.SEPARATOR + Route.REGISTER}}"
+        mat-button
+      >Register</button>
+    </div>
+    <div *ngIf="this.authService.getToken() != null">
+      <button
+        class="nav__item"
+        routerLink="{{Route.SEPARATOR + Route.PROFILE}}"
+        mat-button
+      >Profile</button>
+    </div>
+    <div *ngIf="this.authService.getToken() != null">
+      <button
+        class="nav__item"
+        (click)="this.authService.logout()"
+        mat-button
+      >Logout</button>
+    </div>
   </div>
 
   <div class="nav__toggler" (click)="navToggle()">

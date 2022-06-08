@@ -33,7 +33,7 @@ export class AddToyContainerComponent implements OnInit {
 
   saveToy(toy: Toy): void {
     this.toysService.create(this.user!.id, toy).subscribe(value => {
-      this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id]);
+      this.router.navigate([Route.SEPARATOR + Route.PROFILE]);
     });
   }
 }

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     this.form = this.formBuilder.group({
       'email': [null, Validators.compose([Validators.required, Validators.email])],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])],
-    })
+   })
 }
 
 
@@ -32,7 +32,7 @@ public handleFormSubmit(): void{
 
     if (this.form!.valid) {
       this.authService.logIn({ ...this.form!.value }).subscribe(() => {
-        this.router.navigate([Route.CATEGORIES]);
+        this.router.navigate([Route.EMPTY]);
       });
     }
   }

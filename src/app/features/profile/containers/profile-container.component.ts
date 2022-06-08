@@ -22,7 +22,6 @@ export class ProfileContainerComponent implements OnInit {
 
     this.activatedRoute.data.subscribe((response: any) => {
       this.toys = response[ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY];
-      console.log(this.toys);
     });
   }
 
