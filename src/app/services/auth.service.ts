@@ -43,7 +43,7 @@ export class AuthService {
       mergeMap(({ token, admin, userId }) => {
         this.jwt = token;
         this.admin = admin;
-        this.userId = userId
+        this.userId = userId;
         return of(undefined);
       })
     );
@@ -53,6 +53,7 @@ export class AuthService {
     this.jwt = null;
     this.userId = null;
     this.admin = null;
+    this.router.navigate([Route.EMPTY]);
   }
 
   public goToLogin():void {
