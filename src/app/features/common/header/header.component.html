@@ -11,7 +11,7 @@
         mat-button
       >{{button.text}}</button>
     </div>
-    <div *ngIf="this.authService.getAdmin() == 'true'">
+    <div *ngIf="this.authService.getAdmin()">
       <button
         class="nav__item"
         routerLink="{{Route.SEPARATOR + Route.DASHBOARD}}"
