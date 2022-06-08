@@ -60,7 +60,7 @@ export class AddToyComponent implements OnInit {
   }
 
   public goBack(): void {
-    this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id]);
+    this.router.navigate([Route.PROFILE]);
   }
 
 }
