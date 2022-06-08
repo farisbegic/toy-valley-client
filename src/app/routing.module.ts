@@ -82,35 +82,35 @@ const routes: Routes = [
             }
           },
           {
-            path: Route.GENDER + Route.SEPARATOR + Route.FEMALE,
+            path: Route.TOYS + Route.SEPARATOR + Route.GENDER + Route.SEPARATOR + Route.FEMALE,
             component: GenderToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: GenderToysResolverFemale
             }
           },
           {
-            path: Route.GENDER + Route.SEPARATOR + Route.MALE,
+            path: Route.TOYS + Route.SEPARATOR + Route.GENDER + Route.SEPARATOR + Route.MALE,
             component: GenderToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: GenderToysResolverMale
             }
           },
           {
-            path: Route.GENDER + Route.SEPARATOR + Route.UNISEX,
+            path: Route.TOYS + Route.SEPARATOR + Route.GENDER + Route.SEPARATOR + Route.UNISEX,
             component: GenderToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: GenderToysResolverUnisex
             }
           },
           {
-            path: Route.CONDITION + Route.SEPARATOR + Route.USED,
+            path: Route.TOYS + Route.SEPARATOR + Route.CONDITION + Route.SEPARATOR + Route.USED,
             component: ConditionToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: ConditionToysUsedResolver
             }
           },
           {
-            path: Route.CONDITION + Route.SEPARATOR + Route.BRAND_NEW,
+            path: Route.TOYS + Route.SEPARATOR + Route.CONDITION + Route.SEPARATOR + Route.BRAND_NEW,
             component: ConditionToysComponent,
             resolve: {
               [ResolverResponse.CATEGORIES]: ConditionToysBrandNewResolver
