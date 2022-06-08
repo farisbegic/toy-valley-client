@@ -43,6 +43,18 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getShortenedText(description: string) : string {
+    if (description == null){
+      return '';
+    }
+    const length = 100;
+    let text = description.substring(0, length);
+    if (text.length === length) {
+      text += '...';
+    }
+    return text;
+  }
+
   public edit(): void {
     this.router.navigate([Route.USERS + Route.SEPARATOR + this.user?.id + Route.SEPARATOR + Route.EDIT]);
   }

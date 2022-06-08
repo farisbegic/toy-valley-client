@@ -56,7 +56,7 @@ export class AuthService {
   }
 
   public goToLogin():void {
-    this.router.navigate([Route.CATEGORIES]);
+    this.router.navigate([Route.LOGIN]);
   }
 
 }
