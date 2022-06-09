@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {ToyDetail} from "../../../models/toy-detail";
 import {ItemsModel} from "../../../models/items.model";
 import {ToysService} from "../../../services/toys.service";
+import {ExchangeRequestsModel} from "../../../models/exchange-requests.model";
 
 @Component({
   selector: 'app-profile',
@@ -15,6 +16,9 @@ export class ProfileComponent implements OnInit {
 
   @Input()
   user: User | undefined;
+
+  @Input()
+  requests: ExchangeRequestsModel[] | undefined;
 
   @Input()
   toys: ItemsModel[] | undefined;

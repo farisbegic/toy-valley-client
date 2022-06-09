@@ -46,6 +46,7 @@ import {GenderToysResolverMale} from "./resolvers/gender-toys-male.resolver";
 import {GenderToysResolverUnisex} from "./resolvers/gender-toys-unisex.resolver";
 import {ConditionToysBrandNewResolver} from "./resolvers/condition-toys-brand-new.resolver";
 import {AuthorizedGuard} from "./guards/authorized.guard";
+import {RequestResolver} from "./resolvers/exchange-requests.resolver";
 
 
 const routes: Routes = [
@@ -155,6 +156,7 @@ const routes: Routes = [
             resolve: {
               [ResolverResponse.USER]: UserResolver,
               [ResolverResponse.USER + ResolverResponse.SEPARATOR + ResolverResponse.TOY]: UserToysResolver,
+              [ResolverResponse.REQUEST]: RequestResolver,
             },
           },
           {
