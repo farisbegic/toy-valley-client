@@ -8,6 +8,6 @@ import {Route} from "../../../constants/route.constants";
 })
 export class PageNotFoundComponent {
 
-  public homeRoute = Route.EMPTY;
+  public homeRoute = Route.PROFILE;
 
 }

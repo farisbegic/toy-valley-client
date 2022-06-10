@@ -10,5 +10,6 @@ export interface ItemsModel {
   [ItemProperty.gender]: Gender,
   [ItemProperty.condition]: Condition,
   [ItemProperty.age]: number,
-  [ItemProperty.date_purchased]: string
+  [ItemProperty.date_purchased]: string,
+  [ItemProperty.active]: boolean,
 }

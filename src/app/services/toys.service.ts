@@ -8,6 +8,7 @@ import {ToyDetail} from "../models/toy-detail";
 import {Toy} from "../models/toy.model";
 import {Gender} from "../models/enums/gender.enum";
 import {Condition} from "../models/enums/condition.enum";
+import {User} from "../models/user.model";
 
 @Injectable()
 export class ToysService {
@@ -50,5 +51,9 @@ export class ToysService {
 
   public delete(toyId: number): Observable<HttpResponse<any>> {
     return this.http.delete<HttpResponse<any>>(`${this.url}/${toyId}`);
+  }
+
+  public update(toy: ItemsModel, id: number | undefined): Observable<ItemsModel> {
+    return this.http.put<ItemsModel>(`${this.url}/${id}`, toy);
   }
 }

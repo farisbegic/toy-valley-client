@@ -32,7 +32,7 @@
         <mat-card-actions>
           <button mat-button routerLink="/{{url}}/{{toy.id}}">VIEW MORE </button>
           <br>
-          <button mat-button (click)="delete(toy.id)">REMOVE</button>
+          <button mat-button (click)="delete(toy)">REMOVE</button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -49,8 +49,8 @@
       <div *ngFor="let request of requests" class="one-request">
         <p>Exchange {{request.toy_requested.name}} for {{request.toy_offered.name}}.</p>
         <div class="buttons">
-          <button type="button" mat-raised-button color="primary">Accept</button>
-          <button type="button" mat-raised-button color="primary">Reject</button>
+          <button type="button" mat-raised-button color="primary" (click)="updateRequest(request)">Accept</button>
+          <button type="button" mat-raised-button color="primary" (click)="updateRequest(request)">Reject</button>
         </div>
       </div>
     </div>

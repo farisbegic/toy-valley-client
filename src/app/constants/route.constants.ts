@@ -22,4 +22,7 @@ export class Route {
   public static TOY = 'toy';
   public static DASHBOARD = 'dashboard';
   public static PROFILE = 'profile';
+  public static REMOVED = 'removed';
+  public static ACCEPTED = 'accepted';
+  public static REJECTED = 'rejected';
 }

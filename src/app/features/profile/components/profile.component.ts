@@ -2,10 +2,12 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from "../../../models/user.model";
 import {Route} from "../../../constants/route.constants";
 import {Router} from "@angular/router";
-import {ToyDetail} from "../../../models/toy-detail";
 import {ItemsModel} from "../../../models/items.model";
 import {ToysService} from "../../../services/toys.service";
 import {ExchangeRequestsModel} from "../../../models/exchange-requests.model";
+import {ItemProperty} from "../../../models/enums/item-property.enum";
+import {ExchangeRequestsProperty} from "../../../models/enums/exchange-requests.enum";
+import {ToyExchangeService} from "../../../services/toy-exchange.service";
 
 @Component({
   selector: 'app-profile',
@@ -26,6 +28,9 @@ export class ProfileComponent implements OnInit {
   @Output()
   deleteToy: EventEmitter<ItemsModel> = new EventEmitter<ItemsModel>();
 
+  @Output()
+  updateExchangeRequest: EventEmitter<ExchangeRequestsModel> = new EventEmitter<ExchangeRequestsModel>();
+
   public route = Route;
   image: string = 'https://material.angular.io/assets/img/examples/shiba2.jpg';
   public url: string = Route.TOY
@@ -33,6 +38,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private router: Router,
     private toyService: ToysService,
+    private toyExchangeService: ToyExchangeService,
   ) {}
 
   ngOnInit(): void {
@@ -58,10 +64,17 @@ export class ProfileComponent implements OnInit {
     this.router.navigate([Route.PROFILE + Route.SEPARATOR + Route.ADDTOY]);
   }
 
-  public delete(toyId: number): void {
-    this.toyService.delete(toyId).subscribe(value => {
-      this.router.navigate([this.router.url])
+  public delete(toy: ItemsModel): void {
+    toy[ItemProperty.active] = false;
+    this.toyService.update(toy, toy[ItemProperty.id]).subscribe(value => {
+      this.router.navigate([Route.SEPARATOR + Route.PROFILE]);
     });
   }
 
+  public updateRequest(exchangeRequestsModel: ExchangeRequestsModel): void {
+    exchangeRequestsModel[ExchangeRequestsProperty.active] = false;
+    this.toyExchangeService.update(exchangeRequestsModel, exchangeRequestsModel[ExchangeRequestsProperty.id]).subscribe(value => {
+      this.router.navigate([Route.SEPARATOR + Route.PROFILE]);
+    });
+  }
 }
