@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {City} from "../models/city.model";
 import {environment} from "../../environments/environment";
+import {ExchangeRequestsModel} from "../models/exchange-requests.model";
+import {ItemsModel} from "../models/items.model";
 
 @Injectable()
 export class ToyExchangeService {
@@ -19,7 +21,11 @@ export class ToyExchangeService {
     })
   }
 
-  public getCities(): Observable<City[]> {
-    return this.http.get<City[]>(this.baseUrl);
+  public getUserExchangeRequests(id: string): Observable<ExchangeRequestsModel[]> {
+    return this.http.get<ExchangeRequestsModel[]>(this.baseUrl + "/user/" + id);
+  }
+
+  public update(exchangeRequestsModel: ExchangeRequestsModel, id: number | undefined): Observable<ExchangeRequestsModel> {
+    return this.http.put<ExchangeRequestsModel>(`${this.baseUrl}/${id}`, exchangeRequestsModel);
   }
 }
