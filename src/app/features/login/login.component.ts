@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Route} from "../../constants/route.constants";
 import {Router} from '@angular/router';
@@ -16,27 +16,39 @@ export class LoginComponent implements OnInit {
   public form!: FormGroup;
   public hide: boolean = true;
 
+  @Input()
+  public showErrorMessage: boolean = false;
+
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+
   }
+
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       'email': [null, Validators.compose([Validators.required, Validators.email])],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(8)])],
-   })
-}
+    })
+  }
 
-
-public handleFormSubmit(): void{
+  public handleFormSubmit(): void {
     this.form!.markAllAsTouched();
 
+
     if (this.form!.valid) {
-      this.authService.logIn({ ...this.form!.value }).subscribe(() => {
-        this.router.navigate([Route.EMPTY]);
-      });
+     this.showErrorMessage = false;
+      this.authService.logIn({...this.form!.value}).subscribe(() => {
+          this.router.navigate([Route.EMPTY]);
+
+        }, (error) => {
+          this.showErrorMessage = true;
+        }
+      )
     }
   }
 }
+
+
 
 
 
